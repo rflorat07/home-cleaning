@@ -29,5 +29,11 @@
 * Profile, Your Profile, Payment Methods, Manage Address, Add Address, Wallet, Add Money, Top Up E-Wallet, Top Up Success, Password Manager, Help Center, Privacy Policy Invite Friends, Logout
 
 
+### Run the packages 
+
+```
+1. dart run flutter_native_splash:create --path=splash.yaml 
+```
+
 <!-- MARKDOWN LINKS & IMAGES -->
 [product-screenshot]: assets/images/screenshot.png

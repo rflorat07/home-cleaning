@@ -6,9 +6,16 @@ version: 0.1.0
 environment:
   sdk: '>=3.3.4 <4.0.0'
 
+  #---------- PACKAGES ----------#
+
 dependencies:
   flutter:
     sdk: flutter
+
+  # Utility Packages
+  flutter_native_splash: ^2.4.0
+
+  #---------- ./ PACKAGES END ----------#
 
 dev_dependencies:
   flutter_test:
