@@ -26,8 +26,11 @@ class TColors {
   static const Color buttonDisabled = Color(0xFFC4C4C4);
 
   // Border Colors
-  static const Color borderPrimary = Color.fromARGB(10, 0, 0, 0);
+  static const Color borderPrimary = Color.fromRGBO(0, 0, 0, 0.1);
   static const Color borderSecondary = Color(0xFF4C9580);
+
+  // Divider Color
+  static const Color dividerColor = Color.fromRGBO(0, 0, 0, 0.1);
 
   // Error an Validation Colors
   static const Color error = Color(0xFFFF0A0A);

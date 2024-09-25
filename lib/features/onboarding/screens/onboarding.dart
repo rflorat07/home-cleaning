@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:home_cleaning/features/onboarding/screens/onboarding_back_button.dart';
-import 'package:home_cleaning/features/onboarding/screens/onboarding_dot_navigation.dart';
-import 'package:home_cleaning/features/onboarding/screens/onboarding_next_button.dart';
-import 'package:home_cleaning/features/onboarding/screens/onboarding_skip.dart';
-import 'package:home_cleaning/features/onboarding/widgets/onboarding_page.dart';
 import 'package:home_cleaning/utils/utils.dart';
 
 import '../controllers/onboarding.controller.dart';
+import '../widgets/index.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});

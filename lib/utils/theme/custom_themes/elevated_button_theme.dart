@@ -17,7 +17,7 @@ class TElevatedButtonTheme {
       padding: const EdgeInsets.symmetric(vertical: 18),
       textStyle: const TextStyle(
           fontSize: 16, color: Colors.white, fontWeight: FontWeight.w500),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(78)),
     ),
   );
 

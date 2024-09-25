@@ -13,10 +13,10 @@ class OnBoardingBackButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
 
-    return Obx(() => OnBoardingController.instance.currentPageIndex == 0
+    return Obx(() => OnBoardingController.instance.currentPageIndex.value == 0
         ? const SizedBox()
         : Positioned(
-            left: 0.0,
+            left: double.minPositive,
             bottom: TDeviceUtils.getBottomNavigationBarHeight() + 15,
             child: ElevatedButton(
               onPressed: () => OnBoardingController.instance.backPage(),

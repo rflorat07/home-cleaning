@@ -19,6 +19,13 @@ class TTexts {
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ";
 
   // -- Authentication Headings Text
+  static const String loginTitle = "Sign In";
+  static const String loginSubTitle = "Hi! Welcome back, you’ve been missed ";
 
   // -- Authentication Form Text
+  static const String email = "Email";
+  static const String password = "Password";
+  static const String forgetPassword = "Forget Password";
+  static const String signIn = "Sign In";
+  static const String orSignInWith = "Or sign in with";
 }
