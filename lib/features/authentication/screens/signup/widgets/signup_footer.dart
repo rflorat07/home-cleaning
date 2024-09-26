@@ -5,8 +5,8 @@ import 'package:home_cleaning/features/authentication/screens/signup/widgets/sig
 
 import '../../../../../utils/utils.dart';
 
-class TLoginFooter extends StatelessWidget {
-  const TLoginFooter({
+class TSignupFooter extends StatelessWidget {
+  const TSignupFooter({
     super.key,
   });
 
@@ -15,13 +15,13 @@ class TLoginFooter extends StatelessWidget {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-          text: TTexts.signUpLabel,
+          text: TTexts.signInpLabel,
           style: Theme.of(context).textTheme.labelLarge!.copyWith(
                 fontWeight: FontWeight.w500,
               ),
           children: <TextSpan>[
             TextSpan(
-              text: TTexts.signUp,
+              text: TTexts.signIn,
               style: Theme.of(context).textTheme.labelLarge!.copyWith(
                     color: TColors.green,
                     decoration: TextDecoration.underline,

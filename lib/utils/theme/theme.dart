@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_cleaning/utils/theme/custom_themes/checkbox_theme.dart';
 import 'package:home_cleaning/utils/utils.dart';
 
 class TAppTheme {
@@ -12,6 +13,7 @@ class TAppTheme {
     textTheme: TTextTheme.lightTextTheme,
     scaffoldBackgroundColor: Colors.white,
     appBarTheme: TAppBarTheme.lightAppBarTheme,
+    checkboxTheme: TCheckboxTheme.lightCheckboxTheme,
     bottomSheetTheme: TBottomSheetTheme.lightBottomSheetThemeData,
     elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
@@ -25,6 +27,7 @@ class TAppTheme {
     textTheme: TTextTheme.darkTextTheme,
     scaffoldBackgroundColor: Colors.black,
     appBarTheme: TAppBarTheme.darkAppBarTheme,
+    checkboxTheme: TCheckboxTheme.darkCheckboxTheme,
     bottomSheetTheme: TBottomSheetTheme.darkBottomSheetThemeData,
     elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.darkInputDecorationTheme,

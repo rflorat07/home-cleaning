@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:home_cleaning/common/styles/spacing_styles.dart';
 import 'package:home_cleaning/common/widgets/authentication/custom_header.dart';
 import 'package:home_cleaning/common/widgets/authentication/form_divider.dart';
+import 'package:home_cleaning/common/widgets/authentication/social_buttons.dart';
+import 'package:home_cleaning/features/authentication/screens/signup/widgets/signup_footer.dart';
+import 'package:home_cleaning/features/authentication/screens/signup/widgets/signup_form.dart';
 
-import '../../../../common/widgets/authentication/social_buttons.dart';
-import '../../../../utils/utils.dart';
-import 'widgets/login_footer.dart';
-import 'widgets/login_form.dart';
+import '../../../../../utils/utils.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,15 +21,15 @@ class LoginScreen extends StatelessWidget {
             children: [
               /// Title & Sub-Title
               TCustomHeader(
-                title: TTexts.loginTitle,
-                subTitle: TTexts.loginSubTitle,
+                title: TTexts.signupTitle,
+                subTitle: TTexts.signupSubTitle,
               ),
 
               /// Form
-              TLoginForm(),
+              TSignupForm(),
 
               /// Divider
-              TFormDivider(dividerText: TTexts.orSignInWith),
+              TFormDivider(dividerText: TTexts.orSignUpWith),
 
               SizedBox(height: TSizes.spaceBtwSections),
 
@@ -39,7 +39,7 @@ class LoginScreen extends StatelessWidget {
               SizedBox(height: TSizes.spaceBtwSections),
 
               /// Footer
-              TLoginFooter()
+              TSignupFooter()
             ],
           ),
         ),
