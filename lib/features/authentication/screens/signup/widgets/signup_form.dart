@@ -1,9 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:home_cleaning/features/authentication/controllers/login/signup.controller.dart';
 
 import '../../../../../utils/utils.dart';
-import '../../../controllers/login/login.controller.dart';
 
 class TSignupForm extends StatelessWidget {
   const TSignupForm({
@@ -12,9 +12,9 @@ class TSignupForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(LoginController());
+    final controller = Get.put(SignupController());
     return Form(
-      key: controller.loginFormKey,
+      key: controller.signupFormKey,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSections),
         child: Column(
@@ -129,6 +129,7 @@ class TSignupForm extends StatelessWidget {
               width: double.infinity,
               height: TSizes.buttonHeight,
               child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(padding: EdgeInsets.zero),
                   onPressed: () => controller.emailAndPasswordSignIn(),
                   child: const Text(TTexts.signUp)),
             ),

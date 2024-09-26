@@ -21,14 +21,12 @@ class OnBoardingBackButton extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () => OnBoardingController.instance.backPage(),
               style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.zero,
                   shape: const CircleBorder(),
                   fixedSize:
                       const Size(TSizes.buttonWidth, TSizes.buttonHeight),
                   backgroundColor: dark ? TColors.white : TColors.white),
-              child: const Icon(
-                Icons.arrow_back,
-                color: TColors.green,
-              ),
+              child: const Icon(Icons.arrow_back, color: TColors.green),
             ),
           ));
   }

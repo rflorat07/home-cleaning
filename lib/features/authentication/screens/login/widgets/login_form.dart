@@ -72,6 +72,7 @@ class TLoginForm extends StatelessWidget {
                 TextButton(
                   onPressed: () => Get.to(() => null),
                   style: TextButton.styleFrom(
+                    padding: EdgeInsets.zero,
                     foregroundColor: TColors.green,
                     textStyle: Theme.of(context).textTheme.labelLarge!.copyWith(
                         fontWeight: FontWeight.w500,
@@ -90,6 +91,7 @@ class TLoginForm extends StatelessWidget {
               width: double.infinity,
               height: TSizes.buttonHeight,
               child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(padding: EdgeInsets.zero),
                   onPressed: () => controller.emailAndPasswordSignIn(),
                   child: const Text(TTexts.signIn)),
             ),

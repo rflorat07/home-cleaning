@@ -34,7 +34,7 @@ class TTexts {
   static const String password = "Password";
   static const String orSignInWith = "Or sign in with";
   static const String orSignUpWith = "Or sign up with";
-  static const String forgetPassword = "Forget Password";
+  static const String forgetPassword = "Forgot Password?";
   static const String termsCondition = "Terms & Condition";
   static const String signUpLabel = "Don’t have an account? ";
   static const String signInpLabel = "Already  have an account? ";

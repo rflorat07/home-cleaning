@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:home_cleaning/features/authentication/screens/signup/widgets/signup.dart';
 
 import '../../../../../utils/utils.dart';
 
@@ -28,8 +27,7 @@ class TSignupFooter extends StatelessWidget {
                     decorationColor: TColors.green,
                     fontWeight: FontWeight.w500,
                   ),
-              recognizer: TapGestureRecognizer()
-                ..onTap = () => Get.to(() => const SignupScreen()),
+              recognizer: TapGestureRecognizer()..onTap = () => Get.to(() {}),
             ),
           ]),
     );
