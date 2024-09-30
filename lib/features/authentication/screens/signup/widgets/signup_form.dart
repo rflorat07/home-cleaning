@@ -1,7 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:home_cleaning/features/authentication/controllers/login/signup.controller.dart';
+import 'package:home_cleaning/features/authentication/controllers/signup/signup.controller.dart';
+import 'package:home_cleaning/features/authentication/screens/verify_code/widgets/verify_code.dart';
 
 import '../../../../../utils/utils.dart';
 
@@ -130,7 +131,7 @@ class TSignupForm extends StatelessWidget {
               height: TSizes.buttonHeight,
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(padding: EdgeInsets.zero),
-                  onPressed: () => controller.emailAndPasswordSignIn(),
+                  onPressed: () => Get.to(() => const VerifyCodeScreen()),
                   child: const Text(TTexts.signUp)),
             ),
 

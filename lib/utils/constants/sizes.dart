@@ -26,8 +26,9 @@ class TSizes {
   static const double buttonWidth = 48.0;
   static const double buttonElevation = 4.0;
 
-  // AppBar height
+  // AppBar
   static const double appBarHeight = 56.0;
+  static const double appBarIconSize = 20.0;
 
   // Image size
   static const double imageThumbSize = 80.0;
@@ -52,6 +53,7 @@ class TSizes {
 
   // Input field
   static const double inputMaxHeight = 44.0;
+  static const double inputMinWidth = 56.0;
   static const double inputFieldRadius = 8.0;
   static const double spaceBtwInputFields = 24.0;
 

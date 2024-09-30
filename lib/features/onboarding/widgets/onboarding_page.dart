@@ -13,6 +13,7 @@ class OnBoardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final richTextTitle = title.split('*');
     return Padding(
       padding: EdgeInsets.only(
           top: TDeviceUtils.getAppBarHeight() + TSizes.appBarHeight),
@@ -23,10 +24,25 @@ class OnBoardingPage extends StatelessWidget {
           image: AssetImage(image),
         ),
         const SizedBox(height: TSizes.spaceBtwSections),
-        Text(
-          title,
-          style: Theme.of(context).textTheme.headlineMedium,
+        RichText(
           textAlign: TextAlign.center,
+          text: TextSpan(
+              text: richTextTitle.isNotEmpty ? richTextTitle[0] : null,
+              style: Theme.of(context).textTheme.headlineMedium,
+              children: <TextSpan>[
+                TextSpan(
+                  // ignore: prefer_is_empty
+                  text: richTextTitle.length > 1 ? richTextTitle[1] : null,
+                  style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                        color: TColors.green,
+                        fontWeight: FontWeight.w500,
+                      ),
+                ),
+                TextSpan(
+                  text: richTextTitle.length > 2 ? richTextTitle[2] : null,
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+              ]),
         ),
         const SizedBox(height: TSizes.defaultSpace),
         Text(
