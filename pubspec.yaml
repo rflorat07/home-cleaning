@@ -35,6 +35,8 @@ flutter:
   assets:
     - assets/logos/
     - assets/images/
+    - assets/icons/
+    - assets/icons/tabs/
     - assets/images/on_boarding_images/
 
 #---------- LOCAL FONTS ----------#

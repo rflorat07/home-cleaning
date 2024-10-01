@@ -45,4 +45,11 @@ class TTexts {
   static const String termsCondition = "Terms & Condition";
   static const String signUpLabel = "Don’t have an account? ";
   static const String signInpLabel = "Already  have an account? ";
+
+  // -- Tabs
+  static const String homeTab = "Home";
+  static const String exploreTab = "Explore";
+  static const String bookmarkTab = "Bookmark";
+  static const String chatTab = "Chat";
+  static const String profileTab = "Profile";
 }

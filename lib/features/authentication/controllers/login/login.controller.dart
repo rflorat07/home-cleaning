@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:home_cleaning/features/navigation/screens/navigation_menu.dart';
 
 class LoginController extends GetxController {
   static LoginController get instance => Get.find();
@@ -11,5 +12,7 @@ class LoginController extends GetxController {
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
 
   /// -- Email and password Sign in
-  Future<void> emailAndPasswordSignIn() async {}
+  Future<void> emailAndPasswordSignIn() async {
+    Get.offAll(() => const NavigationMenu());
+  }
 }

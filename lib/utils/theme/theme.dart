@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_cleaning/utils/theme/custom_themes/checkbox_theme.dart';
+import 'package:home_cleaning/utils/theme/custom_themes/navigation_bar_theme.dart';
 import 'package:home_cleaning/utils/utils.dart';
 
 class TAppTheme {
@@ -17,6 +18,7 @@ class TAppTheme {
     bottomSheetTheme: TBottomSheetTheme.lightBottomSheetThemeData,
     elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
+    navigationBarTheme: TNavigationBarTheme.lightNavigationBarThemeData,
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -31,5 +33,6 @@ class TAppTheme {
     bottomSheetTheme: TBottomSheetTheme.darkBottomSheetThemeData,
     elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.darkInputDecorationTheme,
+    navigationBarTheme: TNavigationBarTheme.darkNavigationBarThemeData,
   );
 }

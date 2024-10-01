@@ -42,6 +42,7 @@ class TSizes {
   static const double borderRadiusSm = 4.0;
   static const double borderRadiusMd = 8.0;
   static const double borderRadiusLg = 12.0;
+  static const double borderRadiusXl = 20.0;
 
   // Divider height
   static const double dividerHeight = 1.0;
@@ -75,4 +76,7 @@ class TSizes {
 
   // Dot Navigation
   static const double dotSize = 14.0;
+
+  // Navigation menu
+  static const double navigationMenuHeight = 67.0;
 }

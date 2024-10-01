@@ -6,7 +6,7 @@ import 'package:home_cleaning/common/widgets/authentication/social_buttons.dart'
 import 'package:home_cleaning/features/authentication/screens/signup/widgets/signup_footer.dart';
 import 'package:home_cleaning/features/authentication/screens/signup/widgets/signup_form.dart';
 
-import '../../../../../utils/utils.dart';
+import '../../../../utils/utils.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});

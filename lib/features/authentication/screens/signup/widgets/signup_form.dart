@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:home_cleaning/features/authentication/controllers/signup/signup.controller.dart';
-import 'package:home_cleaning/features/authentication/screens/verify_code/widgets/verify_code.dart';
+import 'package:home_cleaning/features/authentication/screens/verify_code/verify_code.dart';
 
 import '../../../../../utils/utils.dart';
 
