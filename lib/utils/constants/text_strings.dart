@@ -52,4 +52,8 @@ class TTexts {
   static const String bookmarkTab = "Bookmark";
   static const String chatTab = "Chat";
   static const String profileTab = "Profile";
+
+  // -- Home
+
+  static const String location = "Location";
 }

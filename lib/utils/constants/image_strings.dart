@@ -11,4 +11,8 @@ class TImages {
       "assets/images/on_boarding_images/onboarding_1.png";
   static const String onBoardingImage2 =
       "assets/images/on_boarding_images/onboarding_2.png";
+
+// -- Home
+
+  static const String homeHeader = "assets/images/home-header.png";
 }
