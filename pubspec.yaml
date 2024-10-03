@@ -1,5 +1,5 @@
 name: home_cleaning
-description: "A new Flutter project."
+description: "App Home Cleaning"
 publish_to: 'none'
 version: 0.1.0
 
@@ -15,6 +15,7 @@ dependencies:
   # Utility Packages
   flutter_native_splash: ^2.4.0
   smooth_page_indicator: ^1.2.0+3
+  iconsax_plus: ^1.0.0
 
   # State Management
   get: ^4.6.6
@@ -25,7 +26,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
+  flutter_lints: ^4.0.0
 
 flutter:
   uses-material-design: true

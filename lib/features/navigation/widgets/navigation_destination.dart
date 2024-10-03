@@ -11,22 +11,17 @@ class TNavigationDestination extends StatelessWidget {
     this.iconHeight = TSizes.lg,
   });
 
-  final String label, selectedIcon, icon;
+  final String label;
+  final IconData icon, selectedIcon;
   final double iconWidth, iconHeight;
 
   @override
   Widget build(BuildContext context) {
     return NavigationDestination(
-      selectedIcon: Image(
-        image: AssetImage(selectedIcon),
-        width: iconWidth,
-        height: iconHeight,
-      ),
-      icon: Image(
-        image: AssetImage(icon),
-        width: iconWidth,
-        height: iconHeight,
-      ),
+      selectedIcon: Icon(selectedIcon,
+          size: iconWidth, color: TColors.green.withOpacity(0.5)),
+      icon: Icon(icon,
+          size: iconWidth, color: TColors.darkerGrey.withOpacity(0.5)),
       label: label,
     );
   }

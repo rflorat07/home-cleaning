@@ -36,6 +36,7 @@ class TCircularIcon extends StatelessWidget {
         borderRadius: BorderRadius.circular(borderRadius),
       ),
       child: IconButton(
+        padding: const EdgeInsets.all(0.0),
         onPressed: onPressed,
         icon: Icon(icon, color: iconColor, size: size),
       ),

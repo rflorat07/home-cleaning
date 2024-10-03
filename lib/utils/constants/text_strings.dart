@@ -55,5 +55,6 @@ class TTexts {
 
   // -- Home
 
+  static const String search = "Search";
   static const String location = "Location";
 }

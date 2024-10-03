@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:home_cleaning/features/navigation/controllers/navigatio.controller.dart';
-import 'package:home_cleaning/utils/constants/icons.dart';
+import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../utils/utils.dart';
 import '../widgets/navigation_destination.dart';
@@ -34,14 +34,32 @@ class NavigationMenu extends StatelessWidget {
                 // Home Tab
                 TNavigationDestination(
                     label: TTexts.homeTab,
-                    icon: TIcons.iconHomeTab,
-                    selectedIcon: TIcons.iconHomeTabSelected),
+                    icon: IconsaxPlusBold.home_2,
+                    selectedIcon: IconsaxPlusBold.home_2),
 
                 // Explore Tab
                 TNavigationDestination(
                     label: TTexts.exploreTab,
-                    icon: TIcons.iconExploreTab,
-                    selectedIcon: TIcons.iconExploreTabSelected),
+                    icon: IconsaxPlusBold.location,
+                    selectedIcon: IconsaxPlusBold.location),
+
+                // Bookmark Tab
+                TNavigationDestination(
+                    label: TTexts.bookmarkTab,
+                    icon: IconsaxPlusBold.bookmark,
+                    selectedIcon: IconsaxPlusBold.bookmark),
+
+                // Chat Tab
+                TNavigationDestination(
+                    label: TTexts.chatTab,
+                    icon: IconsaxPlusBold.message,
+                    selectedIcon: IconsaxPlusBold.message),
+
+                // Profile Tab
+                TNavigationDestination(
+                    label: TTexts.profileTab,
+                    icon: IconsaxPlusBold.profile,
+                    selectedIcon: IconsaxPlusBold.profile),
               ],
             ),
           ),
