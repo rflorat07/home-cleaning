@@ -10,10 +10,10 @@ class TNavigationBarTheme {
     height: TSizes.navigationMenuHeight,
     backgroundColor: Colors.transparent,
     indicatorColor: Colors.transparent,
-    overlayColor: const MaterialStatePropertyAll(Colors.transparent),
-    labelTextStyle: MaterialStateProperty.resolveWith(
+    overlayColor: const WidgetStatePropertyAll(Colors.transparent),
+    labelTextStyle: WidgetStateProperty.resolveWith(
       (states) {
-        return (states.contains(MaterialState.selected))
+        return (states.contains(WidgetState.selected))
             ? const TextStyle(
                 color: TColors.green,
                 fontSize: 10.0,
@@ -32,13 +32,13 @@ class TNavigationBarTheme {
     height: TSizes.navigationMenuHeight,
     backgroundColor: Colors.transparent,
     indicatorColor: Colors.transparent,
-    overlayColor: const MaterialStatePropertyAll(Colors.transparent),
+    overlayColor: const WidgetStatePropertyAll(Colors.transparent),
     indicatorShape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(4.0),
     ),
-    labelTextStyle: MaterialStateProperty.resolveWith(
+    labelTextStyle: WidgetStateProperty.resolveWith(
       (states) {
-        return (states.contains(MaterialState.selected))
+        return (states.contains(WidgetState.selected))
             ? const TextStyle(
                 color: TColors.green,
                 fontSize: 10.0,

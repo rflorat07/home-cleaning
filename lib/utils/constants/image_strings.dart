@@ -13,6 +13,8 @@ class TImages {
       "assets/images/on_boarding_images/onboarding_2.png";
 
 // -- Home
-
   static const String homeHeader = "assets/images/home-header.png";
+
+  // -- Carousel
+  static const String carouselSpecial = "assets/images/background_special.png";
 }

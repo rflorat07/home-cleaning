@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../../common/widgets/texts/section_heading.dart';
+import '../../../utils/utils.dart';
 import '../widgets/primary_header_container.dart';
+import '../widgets/special_offer_carousel.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,8 +14,31 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Header
-            TPrimaryHeaderContainer()
+            /// Header
+            TPrimaryHeaderContainer(),
+
+            SizedBox(height: TSizes.defaultSpace),
+
+            /// Section Heading - SpecialForYou
+            TSectionHeading(
+              title: TTexts.specialForYou,
+              horizontal: TSizes.defaultSpace,
+            ),
+
+            SizedBox(height: TSizes.defaultSpace / 2),
+
+            /// Special Offer Carousel
+            TSpecialOfferCarousel(),
+
+            SizedBox(height: TSizes.spaceBtwSections),
+
+            /// Section Heading - Categories
+            TSectionHeading(
+              title: TTexts.categories,
+              horizontal: TSizes.defaultSpace,
+            ),
+
+            /// Body
           ],
         ),
       ),

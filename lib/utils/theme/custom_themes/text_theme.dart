@@ -33,6 +33,8 @@ class TTextTheme {
         fontSize: 12.0,
         fontWeight: FontWeight.normal,
         color: TColors.dark.withOpacity(0.5)),
+    labelSmall: const TextStyle().copyWith(
+        fontSize: 10.0, fontWeight: FontWeight.w500, color: TColors.dark),
   );
 
   /// Customizable Dark Text Theme
@@ -63,5 +65,7 @@ class TTextTheme {
         fontSize: 12.0,
         fontWeight: FontWeight.normal,
         color: TColors.light.withOpacity(0.5)),
+    labelSmall: const TextStyle().copyWith(
+        fontSize: 10.0, fontWeight: FontWeight.w500, color: TColors.light),
   );
 }

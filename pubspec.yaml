@@ -15,11 +15,16 @@ dependencies:
   # Utility Packages
   flutter_native_splash: ^2.4.0
   smooth_page_indicator: ^1.2.0+3
+
+  # Icons
   iconsax_plus: ^1.0.0
 
   # State Management
   get: ^4.6.6
   get_storage: ^2.1.1
+
+  # Product Specific
+  
 
   #---------- ./ PACKAGES END ----------#
 

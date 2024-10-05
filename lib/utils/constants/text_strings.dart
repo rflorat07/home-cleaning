@@ -57,4 +57,10 @@ class TTexts {
 
   static const String search = "Search";
   static const String location = "Location";
+  static const String viewAll = "See All";
+
+  // -- Section Heading
+
+  static const String specialForYou = "#SpecialForYou";
+  static const String categories = "Categories";
 }

@@ -18,6 +18,7 @@ class TSizes {
   static const double iconXL = 64.0;
 
   // Font sizes
+  static const double fontSizeXs = 8.0;
   static const double fontSizeXm = 12.0;
   static const double fontSizeSm = 14.0;
   static const double fontSizeMd = 16.0;
@@ -45,6 +46,7 @@ class TSizes {
   static const double borderRadiusSm = 4.0;
   static const double borderRadiusMd = 8.0;
   static const double borderRadiusLg = 12.0;
+  static const double borderRadiusXs = 18.0;
   static const double borderRadiusXl = 20.0;
 
   // Divider height
@@ -82,4 +84,10 @@ class TSizes {
 
   // Navigation menu
   static const double navigationMenuHeight = 67.0;
+
+  // Carousel sizes
+  static const double carouselMaxHeight = 165.0;
+  static const double carouselBorderRadius = 16.0;
+  static const double carouselPadding = 13.0;
+  static const double carouselSpaceBtwItems = 10.0;
 }
