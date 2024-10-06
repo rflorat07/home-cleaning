@@ -37,6 +37,11 @@ class TSectionHeading extends StatelessWidget {
           if (showActionButton)
             TextButton(
                 onPressed: onPressed,
+                style: TextButton.styleFrom(
+                  padding: EdgeInsets.zero,
+                  minimumSize: Size.zero,
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
                 child: Text(
                   buttonTitle,
                   style: Theme.of(context)

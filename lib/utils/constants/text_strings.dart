@@ -61,6 +61,7 @@ class TTexts {
 
   // -- Section Heading
 
-  static const String specialForYou = "#SpecialForYou";
   static const String categories = "Categories";
+  static const String specialForYou = "#SpecialForYou";
+  static const String popularServices = "Popular Services";
 }

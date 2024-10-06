@@ -7,9 +7,9 @@
 ///
 /// flutter:
 ///   fonts:
-///    - family:  MyFlutterApp
+///    - family:  AppIcons
 ///      fonts:
-///       - asset: fonts/MyFlutterApp.ttf
+///       - asset: fonts/AppIcons.ttf
 ///
 ///
 ///
@@ -31,4 +31,6 @@ class AppIcons {
       IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData repairing =
       IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData bookmark =
+      IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

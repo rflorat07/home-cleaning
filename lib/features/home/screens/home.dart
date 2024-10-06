@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:home_cleaning/features/home/widgets/popular_services_carousel.dart';
 
 import '../../../common/widgets/texts/section_heading.dart';
 import '../../../utils/utils.dart';
@@ -27,12 +28,12 @@ class HomeScreen extends StatelessWidget {
               horizontal: TSizes.defaultSpace,
             ),
 
-            SizedBox(height: TSizes.defaultSpace / 2),
+            SizedBox(height: TSizes.spaceBtwItems),
 
             /// Special Offer Carousel
             TSpecialOfferCarousel(),
 
-            SizedBox(height: TSizes.defaultSpace / 2),
+            SizedBox(height: TSizes.spaceBtwSections),
 
             /// Section Heading - Categories
             TSectionHeading(
@@ -40,8 +41,25 @@ class HomeScreen extends StatelessWidget {
               horizontal: TSizes.defaultSpace,
             ),
 
+            SizedBox(height: TSizes.spaceBtwItems),
+
             ///  Categories Carousel
             TCategoriesCarousel(),
+
+            SizedBox(height: TSizes.spaceBtwSections),
+
+            /// Section Heading - Popular Services
+            TSectionHeading(
+              title: TTexts.popularServices,
+              horizontal: TSizes.defaultSpace,
+            ),
+
+            SizedBox(height: TSizes.spaceBtwItems),
+
+            /// Popular Services Carousel
+            TPopularServicesCarousel(),
+
+            SizedBox(height: TSizes.spaceBtwSections),
 
             /// Body
           ],

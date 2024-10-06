@@ -13,6 +13,8 @@ class TCircularIcon extends StatelessWidget {
     this.iconColor,
     this.backgroundColor,
     this.borderRadius = 100.0,
+    this.padding,
+    this.margin,
   });
 
   final double? width, height, size;
@@ -21,6 +23,8 @@ class TCircularIcon extends StatelessWidget {
   final Color? backgroundColor;
   final VoidCallback? onPressed;
   final double borderRadius;
+  final EdgeInsetsGeometry? padding;
+  final EdgeInsetsGeometry? margin;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +32,8 @@ class TCircularIcon extends StatelessWidget {
     return Container(
       width: width,
       height: height,
+      padding: padding,
+      margin: margin,
       decoration: BoxDecoration(
         color: backgroundColor ??
             (dark
