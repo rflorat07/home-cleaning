@@ -23,6 +23,7 @@ class TPopularServicesCarousel extends StatelessWidget {
             maxHeight: TSizes.carouselPopularServicesMaxHeight),
         child: CarouselView(
           itemSnapping: true,
+          overlayColor: WidgetStateProperty.all(Colors.transparent),
           shrinkExtent: THelperFunctions.screenWidth(context) * 0.56,
           itemExtent: THelperFunctions.screenWidth(context) * 0.56,
           backgroundColor: TColors.white,

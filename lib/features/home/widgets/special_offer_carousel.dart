@@ -81,8 +81,8 @@ class UncontainedLayoutCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(TSizes.carouselPadding),
       decoration: BoxDecoration(
-          image:
-              DecorationImage(image: AssetImage(imageUrl), fit: BoxFit.cover)),
+        image: DecorationImage(image: AssetImage(imageUrl), fit: BoxFit.cover),
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

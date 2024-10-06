@@ -64,4 +64,5 @@ class TTexts {
   static const String categories = "Categories";
   static const String specialForYou = "#SpecialForYou";
   static const String popularServices = "Popular Services";
+  static const String topServiceProvider = "Top Service provider";
 }

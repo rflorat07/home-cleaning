@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:home_cleaning/features/home/widgets/popular_services_carousel.dart';
+import 'package:home_cleaning/features/home/widgets/top_service_provider_carousel.dart';
 
 import '../../../common/widgets/texts/section_heading.dart';
 import '../../../utils/utils.dart';
@@ -12,8 +13,9 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SingleChildScrollView(
+    return Scaffold(
+      appBar: AppBar(toolbarHeight: 0.0, backgroundColor: TColors.green),
+      body: const SingleChildScrollView(
         physics: ClampingScrollPhysics(),
         child: Column(
           children: [
@@ -58,6 +60,19 @@ class HomeScreen extends StatelessWidget {
 
             /// Popular Services Carousel
             TPopularServicesCarousel(),
+
+            SizedBox(height: TSizes.spaceBtwSections),
+
+            /// Section Heading - Top Service provider
+            TSectionHeading(
+              title: TTexts.topServiceProvider,
+              horizontal: TSizes.defaultSpace,
+            ),
+
+            SizedBox(height: TSizes.spaceBtwItems),
+
+            /// Service Provider Carousel
+            TTopServiceProviderCarousel(),
 
             SizedBox(height: TSizes.spaceBtwSections),
 

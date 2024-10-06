@@ -3,8 +3,6 @@ import 'package:home_cleaning/features/home/widgets/dropdown_location.dart';
 import 'package:home_cleaning/features/home/widgets/search_filter.dart';
 import 'package:home_cleaning/utils/utils.dart';
 
-import '../../../common/styles/spacing_styles.dart';
-
 class TPrimaryHeaderContainer extends StatelessWidget {
   const TPrimaryHeaderContainer({
     super.key,
@@ -14,7 +12,12 @@ class TPrimaryHeaderContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: TSpacingStyle.paddingWithAppBarHeight,
+      padding: const EdgeInsets.only(
+        top: TSizes.spaceBtwItems / 2,
+        left: TSizes.defaultSpace,
+        bottom: TSizes.defaultSpace,
+        right: TSizes.defaultSpace,
+      ),
       decoration: const BoxDecoration(
         image: DecorationImage(
           alignment: Alignment.bottomRight,

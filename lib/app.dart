@@ -16,6 +16,7 @@ class App extends StatelessWidget {
       darkTheme: TAppTheme.darkTheme,
       getPages: AppRouters.pages,
       home: const NavigationMenu(),
+      debugShowCheckedModeBanner: false,
       /* home: const Scaffold(
         backgroundColor: TColors.primary,
         body: Center(
