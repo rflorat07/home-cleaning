@@ -86,8 +86,12 @@ class TSizes {
   static const double navigationMenuHeight = 67.0;
 
   // Carousel sizes
+  static const double carouselPadding = 13.0;
+  static const double carouselDotSize = 10.0;
   static const double carouselMaxHeight = 165.0;
   static const double carouselBorderRadius = 16.0;
-  static const double carouselPadding = 13.0;
   static const double carouselSpaceBtwItems = 10.0;
+
+  // Home Categories
+  static const double categoriesMaxHeight = 85.0;
 }

@@ -44,4 +44,5 @@ class TColors {
   static const Color green = Color(0xFF4C9580);
   static const Color white = Color(0xFFFFFFFF);
   static const Color yellow = Color(0xFFFFD542);
+  static const Color whiteSmoke = Color(0xFFF6F6F6);
 }

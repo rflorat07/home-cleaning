@@ -58,3 +58,7 @@ flutter:
           weight: 600
         - asset: assets/fonts/Inter-Bold.ttf
           weight: 700
+
+    - family: AppIcons
+      fonts:
+        - asset: assets/fonts/AppIcons.ttf

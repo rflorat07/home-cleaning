@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:home_cleaning/common/widgets/containers/rounded_container.dart';
 import 'package:home_cleaning/features/home/controllers/special_offer_carousel.controllers.dart';
 import 'package:home_cleaning/features/home/models/special_offer.model.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../utils/utils.dart';
 
@@ -15,28 +16,51 @@ class TSpecialOfferCarousel extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(SpecialOfferCarouselController());
 
-    return Obx(() => ConstrainedBox(
-          constraints:
-              const BoxConstraints(maxHeight: TSizes.carouselMaxHeight),
-          child: CarouselView(
-            itemSnapping: true,
-            shrinkExtent: THelperFunctions.screenWidth(context) * 0.8,
-            itemExtent: THelperFunctions.screenWidth(context) * 0.8,
-            backgroundColor: TColors.black,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(TSizes.carouselBorderRadius),
+    return Column(
+      children: [
+        // CarouselView
+        Obx(
+          () => ConstrainedBox(
+            constraints:
+                const BoxConstraints(maxHeight: TSizes.carouselMaxHeight),
+            child: CarouselView(
+              itemSnapping: true,
+              shrinkExtent: THelperFunctions.screenWidth(context) * 0.8,
+              itemExtent: THelperFunctions.screenWidth(context) * 0.8,
+              backgroundColor: TColors.black,
+              shape: RoundedRectangleBorder(
+                borderRadius:
+                    BorderRadius.circular(TSizes.carouselBorderRadius),
+              ),
+              padding: const EdgeInsets.only(left: TSizes.defaultSpace),
+              children: controller.specialOffers
+                  .map((SpecialOfferModel item) => UncontainedLayoutCard(
+                        offer: item.offer,
+                        title: item.title,
+                        discount: item.discount,
+                        imageUrl: item.imageUrl,
+                      ))
+                  .toList(),
             ),
-            padding: const EdgeInsets.only(left: TSizes.defaultSpace),
-            children: controller.specialOffers
-                .map((SpecialOfferModel item) => UncontainedLayoutCard(
-                      offer: item.offer,
-                      title: item.title,
-                      discount: item.discount,
-                      imageUrl: item.imageUrl,
-                    ))
-                .toList(),
           ),
-        ));
+        ),
+
+        const SizedBox(height: TSizes.defaultSpace / 2),
+
+        // PageIndicator
+        SmoothPageIndicator(
+          count: controller.specialOffers.length,
+          controller: controller.smoothPageIndicatorController,
+          effect: ScrollingDotsEffect(
+            fixedCenter: false,
+            dotWidth: TSizes.carouselDotSize,
+            dotHeight: TSizes.carouselDotSize,
+            dotColor: TColors.green.withOpacity(0.2),
+            activeDotColor: TColors.green,
+          ),
+        ),
+      ],
+    );
   }
 }
 
