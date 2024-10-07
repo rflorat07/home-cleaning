@@ -2,8 +2,8 @@ import 'package:get/get.dart';
 
 import '../../../common/models/category.model.dart';
 
-class CategoryCarouselControlller extends GetxController {
-  static CategoryCarouselControlller get instance => Get.find();
+class CategoryControllers extends GetxController {
+  static CategoryControllers get instance => Get.find();
 
   RxList<CategoryModel> categories = <CategoryModel>[].obs;
 

@@ -37,7 +37,7 @@ List<CategoryModel> demoCategories = [
     label: 'Shifting',
     backgroundColor: const Color(0xFFF6F6F6),
   ),
-  /* CategoryModel(
+  CategoryModel(
     icon: AppIcons.painting,
     label: 'Painting',
     backgroundColor: const Color(0xFFF6F6F6),
@@ -48,13 +48,13 @@ List<CategoryModel> demoCategories = [
     backgroundColor: const Color(0xFFF6F6F6),
   ),
   CategoryModel(
-    icon: AppIcons.acRepairing,
+    icon: AppIcons.acRepair,
     label: 'AC Repairing',
     backgroundColor: const Color(0xFFF6F6F6),
   ),
   CategoryModel(
-    icon: AppIcons.carRepairing,
-    label: 'Car Repairing Repairing',
+    icon: AppIcons.carRepair,
+    label: 'Car Repairing',
     backgroundColor: const Color(0xFFF6F6F6),
   ),
   CategoryModel(
@@ -96,5 +96,5 @@ List<CategoryModel> demoCategories = [
     icon: AppIcons.massage,
     label: 'Massage',
     backgroundColor: const Color(0xFFF6F6F6),
-  ), */
+  ),
 ];

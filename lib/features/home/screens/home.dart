@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:home_cleaning/features/home/widgets/popular_services_carousel.dart';
 import 'package:home_cleaning/features/home/widgets/top_service_provider_carousel.dart';
 
 import '../../../common/widgets/texts/section_heading.dart';
 import '../../../utils/utils.dart';
+import '../../category/screens/category.dart';
 import '../widgets/categories_carousel.dart';
 import '../widgets/primary_header_container.dart';
 import '../widgets/special_offer_carousel.dart';
@@ -15,66 +17,67 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(toolbarHeight: 0.0, backgroundColor: TColors.green),
-      body: const SingleChildScrollView(
-        physics: ClampingScrollPhysics(),
+      body: SingleChildScrollView(
+        physics: const ClampingScrollPhysics(),
         child: Column(
           children: [
             /// Header
-            TPrimaryHeaderContainer(),
+            const TPrimaryHeaderContainer(),
 
-            SizedBox(height: TSizes.defaultSpace),
+            const SizedBox(height: TSizes.defaultSpace),
 
             /// Section Heading - SpecialForYou
-            TSectionHeading(
+            const TSectionHeading(
               title: TTexts.specialForYou,
               horizontal: TSizes.defaultSpace,
             ),
 
-            SizedBox(height: TSizes.spaceBtwItems),
+            const SizedBox(height: TSizes.spaceBtwItems),
 
             /// Special Offer Carousel
-            TSpecialOfferCarousel(),
+            const TSpecialOfferCarousel(),
 
-            SizedBox(height: TSizes.spaceBtwSections),
+            const SizedBox(height: TSizes.spaceBtwSections),
 
             /// Section Heading - Categories
             TSectionHeading(
               title: TTexts.categories,
               horizontal: TSizes.defaultSpace,
+              onPressed: () => Get.to(() => const CategoryScreen()),
             ),
 
-            SizedBox(height: TSizes.spaceBtwItems),
+            const SizedBox(height: TSizes.spaceBtwItems),
 
             ///  Categories Carousel
-            TCategoriesCarousel(),
+            const TCategoriesCarousel(),
 
-            SizedBox(height: TSizes.spaceBtwSections),
+            const SizedBox(height: TSizes.spaceBtwSections),
 
             /// Section Heading - Popular Services
-            TSectionHeading(
+            const TSectionHeading(
               title: TTexts.popularServices,
               horizontal: TSizes.defaultSpace,
             ),
 
-            SizedBox(height: TSizes.spaceBtwItems),
+            const SizedBox(height: TSizes.spaceBtwItems),
 
             /// Popular Services Carousel
-            TPopularServicesCarousel(),
+            const TPopularServicesCarousel(),
 
-            SizedBox(height: TSizes.spaceBtwSections),
+            const SizedBox(height: TSizes.spaceBtwSections),
 
             /// Section Heading - Top Service provider
-            TSectionHeading(
+            const TSectionHeading(
               title: TTexts.topServiceProvider,
               horizontal: TSizes.defaultSpace,
             ),
 
-            SizedBox(height: TSizes.spaceBtwItems),
+            const SizedBox(height: TSizes.spaceBtwItems),
 
             /// Service Provider Carousel
-            TTopServiceProviderCarousel(),
+            const TTopServiceProviderCarousel(),
 
-            SizedBox(height: TSizes.spaceBtwSections),
+            const SizedBox(height: TSizes.spaceBtwSections),
 
             /// Body
           ],
