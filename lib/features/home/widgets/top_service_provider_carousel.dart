@@ -22,7 +22,7 @@ class TTopServiceProviderCarousel extends StatelessWidget {
               itemCount: controller.topServiceProvider.length,
               itemBuilder: (_, index) {
                 final item = controller.topServiceProvider[index];
-                return UncontainedLayoutCategory(
+                return TopServiceProviderCard(
                   label: item.name,
                   imageUrl: item.imageUrl,
                 );
@@ -35,8 +35,8 @@ class TTopServiceProviderCarousel extends StatelessWidget {
   }
 }
 
-class UncontainedLayoutCategory extends StatelessWidget {
-  const UncontainedLayoutCategory({
+class TopServiceProviderCard extends StatelessWidget {
+  const TopServiceProviderCard({
     super.key,
     required this.label,
     required this.imageUrl,
@@ -55,7 +55,7 @@ class UncontainedLayoutCategory extends StatelessWidget {
           height: TSizes.iconXL,
           radius: TSizes.iconXL,
           //imageUrl: imageUrl,
-          backgroundColor: TColors.whiteSmoke,
+          backgroundColor: TColors.lightSilver,
         ),
         const SizedBox(height: TSizes.xs),
         Text(

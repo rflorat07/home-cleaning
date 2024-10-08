@@ -6,6 +6,7 @@ import 'package:home_cleaning/features/home/widgets/top_service_provider_carouse
 import '../../../common/widgets/texts/section_heading.dart';
 import '../../../utils/utils.dart';
 import '../../category/screens/category.dart';
+import '../../special/screens/Special_for_you.dart';
 import '../widgets/categories_carousel.dart';
 import '../widgets/primary_header_container.dart';
 import '../widgets/special_offer_carousel.dart';
@@ -27,9 +28,10 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: TSizes.defaultSpace),
 
             /// Section Heading - SpecialForYou
-            const TSectionHeading(
+            TSectionHeading(
               title: TTexts.specialForYou,
               horizontal: TSizes.defaultSpace,
+              onPressed: () => Get.to(() => const SpecialForYouScreen()),
             ),
 
             const SizedBox(height: TSizes.spaceBtwItems),
