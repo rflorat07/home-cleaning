@@ -6,6 +6,7 @@ import 'package:home_cleaning/features/home/widgets/top_service_provider_carouse
 import '../../../common/widgets/texts/section_heading.dart';
 import '../../../utils/utils.dart';
 import '../../category/screens/category.dart';
+import '../../popular_services/screens/popular_services.dart';
 import '../../special/screens/Special_for_you.dart';
 import '../widgets/categories_carousel.dart';
 import '../widgets/primary_header_container.dart';
@@ -56,9 +57,10 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: TSizes.spaceBtwSections),
 
             /// Section Heading - Popular Services
-            const TSectionHeading(
+            TSectionHeading(
               title: TTexts.popularServices,
               horizontal: TSizes.defaultSpace,
+              onPressed: () => Get.to(() => const PopularServicesScreen()),
             ),
 
             const SizedBox(height: TSizes.spaceBtwItems),

@@ -22,8 +22,9 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
+      padding: const EdgeInsets.symmetric(horizontal: TSizes.md),
       child: AppBar(
+        centerTitle: true,
         automaticallyImplyLeading: false,
         leading: showBackArrow
             ? IconButton.outlined(
