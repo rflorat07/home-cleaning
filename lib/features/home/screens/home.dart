@@ -8,6 +8,7 @@ import '../../../utils/utils.dart';
 import '../../category/screens/category.dart';
 import '../../popular_services/screens/popular_services.dart';
 import '../../special/screens/Special_for_you.dart';
+import '../../top_service/screens/top_service_provider.dart';
 import '../widgets/categories_carousel.dart';
 import '../widgets/primary_header_container.dart';
 import '../widgets/special_offer_carousel.dart';
@@ -71,9 +72,10 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: TSizes.spaceBtwSections),
 
             /// Section Heading - Top Service provider
-            const TSectionHeading(
+            TSectionHeading(
               title: TTexts.topServiceProvider,
               horizontal: TSizes.defaultSpace,
+              onPressed: () => Get.to(() => const TopServiceProviderScreen()),
             ),
 
             const SizedBox(height: TSizes.spaceBtwItems),

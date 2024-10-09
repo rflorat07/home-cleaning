@@ -5,24 +5,28 @@ import '../../../utils/utils.dart';
 class TCircularIcon extends StatelessWidget {
   const TCircularIcon({
     super.key,
-    required this.icon,
     this.width,
     this.height,
-    this.size = TSizes.lg,
+    this.margin,
+    this.padding,
     this.onPressed,
     this.iconColor,
+    required this.icon,
     this.backgroundColor,
+    this.size = TSizes.lg,
+    this.showBorder = false,
     this.borderRadius = 100.0,
-    this.padding,
-    this.margin,
+    this.borderColor = TColors.borderPrimary,
   });
 
-  final double? width, height, size;
   final IconData icon;
+  final bool showBorder;
   final Color? iconColor;
+  final Color borderColor;
+  final double borderRadius;
   final Color? backgroundColor;
   final VoidCallback? onPressed;
-  final double borderRadius;
+  final double? width, height, size;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
 
@@ -40,6 +44,7 @@ class TCircularIcon extends StatelessWidget {
                 ? TColors.black.withOpacity(0.9)
                 : TColors.white.withOpacity(0.9)),
         borderRadius: BorderRadius.circular(borderRadius),
+        border: showBorder ? Border.all(color: borderColor) : null,
       ),
       child: IconButton(
         padding: const EdgeInsets.all(0.0),

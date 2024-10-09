@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:home_cleaning/features/home/controllers/top_service_provider_carousel.controllers.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../common/widgets/appbar/appbar.dart';
 import '../../../utils/utils.dart';
-import '../../home/controllers/popular_services_carousel.controllers.dart';
-import '../widgets/popular_service_card.dart';
+import '../widgets/top_service_provider_card.dart';
 
-class PopularServicesScreen extends StatelessWidget {
-  const PopularServicesScreen({super.key});
+class TopServiceProviderScreen extends StatelessWidget {
+  const TopServiceProviderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = PopularServicesCarouselController.instance;
+    final controller = TopServiceProviderCarouselControlller.instance;
     return Scaffold(
       appBar: TAppBar(
         showBackArrow: true,
-        title: Text(TTexts.popularServices,
+        title: Text(TTexts.topServiceProvider,
             style: Theme.of(context).textTheme.titleMedium),
         actions: [
           IconButton.outlined(
@@ -30,9 +30,10 @@ class PopularServicesScreen extends StatelessWidget {
       body: ListView.separated(
         padding: const EdgeInsets.all(TSizes.defaultSpace),
         physics: const BouncingScrollPhysics(),
-        itemCount: controller.popularServices.length,
+        itemCount: controller.topServiceProvider.length,
         itemBuilder: (context, index) {
-          return TPopularServiceCard(item: controller.popularServices[index]);
+          return TopServiceProviderCard(
+              item: controller.topServiceProvider[index]);
         },
         separatorBuilder: (context, index) =>
             const SizedBox(height: TSizes.spaceBtwItems),

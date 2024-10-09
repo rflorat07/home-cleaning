@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../models/popular_service.model.dart';
+import '../../../common/models/popular_service.model.dart';
 
 class PopularServicesCarouselController extends GetxController {
   static PopularServicesCarouselController get instance => Get.find();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:home_cleaning/features/home/models/special_offer.model.dart';
+import 'package:home_cleaning/common/models/special_offer.model.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../common/widgets/special_offer/special_offer.dart';

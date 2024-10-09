@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:home_cleaning/common/widgets/containers/rounded_container.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
+import '../../../common/models/popular_service.model.dart';
 import '../../../common/widgets/icons/t_circular_icon.dart';
 import '../../../utils/utils.dart';
 import '../controllers/popular_services_carousel.controllers.dart';
-import '../models/popular_service.model.dart';
 
 class TPopularServicesCarousel extends StatelessWidget {
   const TPopularServicesCarousel({

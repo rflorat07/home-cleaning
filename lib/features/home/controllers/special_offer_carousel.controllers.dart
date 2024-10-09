@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../models/special_offer.model.dart';
+import '../../../common/models/special_offer.model.dart';
 
 class SpecialOfferCarouselController extends GetxController {
   static SpecialOfferCarouselController get instance => Get.find();

@@ -10,7 +10,7 @@ class TTopServiceProviderCarousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(TTopServiceProviderCarouselControlller());
+    final controller = Get.put(TopServiceProviderCarouselControlller());
 
     return Obx(() => Padding(
           padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),

@@ -96,4 +96,7 @@ class TSizes {
 
   // Home Categories
   static const double categoriesMaxHeight = 85.0;
+
+  // Text Button
+  static const double buttonMaxHeight = 40.0;
 }
