@@ -17,4 +17,7 @@ class TImages {
 
   // -- Carousel
   static const String carouselSpecial = "assets/images/background_special.png";
+
+  // -- Explore
+  static const String exploreMap = "assets/images/explore-map.png";
 }
