@@ -3,6 +3,7 @@ import 'package:home_cleaning/utils/theme/custom_themes/checkbox_theme.dart';
 import 'package:home_cleaning/utils/theme/custom_themes/navigation_bar_theme.dart';
 import 'package:home_cleaning/utils/utils.dart';
 
+import 'custom_themes/chip_theme.dart';
 import 'custom_themes/dropdown_menu_theme.dart';
 
 class TAppTheme {
@@ -15,6 +16,7 @@ class TAppTheme {
     primaryColor: TColors.primary,
     textTheme: TTextTheme.lightTextTheme,
     scaffoldBackgroundColor: Colors.white,
+    chipTheme: TChipTheme.lightChipThemeData,
     appBarTheme: TAppBarTheme.lightAppBarTheme,
     checkboxTheme: TCheckboxTheme.lightCheckboxTheme,
     bottomSheetTheme: TBottomSheetTheme.lightBottomSheetThemeData,
@@ -31,6 +33,7 @@ class TAppTheme {
     primaryColor: TColors.primary,
     textTheme: TTextTheme.darkTextTheme,
     scaffoldBackgroundColor: Colors.black,
+    chipTheme: TChipTheme.darkChipThemeData,
     appBarTheme: TAppBarTheme.darkAppBarTheme,
     checkboxTheme: TCheckboxTheme.darkCheckboxTheme,
     bottomSheetTheme: TBottomSheetTheme.darkBottomSheetThemeData,
