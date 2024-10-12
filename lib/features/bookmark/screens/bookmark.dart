@@ -13,7 +13,6 @@ class BookmarkScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: TAppBar(
-        showBackArrow: true,
         title: Text(TTexts.bookmarkTab,
             style: Theme.of(context).textTheme.titleMedium),
         actions: [

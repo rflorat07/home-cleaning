@@ -11,9 +11,11 @@ class TRoundedContainer extends StatelessWidget {
     this.margin,
     this.padding,
     this.imageUrl,
+    this.borderRadius,
     this.showBorder = false,
     this.fit = BoxFit.cover,
     this.radius = TSizes.cardRadiusLg,
+    this.isBorderRadiusCircular = true,
     this.backgroundColor = TColors.white,
     this.borderColor = TColors.borderPrimary,
   });
@@ -21,13 +23,14 @@ class TRoundedContainer extends StatelessWidget {
   final BoxFit? fit;
   final double radius;
   final Widget? child;
-  final bool showBorder;
   final String? imageUrl;
   final Color borderColor;
   final Color backgroundColor;
   final double? width, height;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
+  final BorderRadius? borderRadius;
+  final bool showBorder, isBorderRadiusCircular;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +41,9 @@ class TRoundedContainer extends StatelessWidget {
       margin: margin,
       decoration: BoxDecoration(
           color: backgroundColor,
-          borderRadius: BorderRadius.circular(radius),
+          borderRadius: isBorderRadiusCircular
+              ? BorderRadius.circular(radius)
+              : borderRadius,
           border: showBorder ? Border.all(color: borderColor) : null,
           image: imageUrl != null
               ? DecorationImage(image: AssetImage(imageUrl ?? ''), fit: fit)
