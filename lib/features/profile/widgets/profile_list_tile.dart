@@ -1,0 +1,32 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:home_cleaning/utils/utils.dart';
+import 'package:iconsax_plus/iconsax_plus.dart';
+
+import '../controllers/profile.controller.dart';
+
+class ProfileListTile extends StatelessWidget {
+  const ProfileListTile({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final controller = Get.put(ProfileController());
+    return Column(
+      children: [
+        const SizedBox(height: TSizes.spaceBtwItems),
+        ...List.generate(
+          controller.profileListTile.length,
+          (index) => ListTile(
+            onTap: () {},
+            title: Text(controller.profileListTile[index].title),
+            leading: Icon(controller.profileListTile[index].icon),
+            trailing: const Icon(IconsaxPlusLinear.arrow_right_3),
+          ),
+        ),
+        const SizedBox(height: TSizes.defaultSpace),
+      ],
+    );
+  }
+}

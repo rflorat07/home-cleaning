@@ -13,8 +13,8 @@ class TSocialButtons extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          height: TSizes.iconXL,
-          width: TSizes.iconXL,
+          height: TSizes.iconXXL,
+          width: TSizes.iconXXL,
           decoration: BoxDecoration(
             border: Border.all(color: TColors.borderPrimary),
             borderRadius: BorderRadius.circular(100),
@@ -29,8 +29,8 @@ class TSocialButtons extends StatelessWidget {
         ),
         const SizedBox(width: TSizes.defaultSpace / 2),
         Container(
-          height: TSizes.iconXL,
-          width: TSizes.iconXL,
+          height: TSizes.iconXXL,
+          width: TSizes.iconXXL,
           decoration: BoxDecoration(
             border: Border.all(color: TColors.borderPrimary),
             borderRadius: BorderRadius.circular(100),
@@ -45,8 +45,8 @@ class TSocialButtons extends StatelessWidget {
         ),
         const SizedBox(width: TSizes.defaultSpace / 2),
         Container(
-          height: TSizes.iconXL,
-          width: TSizes.iconXL,
+          height: TSizes.iconXXL,
+          width: TSizes.iconXXL,
           decoration: BoxDecoration(
             border: Border.all(color: TColors.borderPrimary),
             borderRadius: BorderRadius.circular(100),

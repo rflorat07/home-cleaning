@@ -15,7 +15,8 @@ class TSizes {
   static const double iconSl = 18.0;
   static const double iconMd = 24.0;
   static const double iconLg = 30.0;
-  static const double iconXL = 64.0;
+  static const double iconXL = 36.0;
+  static const double iconXXL = 64.0;
 
   // Font sizes
   static const double fontSizeXs = 8.0;
@@ -99,4 +100,7 @@ class TSizes {
 
   // Text Button
   static const double buttonMaxHeight = 40.0;
+
+  // Avatar
+  static const double avatarRadius = 50.0;
 }

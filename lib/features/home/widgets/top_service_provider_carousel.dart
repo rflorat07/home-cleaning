@@ -51,9 +51,9 @@ class TopServiceProviderCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         const TRoundedContainer(
-          width: TSizes.iconXL,
-          height: TSizes.iconXL,
-          radius: TSizes.iconXL,
+          width: TSizes.iconXXL,
+          height: TSizes.iconXXL,
+          radius: TSizes.iconXXL,
           //imageUrl: imageUrl,
           backgroundColor: TColors.lightSilver,
         ),
