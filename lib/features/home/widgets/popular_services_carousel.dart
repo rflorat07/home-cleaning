@@ -6,6 +6,7 @@ import 'package:iconsax_plus/iconsax_plus.dart';
 import '../../../common/models/popular_service.model.dart';
 import '../../../common/widgets/icons/t_circular_icon.dart';
 import '../../../utils/utils.dart';
+import '../../popular_services/screens/service_details.dart';
 import '../controllers/popular_services_carousel.controllers.dart';
 
 class TPopularServicesCarousel extends StatelessWidget {
@@ -22,6 +23,8 @@ class TPopularServicesCarousel extends StatelessWidget {
           maxHeight: TSizes.carouselPopularServicesMaxHeight),
       child: CarouselView(
         itemSnapping: true,
+        onTap: (index) => Get.to(const ServiceDetailsScreen(),
+            arguments: controller.popularServices[index]),
         overlayColor: WidgetStateProperty.all(Colors.transparent),
         shrinkExtent: THelperFunctions.screenWidth(context) * 0.56,
         itemExtent: THelperFunctions.screenWidth(context) * 0.56,
@@ -110,45 +113,48 @@ class UncontainedLayoutPopularService extends StatelessWidget {
           const SizedBox(height: TSizes.spaceBtwItems / 2),
 
           // Title - Icon - Name - Cost
-          SizedBox(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Title
-                Text(
-                  item.title,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: textTheme.bodyLarge!.copyWith(fontSize: 15),
-                ),
+          InkWell(
+            onTap: () => print('int'),
+            child: SizedBox(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Title
+                  Text(
+                    item.title,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: textTheme.bodyLarge!.copyWith(fontSize: 15),
+                  ),
 
-                const SizedBox(height: TSizes.xs),
-                // Icon - Name
-                Row(
-                  children: [
-                    const Icon(IconsaxPlusBold.profile,
-                        color: TColors.green, size: 20),
-                    const SizedBox(height: TSizes.xs / 2),
-                    Text(
-                      item.name,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: textTheme.labelLarge!
-                          .apply(color: TColors.darkerGrey),
-                    )
-                  ],
-                ),
+                  const SizedBox(height: TSizes.xs),
+                  // Icon - Name
+                  Row(
+                    children: [
+                      const Icon(IconsaxPlusBold.profile,
+                          color: TColors.green, size: 20),
+                      const SizedBox(height: TSizes.xs / 2),
+                      Text(
+                        item.name,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: textTheme.labelLarge!
+                            .apply(color: TColors.darkerGrey),
+                      )
+                    ],
+                  ),
 
-                const SizedBox(height: TSizes.xs),
+                  const SizedBox(height: TSizes.xs),
 
-                // Cost
-                Text(
-                  item.money,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: textTheme.bodyLarge!.apply(color: TColors.green),
-                )
-              ],
+                  // Cost
+                  Text(
+                    item.money,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: textTheme.bodyLarge!.apply(color: TColors.green),
+                  )
+                ],
+              ),
             ),
           )
           // Title

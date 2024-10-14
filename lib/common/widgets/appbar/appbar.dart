@@ -25,11 +25,13 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
       padding: const EdgeInsets.symmetric(horizontal: TSizes.md),
       child: AppBar(
         centerTitle: true,
+        backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
         leading: showBackArrow
             ? IconButton.outlined(
                 iconSize: TSizes.appBarIconSize,
                 style: OutlinedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
                     side: const BorderSide(color: TColors.borderPrimary)),
                 onPressed: () => Get.back(),
                 icon: const Icon(Icons.arrow_back),

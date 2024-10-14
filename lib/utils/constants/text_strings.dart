@@ -70,4 +70,8 @@ class TTexts {
   // -- Category
   static const String category = "Category";
   static const String viewServices = "View Services";
+
+  // ---
+
+  static const String demoVideo = "Demo Video";
 }
