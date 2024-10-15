@@ -7,7 +7,7 @@ class TListTileTheme {
   static ListTileThemeData lightListTileThemeData = const ListTileThemeData(
     iconColor: TColors.primary,
     titleTextStyle: TextStyle(
-        fontSize: TSizes.fontSizeMd,
+        fontSize: TSizes.fontSize16,
         fontWeight: FontWeight.normal,
         color: TColors.secondary),
     contentPadding: EdgeInsets.symmetric(horizontal: 0.0),
@@ -19,7 +19,7 @@ class TListTileTheme {
   static ListTileThemeData darkListTileThemeData = const ListTileThemeData(
     iconColor: TColors.primary,
     titleTextStyle: TextStyle(
-        fontSize: TSizes.fontSizeMd,
+        fontSize: TSizes.fontSize16,
         fontWeight: FontWeight.normal,
         color: TColors.secondary),
     contentPadding: EdgeInsets.symmetric(horizontal: 0.0),

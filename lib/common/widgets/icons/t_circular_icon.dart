@@ -13,7 +13,7 @@ class TCircularIcon extends StatelessWidget {
     this.iconColor,
     required this.icon,
     this.backgroundColor,
-    this.size = TSizes.lg,
+    this.size = TSizes.size24,
     this.borderWidth = 1.0,
     this.showBorder = false,
     this.borderRadius = 100.0,

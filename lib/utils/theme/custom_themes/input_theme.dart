@@ -14,9 +14,9 @@ class TTextFormFieldTheme {
         const EdgeInsets.symmetric(vertical: TSizes.sm, horizontal: TSizes.md),
     floatingLabelBehavior: FloatingLabelBehavior.never,
     labelStyle: const TextStyle()
-        .copyWith(fontSize: TSizes.fontSizeXm, color: TColors.darkerGrey),
+        .copyWith(fontSize: TSizes.fontSize12, color: TColors.darkerGrey),
     hintStyle: const TextStyle()
-        .copyWith(fontSize: TSizes.fontSizeXm, color: TColors.darkerGrey),
+        .copyWith(fontSize: TSizes.fontSize12, color: TColors.darkerGrey),
     errorStyle: const TextStyle().copyWith(fontStyle: FontStyle.normal),
     floatingLabelStyle:
         const TextStyle().copyWith(color: TColors.black.withOpacity(0.8)),
@@ -47,9 +47,9 @@ class TTextFormFieldTheme {
     prefixIconColor: TColors.darkerGrey,
     suffixIconColor: TColors.darkerGrey,
     labelStyle: const TextStyle()
-        .copyWith(fontSize: TSizes.fontSizeXm, color: TColors.white),
+        .copyWith(fontSize: TSizes.fontSize12, color: TColors.white),
     hintStyle: const TextStyle()
-        .copyWith(fontSize: TSizes.fontSizeXm, color: TColors.white),
+        .copyWith(fontSize: TSizes.fontSize12, color: TColors.white),
     errorStyle: const TextStyle().copyWith(fontStyle: FontStyle.normal),
     floatingLabelStyle:
         const TextStyle().copyWith(color: TColors.white.withOpacity(0.8)),

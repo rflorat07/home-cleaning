@@ -52,7 +52,7 @@ class TDropdownlocation extends StatelessWidget {
                     style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
-                      fontSize: TSizes.fontSizeSm,
+                      fontSize: TSizes.fontSize14,
                     ),
                     icon: const Padding(
                       padding: EdgeInsets.only(left: TSizes.xs),

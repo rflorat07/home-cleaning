@@ -18,14 +18,6 @@ class TSizes {
   static const double iconXL = 36.0;
   static const double iconXXL = 64.0;
 
-  // Font sizes
-  static const double fontSizeXs = 8.0;
-  static const double fontSizeXm = 12.0;
-  static const double fontSizeSm = 14.0;
-  static const double fontSizeMd = 16.0;
-  static const double fontSizeLg = 18.0;
-  static const double fontSize15 = 15.0;
-
   // Button sizes
   static const double buttonHeight = 48.0;
   static const double buttonRadius = 12.0;
@@ -104,4 +96,48 @@ class TSizes {
 
   // Avatar
   static const double avatarRadius = 50.0;
+
+  // Font sizes
+  static const double fontSize8 = 8.0;
+  static const double fontSize12 = 12.0;
+  static const double fontSize14 = 14.0;
+  static const double fontSize15 = 15.0;
+  static const double fontSize16 = 16.0;
+  static const double fontSize18 = 18.0;
+  static const double fontSize22 = 22.0;
+
+  // Padding and margin sizes
+  static const double size1 = 1.0;
+  static const double size4 = 4.0;
+  static const double size6 = 6.0;
+  static const double size8 = 8.0;
+  static const double size10 = 10.0;
+  static const double size12 = 12.0;
+  static const double size13 = 13.0;
+  static const double size14 = 14.0;
+  static const double size15 = 15.0;
+  static const double size16 = 16.0;
+  static const double size18 = 18.0;
+  static const double size20 = 20.0;
+  static const double size24 = 24.0;
+  static const double size30 = 30.0;
+  static const double size32 = 32.0;
+  static const double size36 = 36.0;
+  static const double size38 = 38.0;
+  static const double size40 = 40.0;
+  static const double size44 = 44.0;
+  static const double size49 = 49.0;
+  static const double size48 = 48.0;
+  static const double size50 = 50.0;
+  static const double size56 = 56.0;
+  static const double size57 = 57.0;
+  static const double size64 = 64.0;
+  static const double size67 = 67.0;
+  static const double size80 = 80.0;
+  static const double size85 = 85.0;
+  static const double size120 = 120.0;
+  static const double size160 = 160.0;
+  static const double size165 = 165.0;
+  static const double size200 = 200.0;
+  static const double size216 = 216.0;
 }

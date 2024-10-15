@@ -114,7 +114,7 @@ class UncontainedLayoutPopularService extends StatelessWidget {
 
           // Title - Icon - Name - Cost
           InkWell(
-            onTap: () => print('int'),
+            onTap: () {},
             child: SizedBox(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

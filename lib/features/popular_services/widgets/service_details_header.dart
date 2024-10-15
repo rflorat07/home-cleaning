@@ -22,7 +22,7 @@ class ServiceDetailsHeader extends StatelessWidget {
           FilledButton(
             onPressed: () {},
             style: FilledButton.styleFrom(
-              maximumSize: const Size(160, TSizes.buttonHeight),
+              maximumSize: const Size(TSizes.size160, TSizes.size48),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(TSizes.buttonRadius),
               ),
@@ -57,8 +57,8 @@ class ServiceDetailsHeader extends StatelessWidget {
             child: FittedBox(
               fit: BoxFit.scaleDown,
               child: TRoundedContainer(
-                height: 57,
-                radius: TSizes.sm,
+                height: TSizes.size57,
+                radius: TSizes.size8,
                 backgroundColor: TColors.white,
                 padding: const EdgeInsets.all(TSizes.xs),
                 child: Wrap(
@@ -67,15 +67,15 @@ class ServiceDetailsHeader extends StatelessWidget {
                     ...List.generate(
                       5,
                       (index) => const TRoundedContainer(
-                        width: 49,
-                        height: 49,
+                        width: TSizes.size49,
+                        height: TSizes.size49,
                         radius: TSizes.cardRadiusXs,
                         backgroundColor: TColors.lightSilver,
                       ),
                     ),
                     TRoundedContainer(
-                      width: 49,
-                      height: 49,
+                      width: TSizes.size49,
+                      height: TSizes.size49,
                       radius: TSizes.cardRadiusXs,
                       backgroundColor: TColors.darkerGrey.withOpacity(0.6),
                       child: Center(

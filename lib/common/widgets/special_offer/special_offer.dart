@@ -84,7 +84,7 @@ class SpecialOfferCard extends StatelessWidget {
                     specialOffer.services,
                     overflow: TextOverflow.ellipsis,
                     style: textTheme.labelSmall!.copyWith(
-                        fontSize: TSizes.fontSizeXs, color: TColors.white),
+                        fontSize: TSizes.fontSize8, color: TColors.white),
                   ),
                 ),
 

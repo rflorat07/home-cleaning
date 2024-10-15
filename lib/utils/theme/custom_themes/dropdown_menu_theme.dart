@@ -9,7 +9,7 @@ class TDropdownMenuTheme {
     textStyle: TextStyle(
       color: Colors.white,
       fontWeight: FontWeight.w500,
-      fontSize: TSizes.fontSizeSm,
+      fontSize: TSizes.fontSize14,
     ),
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: EdgeInsets.only(left: 0.0),
@@ -27,7 +27,7 @@ class TDropdownMenuTheme {
     textStyle: TextStyle(
       color: Colors.white,
       fontWeight: FontWeight.w500,
-      fontSize: TSizes.fontSizeSm,
+      fontSize: TSizes.fontSize14,
     ),
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: EdgeInsets.only(left: 0.0),

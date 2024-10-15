@@ -20,4 +20,7 @@ class TImages {
 
   // -- Explore
   static const String exploreMap = "assets/images/explore-map.png";
+
+  // -- Service Details
+  static const String serviceMap = "assets/images/service-map.png";
 }

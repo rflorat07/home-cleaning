@@ -52,6 +52,9 @@ class TTexts {
   static const String bookmarkTab = "Bookmark";
   static const String chatTab = "Chat";
   static const String profileTab = "Profile";
+  static const String aboutTab = "About";
+  static const String galleryTab = "Gallery";
+  static const String reviewTab = "Review";
 
   // -- Home
 
@@ -71,7 +74,14 @@ class TTexts {
   static const String category = "Category";
   static const String viewServices = "View Services";
 
-  // ---
-
+  // --- Service Detail
   static const String demoVideo = "Demo Video";
+  static const String aboutService = "About Service";
+  static const String serviceProvider = "Service Provider";
+  static const String workingHours = "Working Hours";
+  static const String address = "Address";
+  static const String viewOnMap = "View on Map";
+  static const String addressDesc = "1012 Ocean avanue, New yourk, USA";
+  static const String aboutServiceDesc =
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Read more";
 }

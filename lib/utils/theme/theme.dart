@@ -6,6 +6,7 @@ import 'package:home_cleaning/utils/utils.dart';
 import 'custom_themes/chip_theme.dart';
 import 'custom_themes/dropdown_menu_theme.dart';
 import 'custom_themes/list_tile_theme.dart';
+import 'custom_themes/tabbar_theme.dart';
 
 class TAppTheme {
   TAppTheme._();
@@ -19,6 +20,7 @@ class TAppTheme {
     scaffoldBackgroundColor: Colors.white,
     chipTheme: TChipTheme.lightChipThemeData,
     appBarTheme: TAppBarTheme.lightAppBarTheme,
+    tabBarTheme: TTabBarTheme.lightTabBarTheme,
     checkboxTheme: TCheckboxTheme.lightCheckboxTheme,
     listTileTheme: TListTileTheme.lightListTileThemeData,
     bottomSheetTheme: TBottomSheetTheme.lightBottomSheetThemeData,
@@ -37,6 +39,7 @@ class TAppTheme {
     scaffoldBackgroundColor: Colors.black,
     chipTheme: TChipTheme.darkChipThemeData,
     appBarTheme: TAppBarTheme.darkAppBarTheme,
+    tabBarTheme: TTabBarTheme.darkTabBarTheme,
     checkboxTheme: TCheckboxTheme.darkCheckboxTheme,
     listTileTheme: TListTileTheme.darkListTileThemeData,
     bottomSheetTheme: TBottomSheetTheme.darkBottomSheetThemeData,

@@ -15,7 +15,7 @@ class TChipTheme {
       borderRadius: BorderRadius.circular(100.0),
     ),
     labelStyle: TextStyle(
-      fontSize: TSizes.fontSizeMd,
+      fontSize: TSizes.fontSize16,
       color: WidgetStateColor.resolveWith((states) {
         if (states.contains(WidgetState.selected)) {
           return TColors.white;
@@ -35,7 +35,7 @@ class TChipTheme {
       borderRadius: BorderRadius.circular(100.0),
     ),
     labelStyle: TextStyle(
-      fontSize: TSizes.fontSizeMd,
+      fontSize: TSizes.fontSize16,
       color: WidgetStateColor.resolveWith((states) {
         if (states.contains(WidgetState.selected)) {
           return TColors.white;
