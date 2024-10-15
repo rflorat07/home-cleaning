@@ -77,12 +77,16 @@ class TTexts {
 
   // --- Service Detail
   static const String demoVideo = "Demo Video";
+  static const String addReview = "add review";
   static const String aboutService = "About Service";
   static const String serviceProvider = "Service Provider";
   static const String workingHours = "Working Hours";
   static const String address = "Address";
   static const String viewOnMap = "View on Map";
   static const String addressDesc = "1012 Ocean avanue, New yourk, USA";
+  static const String searchReviews = "Search in reviews";
   static const String aboutServiceDesc =
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Read more";
+  static const String loremIpsum =
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt";
 }

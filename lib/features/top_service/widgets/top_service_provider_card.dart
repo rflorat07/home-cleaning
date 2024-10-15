@@ -107,9 +107,11 @@ class TopServiceProviderCard extends StatelessWidget {
                                   color: TColors.starYellow,
                                 ),
                               ),
-                              Text(item.rating,
-                                  style: textTheme.labelLarge!
-                                      .copyWith(fontWeight: FontWeight.w500)),
+                              Text(
+                                item.rating,
+                                style: textTheme.bodySmall!
+                                    .apply(color: TColors.darkerGrey),
+                              ),
                             ],
                           ),
 

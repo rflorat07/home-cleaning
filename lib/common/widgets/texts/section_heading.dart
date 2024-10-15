@@ -5,6 +5,7 @@ import '../../../utils/utils.dart';
 class TSectionHeading extends StatelessWidget {
   const TSectionHeading({
     super.key,
+    this.icon,
     this.textStyle,
     this.onPressed,
     this.textColor,
@@ -17,11 +18,12 @@ class TSectionHeading extends StatelessWidget {
     this.buttonTitle = TTexts.seeAll,
   });
 
-  final Color? textColor, buttonColor;
+  final Widget? icon;
   final bool showActionButton;
   final String title, buttonTitle;
   final void Function()? onPressed;
   final double vertical, horizontal;
+  final Color? textColor, buttonColor;
   final TextStyle? textStyle, textButtonStyle;
 
   @override
@@ -39,14 +41,15 @@ class TSectionHeading extends StatelessWidget {
               maxLines: 1,
               overflow: TextOverflow.ellipsis),
           if (showActionButton)
-            TextButton(
+            TextButton.icon(
                 onPressed: onPressed,
                 style: TextButton.styleFrom(
                   padding: EdgeInsets.zero,
                   minimumSize: Size.zero,
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 ),
-                child: Text(
+                icon: icon,
+                label: Text(
                   buttonTitle,
                   style: textButtonStyle ??
                       Theme.of(context)
