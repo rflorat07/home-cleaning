@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_cleaning/utils/utils.dart';
 
+import 'service_detail_tab_gallery.dart';
 import 'service_details_tab_about.dart';
 
 class ServiceDetailsTabs extends StatelessWidget {
@@ -26,7 +27,7 @@ class ServiceDetailsTabs extends StatelessWidget {
           child: const TabBarView(
             children: [
               ServiceDetailTabAbout(),
-              ServiceDetailTabAbout(),
+              ServiceDetailTabGallery(),
               ServiceDetailTabAbout(),
             ],
           ),

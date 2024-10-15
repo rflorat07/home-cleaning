@@ -3,6 +3,7 @@ import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../common/widgets/containers/rounded_container.dart';
 import '../../../common/widgets/icons/t_circular_icon.dart';
+import '../../../common/widgets/texts/section_heading.dart';
 import '../../../utils/utils.dart';
 
 class ServiceDetailTabAbout extends StatelessWidget {
@@ -18,8 +19,12 @@ class ServiceDetailTabAbout extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          //  About Service
-          Text(TTexts.aboutService, style: textTheme.bodyLarge),
+          //  Heading - About Service
+          TSectionHeading(
+            title: TTexts.aboutService,
+            textStyle: textTheme.bodyLarge,
+            showActionButton: false,
+          ),
           const SizedBox(height: TSizes.size8),
 
           //  Section - About Service Desc
@@ -29,8 +34,12 @@ class ServiceDetailTabAbout extends StatelessWidget {
           ),
           const SizedBox(height: TSizes.defaultSpace),
 
-          //  Service Provider
-          Text(TTexts.serviceProvider, style: textTheme.bodyLarge),
+          //  Heading -  Service Provider
+          TSectionHeading(
+            title: TTexts.serviceProvider,
+            textStyle: textTheme.bodyLarge,
+            showActionButton: false,
+          ),
           const SizedBox(height: TSizes.size8),
 
           //  Section - Service Provider
@@ -82,11 +91,17 @@ class ServiceDetailTabAbout extends StatelessWidget {
 
           const SizedBox(height: TSizes.defaultSpace),
 
-          //  Section - Working Hours
-          Text(TTexts.workingHours, style: textTheme.bodyLarge),
+          //  Heading - - Working Hours
+          TSectionHeading(
+            title: TTexts.workingHours,
+            textStyle: textTheme.bodyLarge,
+            showActionButton: false,
+          ),
           const SizedBox(height: TSizes.size4),
           const Divider(color: TColors.dividerColor),
           const SizedBox(height: TSizes.size12),
+
+          //Section - Working Hours
           Column(
             children: [
               ...List.generate(
@@ -111,24 +126,14 @@ class ServiceDetailTabAbout extends StatelessWidget {
           ),
           const SizedBox(height: TSizes.size12),
 
-          // Section - Address
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(TTexts.address, style: textTheme.bodyLarge),
-              TextButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(
-                  padding: EdgeInsets.zero,
-                  minimumSize: Size.zero,
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                ),
-                child: Text(TTexts.viewOnMap,
-                    style: textTheme.bodyLarge!.apply(color: TColors.green)),
-              )
-            ],
+          // Heading - Address
+          TSectionHeading(
+            title: TTexts.address,
+            textStyle: textTheme.bodyLarge,
+            buttonTitle: TTexts.viewOnMap,
+            textButtonStyle: textTheme.bodyLarge!.apply(color: TColors.green),
           ),
+
           const SizedBox(height: TSizes.size4),
           const Divider(color: TColors.dividerColor),
           const SizedBox(height: TSizes.size4),
