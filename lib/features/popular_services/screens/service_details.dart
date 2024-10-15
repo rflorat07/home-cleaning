@@ -3,6 +3,7 @@ import 'package:home_cleaning/features/popular_services/widgets/service_details_
 
 import '../widgets/service_details_appbar.dart';
 import '../widgets/service_details_body.dart';
+import '../widgets/service_details_book_container.dart';
 import '../widgets/service_details_tabs.dart';
 
 class ServiceDetailsScreen extends StatelessWidget {
@@ -13,6 +14,9 @@ class ServiceDetailsScreen extends StatelessWidget {
     return const Scaffold(
       extendBodyBehindAppBar: true,
       appBar: ServiceDetailsAppBar(),
+      bottomNavigationBar: SafeArea(
+        child: ServiceDetailsBookContainer(),
+      ),
       body: SingleChildScrollView(
         physics: ClampingScrollPhysics(),
         child: DefaultTabController(
