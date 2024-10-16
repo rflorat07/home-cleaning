@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:home_cleaning/common/widgets/appbar/appbar.dart';
 import 'package:home_cleaning/common/widgets/containers/rounded_container.dart';
 
@@ -14,6 +15,7 @@ class ChatScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: TColors.green,
       appBar: TAppBar(
+        systemOverlayStyle: SystemUiOverlayStyle.light,
         title: Row(
           children: [
             const CircleAvatar(

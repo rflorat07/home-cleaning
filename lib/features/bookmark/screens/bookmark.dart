@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../common/widgets/appbar/appbar.dart';
@@ -13,6 +14,7 @@ class BookmarkScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: TAppBar(
+        systemOverlayStyle: SystemUiOverlayStyle.dark,
         title: Text(TTexts.bookmarkTab,
             style: Theme.of(context).textTheme.titleMedium),
         actions: [

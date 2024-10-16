@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../common/models/popular_service.model.dart';
@@ -8,10 +9,15 @@ import '../../../utils/utils.dart';
 class TPopularServiceCard extends StatelessWidget {
   const TPopularServiceCard({
     super.key,
+    this.padding,
     required this.item,
+    this.showBorder = true,
+    this.showIconButton = true,
   });
 
   final PopularServiceModel item;
+  final EdgeInsetsGeometry? padding;
+  final bool showBorder, showIconButton;
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +26,8 @@ class TPopularServiceCard extends StatelessWidget {
       height: 135,
       radius: TSizes.borderRadiusLg,
       backgroundColor: TColors.white,
-      showBorder: true,
-      padding: const EdgeInsets.all(TSizes.cardPadding),
+      showBorder: showBorder,
+      padding: padding ?? const EdgeInsets.all(TSizes.size10),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -108,11 +114,12 @@ class TPopularServiceCard extends StatelessWidget {
                 ),
 
                 // Bookmark Button
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(AppIcons.bookmark, color: TColors.green),
-                  iconSize: TSizes.iconMd,
-                )
+                if (showIconButton)
+                  IconButton(
+                    onPressed: () => _showBottomSheet(context, item),
+                    icon: const Icon(AppIcons.bookmark, color: TColors.green),
+                    iconSize: TSizes.iconMd,
+                  )
                 // Title - Icon - Name - Cost
               ],
             ),
@@ -121,6 +128,79 @@ class TPopularServiceCard extends StatelessWidget {
           // Title
         ],
       ),
+    );
+  }
+
+  void _showBottomSheet(BuildContext context, PopularServiceModel item) {
+    showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      builder: (BuildContext context) {
+        final textTheme = Theme.of(context).textTheme;
+        return SafeArea(
+          child: SingleChildScrollView(
+            child: Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: TSizes.defaultSpace,
+                vertical: TSizes.size16,
+              ),
+              width: double.infinity,
+              child: Column(
+                children: [
+                  // Remove Favorites text
+                  Text(
+                    TTexts.removeFavorites,
+                    style: textTheme.headlineSmall!.copyWith(
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+
+                  // Divider
+                  const SizedBox(height: TSizes.spaceBtwItems),
+                  const Divider(),
+                  const SizedBox(height: TSizes.size6),
+
+                  // Popular Service Card
+                  TPopularServiceCard(
+                    item: item,
+                    showBorder: false,
+                    showIconButton: false,
+                    padding:
+                        const EdgeInsets.symmetric(vertical: TSizes.size10),
+                  ),
+
+                  // Button - Cancel - Remove
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: FilledButton(
+                          onPressed: Get.back,
+                          style: const ButtonStyle(
+                            backgroundColor:
+                                WidgetStatePropertyAll(TColors.whiteSmoke),
+                          ),
+                          child: const Text(
+                            TTexts.cancel,
+                            style: TextStyle(color: TColors.green),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: TSizes.size10),
+                      Expanded(
+                        child: FilledButton(
+                          onPressed: Get.back,
+                          child: const Text(TTexts.yesRemove),
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

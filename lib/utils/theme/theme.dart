@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:home_cleaning/utils/theme/custom_themes/checkbox_theme.dart';
-import 'package:home_cleaning/utils/theme/custom_themes/navigation_bar_theme.dart';
 import 'package:home_cleaning/utils/utils.dart';
-
-import 'custom_themes/chip_theme.dart';
-import 'custom_themes/dropdown_menu_theme.dart';
-import 'custom_themes/list_tile_theme.dart';
-import 'custom_themes/tabbar_theme.dart';
 
 class TAppTheme {
   TAppTheme._();
@@ -22,9 +15,11 @@ class TAppTheme {
     appBarTheme: TAppBarTheme.lightAppBarTheme,
     tabBarTheme: TTabBarTheme.lightTabBarTheme,
     checkboxTheme: TCheckboxTheme.lightCheckboxTheme,
+    dividerTheme: TDividerTheme.lightDividerThemeData,
     listTileTheme: TListTileTheme.lightListTileThemeData,
     bottomSheetTheme: TBottomSheetTheme.lightBottomSheetThemeData,
     dropdownMenuTheme: TDropdownMenuTheme.lightDropdownMenuThemeData,
+    filledButtonTheme: TFilledButtonTheme.lightFilledButtonThemeData,
     elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
     navigationBarTheme: TNavigationBarTheme.lightNavigationBarThemeData,
@@ -41,9 +36,11 @@ class TAppTheme {
     appBarTheme: TAppBarTheme.darkAppBarTheme,
     tabBarTheme: TTabBarTheme.darkTabBarTheme,
     checkboxTheme: TCheckboxTheme.darkCheckboxTheme,
+    dividerTheme: TDividerTheme.darkDividerThemeData,
     listTileTheme: TListTileTheme.darkListTileThemeData,
     bottomSheetTheme: TBottomSheetTheme.darkBottomSheetThemeData,
     dropdownMenuTheme: TDropdownMenuTheme.darkDropdownMenuThemeData,
+    filledButtonTheme: TFilledButtonTheme.darkFilledButtonThemeData,
     elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.darkInputDecorationTheme,
     navigationBarTheme: TNavigationBarTheme.darkNavigationBarThemeData,

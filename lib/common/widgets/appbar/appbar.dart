@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../../../utils/utils.dart';
@@ -11,6 +12,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.leadingIcon,
     this.leadingOnPressed,
     this.showBackArrow = false,
+    this.systemOverlayStyle = SystemUiOverlayStyle.dark,
   });
 
   final Widget? title;
@@ -18,6 +20,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   final IconData? leadingIcon;
   final List<Widget>? actions;
   final VoidCallback? leadingOnPressed;
+  final SystemUiOverlayStyle systemOverlayStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +28,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
       padding: const EdgeInsets.symmetric(horizontal: TSizes.md),
       child: AppBar(
         centerTitle: true,
+        systemOverlayStyle: systemOverlayStyle,
         backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
         leading: showBackArrow

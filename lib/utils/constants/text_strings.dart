@@ -56,8 +56,11 @@ class TTexts {
   static const String galleryTab = "Gallery";
   static const String reviewTab = "Review";
 
-  // -- Home
+  // -- CTA
+  static const String cancel = "Cancel";
+  static const String yesRemove = "Yes, Remove";
 
+  // -- Home
   static const String search = "Search";
   static const String location = "Location";
   static const String seeAll = "See All";
@@ -65,7 +68,6 @@ class TTexts {
   static const String searchServices = "Search Services";
 
   // -- Section Heading
-
   static const String categories = "Categories";
   static const String specialForYou = "#SpecialForYou";
   static const String popularServices = "Popular Services";
@@ -85,6 +87,7 @@ class TTexts {
   static const String viewOnMap = "View on Map";
   static const String addressDesc = "1012 Ocean avanue, New yourk, USA";
   static const String searchReviews = "Search in reviews";
+  static const String removeFavorites = "Remove from Favorites?";
   static const String aboutServiceDesc =
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Read more";
   static const String loremIpsum =

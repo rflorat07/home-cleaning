@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:home_cleaning/features/explore/widgets/explorer_carousel_card.dart';
 
 import '../../../utils/utils.dart';
@@ -10,6 +11,11 @@ class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        systemOverlayStyle: SystemUiOverlayStyle.dark,
+      ),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
