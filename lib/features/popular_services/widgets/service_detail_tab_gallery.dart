@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:home_cleaning/common/widgets/containers/rounded_container.dart';
 import 'package:home_cleaning/common/widgets/texts/section_heading.dart';
 
 import '../../../utils/utils.dart';
@@ -28,7 +27,7 @@ class ServiceDetailTabGallery extends StatelessWidget {
           const SizedBox(height: TSizes.spaceBtwItems),
 
           // Gallery IMG
-          Expanded(
+          /*  Expanded(
             child: GridView.count(
               primary: false,
               padding: const EdgeInsets.all(0.0),
@@ -45,7 +44,7 @@ class ServiceDetailTabGallery extends StatelessWidget {
                 )
               ],
             ),
-          )
+          ) */
         ],
       ),
     );

@@ -10,6 +10,7 @@ class ServiceDetailsController extends GetxController {
 
   PopularServiceModel _serviceSelected = PopularServiceModel.empty();
 
+  RxInt selectedTabBar = 0.obs;
   var appBarColor = Colors.transparent.obs;
   final ScrollController scrollController = ScrollController();
 

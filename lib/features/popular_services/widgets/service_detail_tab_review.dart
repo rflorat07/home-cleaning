@@ -197,7 +197,7 @@ class ServiceDetailTabReview extends StatelessWidget {
           ),
 
           // Gallery IMG
-          Expanded(
+          /* Expanded(
             child: GridView.count(
               primary: false,
               physics: const NeverScrollableScrollPhysics(),
@@ -215,7 +215,7 @@ class ServiceDetailTabReview extends StatelessWidget {
                 )
               ],
             ),
-          )
+          ) */
         ],
       ),
     );

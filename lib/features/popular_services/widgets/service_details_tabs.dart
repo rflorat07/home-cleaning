@@ -1,38 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:home_cleaning/features/popular_services/widgets/service_details_tab_about.dart';
 import 'package:home_cleaning/utils/utils.dart';
 
+import '../controllers/service_details.controller.dart';
 import 'service_detail_tab_gallery.dart';
 import 'service_detail_tab_review.dart';
-import 'service_details_tab_about.dart';
 
 class ServiceDetailsTabs extends StatelessWidget {
   const ServiceDetailsTabs({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = ServiceDetailsController.instance;
+
+    List<Widget> tabBarView = [
+      const ServiceDetailTabAbout(),
+      const ServiceDetailTabGallery(),
+      const ServiceDetailTabReview(),
+    ];
     return Column(
       children: [
         // TAB BAR //
-        const TabBar(
-            indicatorPadding:
-                EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
-            tabs: [
-              Tab(child: Text(TTexts.aboutTab)),
-              Tab(child: Text(TTexts.galleryTab)),
-              Tab(child: Text(TTexts.reviewTab)),
-            ]),
+        TabBar(
+          onTap: (index) => controller.selectedTabBar.value = index,
+          indicatorPadding:
+              const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
+          tabs: const [
+            Tab(child: Text(TTexts.aboutTab)),
+            Tab(child: Text(TTexts.galleryTab)),
+            Tab(child: Text(TTexts.reviewTab)),
+          ],
+        ),
 
-        // TAB BAR VIEWS //
-        SizedBox(
-          height: MediaQuery.of(context).size.height,
-          child: const TabBarView(
-            children: [
-              ServiceDetailTabAbout(),
-              ServiceDetailTabGallery(),
-              ServiceDetailTabReview(),
-            ],
-          ),
-        )
+        Builder(
+          builder: (_) =>
+              Obx(() => tabBarView[controller.selectedTabBar.value]),
+        ),
       ],
     );
   }
