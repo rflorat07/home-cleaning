@@ -6,7 +6,7 @@ import 'package:iconsax_plus/iconsax_plus.dart';
 import '../../../common/models/popular_service.model.dart';
 import '../../../common/widgets/icons/t_circular_icon.dart';
 import '../../../utils/utils.dart';
-import '../../popular_services/screens/service_details.dart';
+import '../../popular_services/controllers/service_details.controller.dart';
 import '../controllers/popular_services_carousel.controllers.dart';
 
 class TPopularServicesCarousel extends StatelessWidget {
@@ -17,14 +17,15 @@ class TPopularServicesCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(PopularServicesCarouselController());
+    final controllerServiceDetails = Get.put(ServiceDetailsController());
 
     return ConstrainedBox(
       constraints: const BoxConstraints(
           maxHeight: TSizes.carouselPopularServicesMaxHeight),
       child: CarouselView(
         itemSnapping: true,
-        onTap: (index) => Get.to(const ServiceDetailsScreen(),
-            arguments: controller.popularServices[index]),
+        onTap: (index) => controllerServiceDetails.serviceDetails =
+            controller.popularServices[index],
         overlayColor: WidgetStateProperty.all(Colors.transparent),
         shrinkExtent: THelperFunctions.screenWidth(context) * 0.56,
         itemExtent: THelperFunctions.screenWidth(context) * 0.56,
@@ -34,7 +35,7 @@ class TPopularServicesCarousel extends StatelessWidget {
         ),
         padding: const EdgeInsets.only(left: TSizes.defaultSpace),
         children: controller.popularServices
-            .map((PopularService item) =>
+            .map((PopularServiceModel item) =>
                 UncontainedLayoutPopularService(item: item))
             .toList(),
       ),
@@ -49,7 +50,7 @@ class UncontainedLayoutPopularService extends StatelessWidget {
     required this.item,
   });
 
-  final PopularService item;
+  final PopularServiceModel item;
   final EdgeInsetsGeometry? padding;
 
   @override

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_cleaning/features/popular_services/widgets/service_details_header.dart';
 
+import '../controllers/service_details.controller.dart';
 import '../widgets/service_details_appbar.dart';
 import '../widgets/service_details_body.dart';
 import '../widgets/service_details_book_container.dart';
@@ -11,15 +12,17 @@ class ServiceDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    final controller = ServiceDetailsController.instance;
+    return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: ServiceDetailsAppBar(),
-      bottomNavigationBar: SafeArea(
+      appBar: const ServiceDetailsAppBar(),
+      bottomNavigationBar: const SafeArea(
         child: ServiceDetailsBookContainer(),
       ),
       body: SingleChildScrollView(
-        physics: ClampingScrollPhysics(),
-        child: DefaultTabController(
+        controller: controller.scrollController,
+        physics: const ClampingScrollPhysics(),
+        child: const DefaultTabController(
           length: 3,
           child: Column(
             children: [

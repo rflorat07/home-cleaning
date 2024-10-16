@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../common/widgets/containers/rounded_container.dart';
 import '../../../utils/utils.dart';
+import '../controllers/service_details.controller.dart';
 
 class ServiceDetailsBody extends StatelessWidget {
   const ServiceDetailsBody({
@@ -10,6 +11,7 @@ class ServiceDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final serviceDetails = ServiceDetailsController.instance.serviceDetails;
     return Padding(
       padding: const EdgeInsets.only(
           top: TSizes.defaultSpace,
@@ -30,7 +32,7 @@ class ServiceDetailsBody extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(
                     vertical: TSizes.size4, horizontal: TSizes.size8),
                 child: Text(
-                  'Home Cleaning',
+                  serviceDetails.offer,
                   overflow: TextOverflow.ellipsis,
                   style: Theme.of(context)
                       .textTheme
@@ -49,7 +51,7 @@ class ServiceDetailsBody extends StatelessWidget {
                   ),
                   const SizedBox(width: TSizes.size4),
                   Text(
-                    '4.5 (365 reviews)',
+                    '${serviceDetails.rating} (365 reviews)',
                     style: Theme.of(context)
                         .textTheme
                         .bodyMedium!
@@ -64,7 +66,7 @@ class ServiceDetailsBody extends StatelessWidget {
           const SizedBox(height: TSizes.spaceBtwItems),
 
           Text(
-            'Deep House Cleaning',
+            serviceDetails.title,
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!
@@ -74,7 +76,7 @@ class ServiceDetailsBody extends StatelessWidget {
           const SizedBox(height: TSizes.size12),
 
           Text(
-            '1012 Ocean avanue, New yourk, USA',
+            serviceDetails.address,
             style: Theme.of(context)
                 .textTheme
                 .bodyMedium!

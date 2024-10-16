@@ -11,7 +11,7 @@ class TPopularServiceCard extends StatelessWidget {
     required this.item,
   });
 
-  final PopularService item;
+  final PopularServiceModel item;
 
   @override
   Widget build(BuildContext context) {

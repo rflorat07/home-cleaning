@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../utils/utils.dart';
+import '../controllers/service_details.controller.dart';
 
 class ServiceDetailsBookContainer extends StatelessWidget {
   const ServiceDetailsBookContainer({
@@ -9,6 +10,7 @@ class ServiceDetailsBookContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final serviceDetails = ServiceDetailsController.instance.serviceDetails;
     return Container(
       height: TSizes.size68,
       padding: const EdgeInsets.symmetric(
@@ -36,7 +38,7 @@ class ServiceDetailsBookContainer extends StatelessWidget {
                       .textTheme
                       .bodyMedium!
                       .apply(color: TColors.davyGrey)),
-              Text('\$180.00',
+              Text(serviceDetails.money,
                   style: Theme.of(context)
                       .textTheme
                       .titleMedium!

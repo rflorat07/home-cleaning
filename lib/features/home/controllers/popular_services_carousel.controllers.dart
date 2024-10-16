@@ -7,7 +7,7 @@ class PopularServicesCarouselController extends GetxController {
 
   final isLoading = false.obs;
   final carouselCurrentIndex = 0.obs;
-  RxList<PopularService> popularServices = <PopularService>[].obs;
+  RxList<PopularServiceModel> popularServices = <PopularServiceModel>[].obs;
 
   @override
   void onInit() {

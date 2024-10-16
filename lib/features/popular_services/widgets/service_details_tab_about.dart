@@ -5,6 +5,7 @@ import '../../../common/widgets/containers/rounded_container.dart';
 import '../../../common/widgets/icons/t_circular_icon.dart';
 import '../../../common/widgets/texts/section_heading.dart';
 import '../../../utils/utils.dart';
+import '../controllers/service_details.controller.dart';
 
 class ServiceDetailTabAbout extends StatelessWidget {
   const ServiceDetailTabAbout({
@@ -14,6 +15,7 @@ class ServiceDetailTabAbout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+    final serviceDetails = ServiceDetailsController.instance.serviceDetails;
     return Container(
       padding: const EdgeInsets.all(TSizes.defaultSpace),
       child: Column(
@@ -58,7 +60,7 @@ class ServiceDetailTabAbout extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Jenny Wilson',
+                      Text(serviceDetails.name,
                           style: textTheme.bodyLarge!
                               .copyWith(fontWeight: FontWeight.w600)),
                       // Service Provider
@@ -144,7 +146,7 @@ class ServiceDetailTabAbout extends StatelessWidget {
               const Icon(IconsaxPlusLinear.location, size: TSizes.size18),
               const SizedBox(width: TSizes.size4),
               Text(
-                TTexts.addressDesc,
+                serviceDetails.address,
                 style: textTheme.bodyMedium!.apply(color: TColors.darkerGrey),
               )
             ],
