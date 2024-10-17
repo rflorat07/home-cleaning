@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:home_cleaning/utils/utils.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
+import '../../../utils/utils.dart';
 import '../controllers/profile.controller.dart';
 
 class ProfileListTile extends StatelessWidget {

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:home_cleaning/features/popular_services/widgets/service_details_header.dart';
 
 import '../controllers/service_details.controller.dart';
 import '../widgets/service_details_appbar.dart';
 import '../widgets/service_details_body.dart';
 import '../widgets/service_details_book_container.dart';
+import '../widgets/service_details_header.dart';
 import '../widgets/service_details_tabs.dart';
 
 class ServiceDetailsScreen extends StatelessWidget {

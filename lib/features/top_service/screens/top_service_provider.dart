@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:home_cleaning/features/home/controllers/top_service_provider_carousel.controllers.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
-import '../../../common/widgets/appbar/appbar.dart';
+import '../../../common/common.dart';
 import '../../../utils/utils.dart';
+import '../../home/controllers/top_service_provider_carousel.controllers.dart';
 import '../widgets/top_service_provider_card.dart';
 
 class TopServiceProviderScreen extends StatelessWidget {

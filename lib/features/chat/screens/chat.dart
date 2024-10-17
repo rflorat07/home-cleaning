@@ -2,9 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:home_cleaning/common/widgets/appbar/appbar.dart';
-import 'package:home_cleaning/common/widgets/containers/rounded_container.dart';
 
+import '../../../common/common.dart';
 import '../../../utils/utils.dart';
 
 class ChatScreen extends StatelessWidget {

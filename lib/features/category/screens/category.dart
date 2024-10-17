@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:home_cleaning/common/widgets/appbar/appbar.dart';
-import 'package:home_cleaning/common/widgets/containers/rounded_icon_text.dart';
-import 'package:home_cleaning/features/category/controllers/category.controllers.dart';
-import 'package:home_cleaning/utils/utils.dart';
+
+import '../../../common/common.dart';
+import '../../../utils/utils.dart';
+import '../controllers/category.controllers.dart';
 
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen({super.key});

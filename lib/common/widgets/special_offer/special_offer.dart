@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:home_cleaning/common/widgets/containers/rounded_container.dart';
 
 import '../../../utils/utils.dart';
 import '../../models/special_offer.model.dart';
+import '../containers/rounded_container.dart';
 
 class SpecialOfferCard extends StatelessWidget {
   const SpecialOfferCard({

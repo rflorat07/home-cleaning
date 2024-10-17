@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:home_cleaning/features/navigation/controllers/navigatio.controller.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../utils/utils.dart';
+import '../controllers/navigatio.controller.dart';
 import '../widgets/navigation_destination.dart';
 
 class NavigationMenu extends StatelessWidget {

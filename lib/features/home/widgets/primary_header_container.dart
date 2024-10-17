@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:home_cleaning/features/home/widgets/dropdown_location.dart';
-import 'package:home_cleaning/features/home/widgets/search_filter.dart';
-import 'package:home_cleaning/utils/utils.dart';
+
+import '../../../utils/utils.dart';
+import 'dropdown_location.dart';
+import 'search_filter.dart';
 
 class TPrimaryHeaderContainer extends StatelessWidget {
   const TPrimaryHeaderContainer({

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:home_cleaning/utils/utils.dart';
+
+import '../../utils.dart';
 
 class TCheckboxTheme {
   TCheckboxTheme._();

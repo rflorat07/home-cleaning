@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:home_cleaning/features/navigation/screens/navigation_menu.dart';
+
+import '../../../navigation/screens/navigation_menu.dart';
 
 class LoginController extends GetxController {
   static LoginController get instance => Get.find();

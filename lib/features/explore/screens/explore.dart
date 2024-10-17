@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:home_cleaning/features/explore/widgets/explorer_carousel_card.dart';
 
 import '../../../utils/utils.dart';
 import '../widgets/explore_header_container.dart';
+import '../widgets/explorer_carousel_card.dart';
 
 class ExploreScreen extends StatelessWidget {
   const ExploreScreen({super.key});

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:home_cleaning/utils/utils.dart';
+
+import '../../../utils/utils.dart';
 
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({

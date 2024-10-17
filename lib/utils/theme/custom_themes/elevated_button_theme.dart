@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:home_cleaning/utils/constants/colors.dart';
+
+import '../../utils.dart';
 
 class TElevatedButtonTheme {
   TElevatedButtonTheme._(); // To void creating instances

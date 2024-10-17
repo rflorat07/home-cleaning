@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:home_cleaning/common/widgets/containers/rounded_container.dart';
-import 'package:home_cleaning/common/widgets/texts/section_heading.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
+import '../../../common/common.dart';
 import '../../../utils/utils.dart';
 
 class ServiceDetailTabReview extends StatelessWidget {
@@ -192,30 +191,33 @@ class ServiceDetailTabReview extends StatelessWidget {
                     ),
                   ],
                 ),
-              ],
-            ),
-          ),
 
-          // Gallery IMG
-          /* Expanded(
-            child: GridView.count(
-              primary: false,
-              physics: const NeverScrollableScrollPhysics(),
-              padding: const EdgeInsets.all(0.0),
-              crossAxisSpacing: TSizes.size8,
-              mainAxisSpacing: TSizes.size8,
-              crossAxisCount: 2,
-              children: [
-                ...List.generate(
-                  4,
-                  (_) => const TRoundedContainer(
-                    radius: TSizes.size6,
-                    backgroundColor: TColors.lightSilver,
+                const SizedBox(height: TSizes.size12),
+
+                // Gallery IMG
+                SizedBox(
+                  height: ((MediaQuery.of(context).size.width - 48) / 2) * 2,
+                  child: GridView.count(
+                    primary: false,
+                    physics: const NeverScrollableScrollPhysics(),
+                    padding: const EdgeInsets.all(0.0),
+                    crossAxisSpacing: TSizes.size8,
+                    mainAxisSpacing: TSizes.size8,
+                    crossAxisCount: 2,
+                    children: [
+                      ...List.generate(
+                        4,
+                        (_) => const TRoundedContainer(
+                          radius: TSizes.size12,
+                          backgroundColor: TColors.lightSilver,
+                        ),
+                      )
+                    ],
                   ),
                 )
               ],
             ),
-          ) */
+          ),
         ],
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-import 'package:home_cleaning/features/authentication/models/chip.model.dart';
+
+import '../../authentication/models/chip.model.dart';
 
 class TChoiceChipListController extends GetxController {
   static TChoiceChipListController get instance => Get.find();

@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:home_cleaning/common/styles/spacing_styles.dart';
-import 'package:home_cleaning/common/widgets/authentication/custom_header.dart';
-import 'package:home_cleaning/common/widgets/authentication/form_divider.dart';
-import 'package:home_cleaning/common/widgets/authentication/social_buttons.dart';
-import 'package:home_cleaning/features/authentication/screens/signup/widgets/signup_footer.dart';
-import 'package:home_cleaning/features/authentication/screens/signup/widgets/signup_form.dart';
 
+import '../../../../common/common.dart';
 import '../../../../utils/utils.dart';
+import 'widgets/signup_footer.dart';
+import 'widgets/signup_form.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});

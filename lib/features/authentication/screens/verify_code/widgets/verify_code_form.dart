@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:home_cleaning/features/authentication/controllers/verify_code/verify_code.dart';
-import 'package:home_cleaning/features/authentication/screens/login/login.dart';
-import 'package:home_cleaning/utils/utils.dart';
+
+import '../../../../../utils/utils.dart';
+import '../../../controllers/verify_code/verify_code.dart';
+import '../../login/login.dart';
 
 class VerifyCodeForm extends StatelessWidget {
   const VerifyCodeForm({super.key});
@@ -32,7 +33,7 @@ class VerifyCodeForm extends StatelessWidget {
                     textAlign: TextAlign.center,
                     decoration: const InputDecoration(
                       contentPadding: EdgeInsets.zero,
-                      counterText: "",
+                      counterText: '',
                     ),
                   ),
                 );

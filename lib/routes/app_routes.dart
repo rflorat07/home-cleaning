@@ -1,7 +1,8 @@
 import 'package:get/get.dart';
-import 'package:home_cleaning/features/explore/screens/explore.dart';
-import 'package:home_cleaning/features/home/screens/home.dart';
-import 'package:home_cleaning/routes/routes.dart';
+
+import '../features/explore/screens/explore.dart';
+import '../features/home/screens/home.dart';
+import 'routes.dart';
 
 class AppRouters {
   static final pages = [

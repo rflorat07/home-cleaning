@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:home_cleaning/common/styles/spacing_styles.dart';
-import 'package:home_cleaning/common/widgets/authentication/custom_header.dart';
-import 'package:home_cleaning/common/widgets/authentication/form_divider.dart';
 
-import '../../../../common/widgets/authentication/social_buttons.dart';
+import '../../../../common/common.dart';
 import '../../../../utils/utils.dart';
 import 'widgets/login_footer.dart';
 import 'widgets/login_form.dart';

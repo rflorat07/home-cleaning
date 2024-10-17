@@ -1,9 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:home_cleaning/features/authentication/screens/signup/signup.dart';
 
 import '../../../../../utils/utils.dart';
+import '../../signup/signup.dart';
 
 class TLoginFooter extends StatelessWidget {
   const TLoginFooter({

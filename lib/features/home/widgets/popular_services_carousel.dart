@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:home_cleaning/common/widgets/containers/rounded_container.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
-import '../../../common/models/popular_service.model.dart';
-import '../../../common/widgets/icons/t_circular_icon.dart';
+import '../../../common/common.dart';
 import '../../../utils/utils.dart';
 import '../../popular_services/controllers/service_details.controller.dart';
 import '../controllers/popular_services_carousel.controllers.dart';

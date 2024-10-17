@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:home_cleaning/common/widgets/containers/rounded_container.dart';
 
+import '../../../common/common.dart';
 import '../../../utils/utils.dart';
 import '../controllers/top_service_provider_carousel.controllers.dart';
 

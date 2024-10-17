@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-import 'package:home_cleaning/common/models/top_service.model.dart';
+
+import '../../../common/common.dart';
 
 class TopServiceProviderCarouselControlller extends GetxController {
   static TopServiceProviderCarouselControlller get instance => Get.find();

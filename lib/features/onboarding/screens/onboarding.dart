@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:home_cleaning/utils/utils.dart';
 
+import '../../../utils/utils.dart';
 import '../controllers/onboarding.controller.dart';
 import '../widgets/index.dart';
 

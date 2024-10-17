@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:home_cleaning/features/home/widgets/popular_services_carousel.dart';
-import 'package:home_cleaning/features/home/widgets/top_service_provider_carousel.dart';
 
-import '../../../common/widgets/texts/section_heading.dart';
+import '../../../common/common.dart';
 import '../../../utils/utils.dart';
 import '../../category/screens/category.dart';
 import '../../popular_services/screens/popular_services.dart';
 import '../../special/screens/Special_for_you.dart';
 import '../../top_service/screens/top_service_provider.dart';
 import '../widgets/categories_carousel.dart';
+import '../widgets/popular_services_carousel.dart';
 import '../widgets/primary_header_container.dart';
 import '../widgets/special_offer_carousel.dart';
+import '../widgets/top_service_provider_carousel.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

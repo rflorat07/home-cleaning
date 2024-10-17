@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:home_cleaning/features/popular_services/widgets/service_details_tab_about.dart';
-import 'package:home_cleaning/utils/utils.dart';
 
+import '../../../utils/utils.dart';
 import '../controllers/service_details.controller.dart';
 import 'service_detail_tab_gallery.dart';
 import 'service_detail_tab_review.dart';
+import 'service_details_tab_about.dart';
 
 class ServiceDetailsTabs extends StatelessWidget {
   const ServiceDetailsTabs({super.key});
