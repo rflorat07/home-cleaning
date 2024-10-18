@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../utils/utils.dart';
+import '../../login/login.dart';
 
 class TSignupFooter extends StatelessWidget {
   const TSignupFooter({
@@ -27,7 +28,8 @@ class TSignupFooter extends StatelessWidget {
                     decorationColor: TColors.green,
                     fontWeight: FontWeight.w500,
                   ),
-              recognizer: TapGestureRecognizer()..onTap = () => Get.to(() {}),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () => Get.offAll(() => const LoginScreen()),
             ),
           ]),
     );

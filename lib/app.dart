@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'features/navigation/screens/navigation_menu.dart';
+import 'features/onboarding/screens/onboarding.dart';
 import 'routes/app_routes.dart';
 import 'utils/utils.dart';
 
@@ -15,7 +15,7 @@ class App extends StatelessWidget {
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
       getPages: AppRouters.pages,
-      home: const NavigationMenu(),
+      home: const OnBoardingScreen(),
       debugShowCheckedModeBanner: false,
       /* home: const Scaffold(
         backgroundColor: TColors.primary,

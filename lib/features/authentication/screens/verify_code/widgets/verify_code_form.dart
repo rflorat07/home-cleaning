@@ -71,7 +71,7 @@ class VerifyCodeForm extends StatelessWidget {
               height: TSizes.buttonHeight,
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(padding: EdgeInsets.zero),
-                  onPressed: () => Get.to(() => const LoginScreen()),
+                  onPressed: () => Get.offAll(() => const LoginScreen()),
                   child: const Text(TTexts.verify)),
             ),
           ],

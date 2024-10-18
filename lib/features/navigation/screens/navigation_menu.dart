@@ -46,8 +46,8 @@ class NavigationMenu extends StatelessWidget {
                 // Bookmark Tab
                 TNavigationDestination(
                     label: TTexts.bookmarkTab,
-                    icon: IconsaxPlusBold.bookmark,
-                    selectedIcon: IconsaxPlusBold.bookmark),
+                    icon: IconsaxPlusBold.bookmark_2,
+                    selectedIcon: IconsaxPlusBold.bookmark_2),
 
                 // Chat Tab
                 TNavigationDestination(
