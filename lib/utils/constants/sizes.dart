@@ -108,6 +108,7 @@ class TSizes {
 
   // Padding and margin sizes
   static const double size1 = 1.0;
+  static const double size2 = 2.0;
   static const double size4 = 4.0;
   static const double size6 = 6.0;
   static const double size8 = 8.0;
@@ -118,8 +119,10 @@ class TSizes {
   static const double size15 = 15.0;
   static const double size16 = 16.0;
   static const double size18 = 18.0;
+  static const double size19 = 19.0;
   static const double size20 = 20.0;
   static const double size24 = 24.0;
+  static const double size25 = 25.0;
   static const double size30 = 30.0;
   static const double size32 = 32.0;
   static const double size36 = 36.0;
@@ -129,14 +132,17 @@ class TSizes {
   static const double size49 = 49.0;
   static const double size48 = 48.0;
   static const double size50 = 50.0;
+  static const double size54 = 54.0;
   static const double size56 = 56.0;
   static const double size57 = 57.0;
+  static const double size60 = 60.0;
   static const double size64 = 64.0;
   static const double size67 = 67.0;
   static const double size68 = 68.0;
   static const double size80 = 80.0;
   static const double size85 = 85.0;
   static const double size120 = 120.0;
+  static const double size135 = 135.0;
   static const double size160 = 160.0;
   static const double size165 = 165.0;
   static const double size200 = 200.0;

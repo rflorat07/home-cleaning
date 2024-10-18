@@ -23,7 +23,7 @@ class TPopularServiceCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return TRoundedContainer(
-      height: 135,
+      height: TSizes.size135,
       radius: TSizes.borderRadiusLg,
       backgroundColor: TColors.white,
       showBorder: showBorder,

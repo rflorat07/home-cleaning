@@ -55,6 +55,7 @@ class TTexts {
   static const String aboutTab = 'About';
   static const String galleryTab = 'Gallery';
   static const String reviewTab = 'Review';
+  static const String servicesTab = 'Services';
 
   // -- CTA
   static const String cancel = 'Cancel';

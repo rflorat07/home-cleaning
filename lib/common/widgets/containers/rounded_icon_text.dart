@@ -8,20 +8,24 @@ class TRoundedIconText extends StatelessWidget {
     super.key,
     required this.label,
     required this.icon,
+    this.child,
+    this.style,
     this.onPressed,
-    this.width = TSizes.iconXXL,
-    this.height = TSizes.iconXXL,
-    this.size = TSizes.iconMd,
+    this.size = TSizes.size24,
+    this.width = TSizes.size64,
+    this.height = TSizes.size64,
     this.color = TColors.green,
     this.backgroundColor = TColors.whiteSmoke,
   });
 
   final double size;
-  final String label;
   final IconData icon;
   final double? width, height;
+  final String label;
   final VoidCallback? onPressed;
   final Color color, backgroundColor;
+  final TextStyle? style;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +43,7 @@ class TRoundedIconText extends StatelessWidget {
           backgroundColor: backgroundColor,
         ),
 
-        const SizedBox(height: TSizes.xs),
+        const SizedBox(height: TSizes.size4),
 
         // Text
         SizedBox(
@@ -49,11 +53,16 @@ class TRoundedIconText extends StatelessWidget {
             maxLines: 1,
             textAlign: TextAlign.center,
             overflow: TextOverflow.ellipsis,
-            style: Theme.of(context)
-                .textTheme
-                .labelLarge!
-                .copyWith(fontWeight: FontWeight.w500),
+            style: style ??
+                Theme.of(context)
+                    .textTheme
+                    .labelLarge!
+                    .copyWith(fontWeight: FontWeight.w500),
           ),
+        ),
+
+        Container(
+          child: child,
         )
       ],
     );
