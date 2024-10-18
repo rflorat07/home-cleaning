@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../utils/utils.dart';
-import '../controllers/onboarding.controller.dart';
+import '../../authentication/screens/login/login.dart';
 
 class OnBoardingSkip extends StatelessWidget {
   const OnBoardingSkip({
@@ -14,7 +15,7 @@ class OnBoardingSkip extends StatelessWidget {
       top: TDeviceUtils.getAppBarHeight(),
       right: double.minPositive,
       child: TextButton(
-        onPressed: () => OnBoardingController.instance.skipPage(),
+        onPressed: () => Get.offAll(() => const LoginScreen()),
         child: Text(
           'Skip',
           style: Theme.of(context)
