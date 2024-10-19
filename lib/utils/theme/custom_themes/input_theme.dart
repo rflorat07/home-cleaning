@@ -10,8 +10,8 @@ class TTextFormFieldTheme {
     prefixIconColor: TColors.black,
     suffixIconColor: TColors.black,
     constraints: const BoxConstraints(maxHeight: TSizes.inputMaxHeight),
-    contentPadding:
-        const EdgeInsets.symmetric(vertical: TSizes.sm, horizontal: TSizes.md),
+    contentPadding: const EdgeInsets.symmetric(
+        vertical: TSizes.size8, horizontal: TSizes.size16),
     floatingLabelBehavior: FloatingLabelBehavior.never,
     labelStyle: const TextStyle()
         .copyWith(fontSize: TSizes.fontSize12, color: TColors.darkerGrey),

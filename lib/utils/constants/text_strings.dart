@@ -32,13 +32,15 @@ class TTexts {
   static const String resendCode = 'Resend code';
 
   // -- Authentication Form Text
-  static const String email = 'Email';
   static const String name = 'Name';
+  static const String email = 'Email';
   static const String verify = 'Verify';
+  static const String gender = 'Gender';
   static const String signIn = 'Sign In';
   static const String signUp = 'Sign Up';
   static const String agree = 'Agree with ';
   static const String password = 'Password';
+  static const String phoneNumber = 'Phone Number';
   static const String orSignInWith = 'Or sign in with';
   static const String orSignUpWith = 'Or sign up with';
   static const String forgetPassword = 'Forgot Password?';
@@ -59,6 +61,7 @@ class TTexts {
 
   // -- CTA
   static const String cancel = 'Cancel';
+  static const String update = 'Update';
   static const String yesRemove = 'Yes, Remove';
 
   // -- Home
@@ -77,6 +80,10 @@ class TTexts {
   // -- Category
   static const String category = 'Category';
   static const String viewServices = 'View Services';
+
+  // -- Profile
+  static const String yourProfile = 'Your Profile';
+  static const String manageAddress = 'Manage Address';
 
   // --- Service Detail
   static const String demoVideo = 'Demo Video';

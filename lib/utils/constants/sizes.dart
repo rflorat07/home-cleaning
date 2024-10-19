@@ -128,6 +128,7 @@ class TSizes {
   static const double size36 = 36.0;
   static const double size38 = 38.0;
   static const double size40 = 40.0;
+  static const double size42 = 42.0;
   static const double size44 = 44.0;
   static const double size49 = 49.0;
   static const double size48 = 48.0;
@@ -139,6 +140,7 @@ class TSizes {
   static const double size64 = 64.0;
   static const double size67 = 67.0;
   static const double size68 = 68.0;
+  static const double size72 = 72.0;
   static const double size80 = 80.0;
   static const double size85 = 85.0;
   static const double size120 = 120.0;

@@ -19,7 +19,7 @@ class ProfileListTile extends StatelessWidget {
         ...List.generate(
           controller.profileListTile.length,
           (index) => ListTile(
-            onTap: () {},
+            onTap: () => Get.toNamed(controller.profileListTile[index].router),
             title: Text(controller.profileListTile[index].title),
             leading: Icon(controller.profileListTile[index].icon),
             trailing: const Icon(IconsaxPlusLinear.arrow_right_3),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
+import '../../../routes/routes.dart';
+
 class ProfileModel {
   ProfileModel({
     required this.icon,
@@ -19,7 +21,7 @@ List<ProfileModel> demoProfileList = [
   ProfileModel(
     title: 'Your profile',
     icon: IconsaxPlusLinear.user,
-    router: '',
+    router: TRoutes.yourProfile,
   ),
   ProfileModel(
     title: 'Manage Address',
