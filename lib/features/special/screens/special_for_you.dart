@@ -12,10 +12,9 @@ class SpecialForYouScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = SpecialOfferCarouselController.instance;
     return Scaffold(
-        appBar: TAppBar(
+        appBar: const TAppBar(
           showBackArrow: true,
-          title: Text(TTexts.specialForYou,
-              style: Theme.of(context).textTheme.titleMedium),
+          title: TTexts.specialForYou,
         ),
         body: ListView.separated(
           padding: const EdgeInsets.all(TSizes.defaultSpace),

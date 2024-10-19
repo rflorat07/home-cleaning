@@ -10,12 +10,11 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       appBar: TAppBar(
-        title: Text(TTexts.profileTab,
-            style: Theme.of(context).textTheme.titleMedium),
+        title: TTexts.profileTab,
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
         child: Column(
           children: [

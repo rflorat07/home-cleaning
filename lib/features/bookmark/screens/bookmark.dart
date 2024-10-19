@@ -15,8 +15,7 @@ class BookmarkScreen extends StatelessWidget {
     return Scaffold(
       appBar: TAppBar(
         systemOverlayStyle: SystemUiOverlayStyle.dark,
-        title: Text(TTexts.bookmarkTab,
-            style: Theme.of(context).textTheme.titleMedium),
+        title: TTexts.bookmarkTab,
         actions: [
           IconButton.outlined(
             iconSize: TSizes.appBarIconSize,

@@ -15,7 +15,8 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.systemOverlayStyle = SystemUiOverlayStyle.dark,
   });
 
-  final Widget? title;
+  ///  * Title String or Widget.
+  final dynamic title;
   final bool showBackArrow;
   final IconData? leadingIcon;
   final List<Widget>? actions;
@@ -44,7 +45,9 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ? IconButton(
                     onPressed: leadingOnPressed, icon: Icon(leadingIcon))
                 : null,
-        title: title,
+        title: title is String
+            ? Text(title, style: Theme.of(context).textTheme.titleMedium)
+            : title,
         actions: actions,
       ),
     );

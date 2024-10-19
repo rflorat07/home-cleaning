@@ -12,10 +12,9 @@ class CategoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(CategoryControllers());
     return Scaffold(
-      appBar: TAppBar(
+      appBar: const TAppBar(
         showBackArrow: true,
-        title: Text(TTexts.category,
-            style: Theme.of(context).textTheme.titleMedium),
+        title: TTexts.category,
       ),
       body: GridView.count(
         mainAxisSpacing: TSizes.defaultSpace,

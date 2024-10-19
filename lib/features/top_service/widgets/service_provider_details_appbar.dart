@@ -15,8 +15,7 @@ class ServiceProviderDetailsAppBar extends StatelessWidget
     return TAppBar(
       showBackArrow: true,
       systemOverlayStyle: SystemUiOverlayStyle.dark,
-      title: Text(TTexts.serviceProvider,
-          style: Theme.of(context).textTheme.titleMedium),
+      title: TTexts.serviceProvider,
       actions: [
         IconButton.outlined(
           iconSize: TSizes.appBarIconSize,

@@ -15,8 +15,7 @@ class PopularServicesScreen extends StatelessWidget {
     return Scaffold(
       appBar: TAppBar(
         showBackArrow: true,
-        title: Text(TTexts.popularServices,
-            style: Theme.of(context).textTheme.titleMedium),
+        title: TTexts.popularServices,
         actions: [
           IconButton.outlined(
             iconSize: TSizes.appBarIconSize,

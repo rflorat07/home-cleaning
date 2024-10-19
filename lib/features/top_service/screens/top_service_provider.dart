@@ -15,8 +15,7 @@ class TopServiceProviderScreen extends StatelessWidget {
     return Scaffold(
       appBar: TAppBar(
         showBackArrow: true,
-        title: Text(TTexts.topServiceProvider,
-            style: Theme.of(context).textTheme.titleMedium),
+        title: TTexts.topServiceProvider,
         actions: [
           IconButton.outlined(
             iconSize: TSizes.appBarIconSize,
