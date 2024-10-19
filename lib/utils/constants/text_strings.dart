@@ -62,6 +62,7 @@ class TTexts {
   // -- CTA
   static const String cancel = 'Cancel';
   static const String update = 'Update';
+  static const String apply = 'Apply';
   static const String yesRemove = 'Yes, Remove';
 
   // -- Home

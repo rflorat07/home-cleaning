@@ -15,6 +15,7 @@ dependencies:
   # Utility Packages
   flutter_native_splash: ^2.4.0
   smooth_page_indicator: ^1.2.0+3
+  dotted_border: ^2.1.0
 
   # Icons
   iconsax_plus: ^1.0.0

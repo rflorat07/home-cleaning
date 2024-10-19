@@ -6,4 +6,5 @@ class TRoutes {
   static const chat = '/chat';
   static const profile = '/profile';
   static const yourProfile = '/yourprofile';
+  static const manageAddress = '/manageaddress';
 }

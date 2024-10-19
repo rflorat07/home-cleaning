@@ -26,7 +26,7 @@ List<ProfileModel> demoProfileList = [
   ProfileModel(
     title: 'Manage Address',
     icon: IconsaxPlusLinear.location,
-    router: '',
+    router: TRoutes.manageAddress,
   ),
   ProfileModel(
     title: 'Payment Methods',
