@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../common/common.dart';
 import '../../../utils/utils.dart';
+import '../../notification/screens/notification.dart';
 
 class TDropdownlocation extends StatelessWidget {
   const TDropdownlocation({
@@ -83,6 +85,7 @@ class TDropdownlocation extends StatelessWidget {
           height: TSizes.xxl,
           backgroundColor: Colors.white.withOpacity(0.17),
           borderRadius: TSizes.borderRadiusMd,
+          onPressed: () => Get.to(() => const NotificationScreen()),
         ),
       ],
     );

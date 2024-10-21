@@ -38,12 +38,28 @@ class SearchScreen extends StatelessWidget {
         ),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Container(
+            padding: const EdgeInsets.symmetric(
+                horizontal: TSizes.defaultSpace,
+                vertical: TSizes.spaceBtwItems),
+            child: Obx(
+              () => Text(
+                '${controller.filteredItems.length} Results Found',
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineSmall!
+                    .copyWith(fontWeight: FontWeight.w500),
+              ),
+            ),
+          ),
           Expanded(
             child: Obx(
               () => ListView.separated(
-                padding: const EdgeInsets.all(TSizes.defaultSpace),
                 physics: const BouncingScrollPhysics(),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: TSizes.defaultSpace, vertical: TSizes.size4),
                 itemCount: controller.filteredItems.length,
                 itemBuilder: (context, index) {
                   return TPopularServiceCard(

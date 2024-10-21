@@ -70,6 +70,7 @@ class TTexts {
   static const String location = 'Location';
   static const String seeAll = 'See All';
   static const String viewAll = 'View All';
+  static const String notification = 'Notification';
   static const String searchServices = 'Search Services';
 
   // -- Section Heading
