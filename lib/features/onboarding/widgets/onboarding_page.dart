@@ -34,10 +34,10 @@ class OnBoardingPage extends StatelessWidget {
                 TextSpan(
                   // ignore: prefer_is_empty
                   text: richTextTitle.length > 1 ? richTextTitle[1] : null,
-                  style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                        color: TColors.green,
-                        fontWeight: FontWeight.w500,
-                      ),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineMedium!
+                      .apply(color: TColors.green),
                 ),
                 TextSpan(
                   text: richTextTitle.length > 2 ? richTextTitle[2] : null,

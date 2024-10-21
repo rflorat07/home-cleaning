@@ -5,6 +5,7 @@ import '../../../utils/utils.dart';
 class TCarouselView extends StatelessWidget {
   const TCarouselView({
     super.key,
+    this.onTap,
     required this.children,
     required this.maxHeight,
     required this.widthFactor,
@@ -22,12 +23,14 @@ class TCarouselView extends StatelessWidget {
   final double widthFactor, maxHeight, borderRadius;
   final Color borderSideColor;
   final bool showBorderSide;
+  final Function(int)? onTap;
 
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(maxHeight: maxHeight),
       child: CarouselView(
+        onTap: onTap,
         itemSnapping: true,
         overlayColor: WidgetStateProperty.all(overlayColor),
         shrinkExtent: THelperFunctions.screenWidth(context) * widthFactor,

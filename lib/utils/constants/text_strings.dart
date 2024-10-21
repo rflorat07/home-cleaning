@@ -6,11 +6,11 @@ class TTexts {
 
   // -- OnBoarding Texts
   static const String onBoardingTitle1 =
-      'Explore *Professional Services* Provider';
+      'Explore *Professional \nServices* Provider';
   static const String onBoardingTitle2 =
-      'Explore *Services* by interactive Map';
+      'Explore *Services* by \ninteractive Map';
   static const String onBoardingTitle3 =
-      'Engage in a *Conversation with Service Provider*';
+      'Engage in a *Conversation \nwith Service Provider*';
 
   static const String onBoardingSubTitle1 =
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ';

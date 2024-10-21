@@ -12,6 +12,7 @@ class TChipTheme {
     side: BorderSide.none,
     selectedColor: TColors.primary,
     disabledColor: TColors.whiteSmoke,
+    backgroundColor: TColors.whiteSmoke,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(100.0),
     ),
@@ -32,6 +33,7 @@ class TChipTheme {
     side: BorderSide.none,
     selectedColor: TColors.primary,
     disabledColor: TColors.whiteSmoke,
+    backgroundColor: TColors.whiteSmoke,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(100.0),
     ),
