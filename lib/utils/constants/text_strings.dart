@@ -66,7 +66,7 @@ class TTexts {
   static const String yesRemove = 'Yes, Remove';
 
   // -- Home
-  static const String search = 'Search';
+  static const String search = 'Search..';
   static const String location = 'Location';
   static const String seeAll = 'See All';
   static const String viewAll = 'View All';
