@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../utils/utils.dart';
 import '../controllers/navigatio.controller.dart';
@@ -34,32 +33,32 @@ class NavigationMenu extends StatelessWidget {
                 // Home Tab
                 TNavigationDestination(
                     label: TTexts.homeTab,
-                    icon: IconsaxPlusBold.home_2,
-                    selectedIcon: IconsaxPlusBold.home_2),
+                    icon: TIcons.iconHomeTab,
+                    selectedIcon: TIcons.iconHomeTabSelected),
 
                 // Explore Tab
                 TNavigationDestination(
                     label: TTexts.exploreTab,
-                    icon: IconsaxPlusBold.location,
-                    selectedIcon: IconsaxPlusBold.location),
+                    icon: TIcons.iconExploreTab,
+                    selectedIcon: TIcons.iconExploreTabSelected),
 
                 // Bookmark Tab
                 TNavigationDestination(
                     label: TTexts.bookmarkTab,
-                    icon: IconsaxPlusBold.bookmark_2,
-                    selectedIcon: IconsaxPlusBold.bookmark_2),
+                    icon: TIcons.iconBookmarkTab,
+                    selectedIcon: TIcons.iconBookmarkTabSelected),
 
                 // Chat Tab
                 TNavigationDestination(
                     label: TTexts.chatTab,
-                    icon: IconsaxPlusBold.message,
-                    selectedIcon: IconsaxPlusBold.message),
+                    icon: TIcons.iconChatTab,
+                    selectedIcon: TIcons.iconChatTabSelected),
 
                 // Profile Tab
                 TNavigationDestination(
                     label: TTexts.profileTab,
-                    icon: IconsaxPlusBold.profile,
-                    selectedIcon: IconsaxPlusBold.profile),
+                    icon: TIcons.iconProfileTab,
+                    selectedIcon: TIcons.iconProfileTabSelected),
               ],
             ),
           ),

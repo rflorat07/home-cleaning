@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../utils/utils.dart';
 
@@ -13,16 +14,15 @@ class TNavigationDestination extends StatelessWidget {
   });
 
   final String label;
-  final IconData icon, selectedIcon;
+  final String icon, selectedIcon;
   final double iconWidth, iconHeight;
 
   @override
   Widget build(BuildContext context) {
     return NavigationDestination(
-      selectedIcon: Icon(selectedIcon,
-          size: iconWidth, color: TColors.green.withOpacity(0.5)),
-      icon: Icon(icon,
-          size: iconWidth, color: TColors.darkerGrey.withOpacity(0.5)),
+      selectedIcon:
+          SvgPicture.asset(selectedIcon, width: iconWidth, height: iconHeight),
+      icon: SvgPicture.asset(icon, width: iconWidth, height: iconHeight),
       label: label,
     );
   }
