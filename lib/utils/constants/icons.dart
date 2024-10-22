@@ -22,4 +22,6 @@ class TIcons {
   static const String iconProfileTab = 'assets/icons/tabs/icon-profile-tab.svg';
   static const String iconProfileTabSelected =
       'assets/icons/tabs/icon-profile-tab-selected.svg';
+
+  static const String notification = 'assets/icons/notification.svg';
 }

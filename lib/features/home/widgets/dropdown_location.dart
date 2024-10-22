@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
@@ -79,12 +80,12 @@ class TDropdownlocation extends StatelessWidget {
 
         // Icon notification
         TCircularIcon(
-          icon: IconsaxPlusBold.notification,
-          iconColor: TColors.white,
           width: TSizes.xxl,
           height: TSizes.xxl,
+          iconColor: TColors.white,
+          borderRadius: TSizes.size8,
+          svgIcon: SvgPicture.asset(TIcons.notification),
           backgroundColor: Colors.white.withOpacity(0.17),
-          borderRadius: TSizes.borderRadiusMd,
           onPressed: () => Get.to(() => const NotificationScreen()),
         ),
       ],

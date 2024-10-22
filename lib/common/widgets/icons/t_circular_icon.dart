@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../utils/utils.dart';
 
@@ -11,7 +12,8 @@ class TCircularIcon extends StatelessWidget {
     this.padding,
     this.onPressed,
     this.iconColor,
-    required this.icon,
+    this.icon,
+    this.svgIcon,
     this.backgroundColor,
     this.size = TSizes.size24,
     this.borderWidth = 1.0,
@@ -20,7 +22,7 @@ class TCircularIcon extends StatelessWidget {
     this.borderColor = TColors.borderPrimary,
   });
 
-  final IconData icon;
+  final IconData? icon;
   final bool showBorder;
   final Color? iconColor;
   final Color borderColor;
@@ -30,6 +32,7 @@ class TCircularIcon extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
   final double borderRadius, borderWidth;
+  final SvgPicture? svgIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +55,7 @@ class TCircularIcon extends StatelessWidget {
       child: IconButton(
         padding: const EdgeInsets.all(0.0),
         onPressed: onPressed,
-        icon: Icon(icon, color: iconColor, size: size),
+        icon: svgIcon ?? Icon(icon, color: iconColor, size: size),
       ),
     );
   }
