@@ -36,7 +36,7 @@ List<ProfileModel> demoProfileList = [
   ProfileModel(
     title: 'My Bookings',
     icon: IconsaxPlusLinear.calendar,
-    router: '',
+    router: TRoutes.myBookings,
   ),
   ProfileModel(
     title: 'My Wallet',

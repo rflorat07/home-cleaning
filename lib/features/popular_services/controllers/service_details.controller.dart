@@ -14,11 +14,6 @@ class ServiceDetailsController extends GetxController {
   var appBarColor = Colors.transparent.obs;
   final ScrollController scrollController = ScrollController();
 
-  set serviceDetails(PopularServiceModel service) {
-    _serviceSelected = service;
-    Get.to(() => const ServiceDetailsScreen());
-  }
-
   @override
   void onInit() {
     scrollController.addListener(() => updateColor(scrollController.offset));
@@ -29,6 +24,11 @@ class ServiceDetailsController extends GetxController {
   void dispose() {
     scrollController.dispose();
     super.dispose();
+  }
+
+  set serviceDetails(PopularServiceModel service) {
+    _serviceSelected = service;
+    Get.to(() => const ServiceDetailsScreen());
   }
 
   PopularServiceModel get serviceDetails {

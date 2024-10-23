@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../common/models/top_service.model.dart';
 import '../../../common/widgets/containers/rounded_container.dart';
 import '../../../utils/utils.dart';
+import '../screens/service_provider_details.dart';
 
 class TopServiceProviderCard extends StatelessWidget {
   const TopServiceProviderCard({
@@ -144,7 +146,8 @@ class TopServiceProviderCard extends StatelessWidget {
             width: double.infinity,
             height: TSizes.buttonMaxHeight,
             child: TextButton(
-              onPressed: () {},
+              onPressed: () =>
+                  Get.to(() => const ServiceProviderDetailsScreen()),
               style: TextButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),

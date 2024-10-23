@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../common/widgets/appbar/appbar.dart';
 import '../../../utils/utils.dart';
 import '../../home/controllers/popular_services_carousel.controllers.dart';
+import '../../search/screens/search.dart';
 import '../widgets/popular_service_card.dart';
 
 class PopularServicesScreen extends StatelessWidget {
@@ -21,7 +23,7 @@ class PopularServicesScreen extends StatelessWidget {
             iconSize: TSizes.appBarIconSize,
             style: OutlinedButton.styleFrom(
                 side: const BorderSide(color: TColors.borderPrimary)),
-            onPressed: () {},
+            onPressed: () => Get.to(() => const SearchScreen()),
             icon: const Icon(IconsaxPlusLinear.search_normal_1),
           )
         ],

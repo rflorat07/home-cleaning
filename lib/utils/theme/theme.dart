@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../utils.dart';
+import 'custom_themes/expansion_tile_theme.dart';
 
 class TAppTheme {
   TAppTheme._();
@@ -24,6 +25,7 @@ class TAppTheme {
     elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
     navigationBarTheme: TNavigationBarTheme.lightNavigationBarThemeData,
+    expansionTileTheme: TExpansionTileTheme.lightExpansionTileThemeData,
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -45,5 +47,6 @@ class TAppTheme {
     elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.darkInputDecorationTheme,
     navigationBarTheme: TNavigationBarTheme.darkNavigationBarThemeData,
+    expansionTileTheme: TExpansionTileTheme.darkExpansionTileThemeData,
   );
 }

@@ -58,12 +58,16 @@ class TTexts {
   static const String galleryTab = 'Gallery';
   static const String reviewTab = 'Review';
   static const String servicesTab = 'Services';
+  static const String upcomingTab = 'Upcoming';
+  static const String completedTab = 'Completed';
+  static const String cancelledTab = 'Cancelled';
 
   // -- CTA
   static const String cancel = 'Cancel';
   static const String update = 'Update';
   static const String apply = 'Apply';
   static const String yesRemove = 'Yes, Remove';
+  static const String eReceipt = 'E-Receipt';
 
   // -- Home
   static const String search = 'Search..';
@@ -86,6 +90,7 @@ class TTexts {
   // -- Profile
   static const String yourProfile = 'Your Profile';
   static const String manageAddress = 'Manage Address';
+  static const String myBookings = 'My Bookings';
 
   // --- Service Detail
   static const String demoVideo = 'Demo Video';

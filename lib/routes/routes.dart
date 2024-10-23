@@ -7,4 +7,5 @@ class TRoutes {
   static const profile = '/profile';
   static const yourProfile = '/yourprofile';
   static const manageAddress = '/manageaddress';
+  static const myBookings = '/mybookings';
 }

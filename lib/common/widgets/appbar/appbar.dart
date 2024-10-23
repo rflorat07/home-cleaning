@@ -8,6 +8,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   const TAppBar({
     super.key,
     this.title,
+    this.bottom,
     this.actions,
     this.leadingIcon,
     this.leadingOnPressed,
@@ -24,6 +25,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? leadingOnPressed;
   final SystemUiOverlayStyle systemOverlayStyle;
   final Color backgroundColor;
+  final PreferredSizeWidget? bottom;
 
   @override
   Widget build(BuildContext context) {
@@ -52,10 +54,12 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
             ? Text(title, style: Theme.of(context).textTheme.titleMedium)
             : title,
         actions: actions,
+        bottom: bottom,
       ),
     );
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(TDeviceUtils.getAppBarHeight());
+  Size get preferredSize => Size.fromHeight(
+      TDeviceUtils.getAppBarHeight() + (bottom != null ? TSizes.size50 : 0.0));
 }
