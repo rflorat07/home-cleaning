@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../common/common.dart';
 import '../../../utils/utils.dart';
+import '../controllers/my_bookings.controller.dart';
 import '../enums/booking_type.enum.dart';
 import '../widgets/booking_list.dart';
 
@@ -10,10 +12,11 @@ class MyBookingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const DefaultTabController(
+    final controller = Get.put(MyBookingsController());
+    return DefaultTabController(
       length: 3,
       child: Scaffold(
-        appBar: TAppBar(
+        appBar: const TAppBar(
           showBackArrow: true,
           title: TTexts.myBookings,
           bottom: TabBar(tabs: [
@@ -22,16 +25,27 @@ class MyBookingsScreen extends StatelessWidget {
             Tab(child: Text(TTexts.cancelledTab)),
           ]),
         ),
-        body: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: TSizes.defaultSpace, vertical: TSizes.spaceBtwItems),
-          child: TabBarView(
-            children: [
-              TBookingList(type: BookingType.upcoming, items: []),
-              TBookingList(type: BookingType.completed, items: []),
-              TBookingList(type: BookingType.cancelled, items: []),
-            ],
-          ),
+        body: TabBarView(
+          children: [
+            TBookingList(
+              type: BookingType.upcoming,
+              items: controller.bookingList
+                  .where((item) => item.type == BookingType.upcoming)
+                  .toList(),
+            ),
+            TBookingList(
+              type: BookingType.completed,
+              items: controller.bookingList
+                  .where((item) => item.type == BookingType.completed)
+                  .toList(),
+            ),
+            TBookingList(
+              type: BookingType.cancelled,
+              items: controller.bookingList
+                  .where((item) => item.type == BookingType.cancelled)
+                  .toList(),
+            ),
+          ],
         ),
       ),
     );
