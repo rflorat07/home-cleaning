@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "165247309867",
+    "project_id": "home-cleaning-app-34752",
+    "storage_bucket": "home-cleaning-app-34752.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165247309867:android:dc154dcf79afcec64d326e",
+        "android_client_info": {
+          "package_name": "com.example.home_cleaning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165247309867-dumt07jbnub51nc90d6e20kg2ota45s1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2D1MatU9paNCle-dsa1KIYKkQaLcbui8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165247309867-dumt07jbnub51nc90d6e20kg2ota45s1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "165247309867-gvedst53f1a6kk4201m6l1ojofm2pvj4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.homeCleaning"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,7 @@
 export 'constants/app_icons.dart';
 export 'constants/colors.dart';
 export 'constants/enums.dart';
+export 'constants/environment.dart';
 export 'constants/icons.dart';
 export 'constants/image_strings.dart';
 export 'constants/sizes.dart';
