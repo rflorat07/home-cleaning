@@ -1,20 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '../../authentication/screens/login/login.dart';
 
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();
-
-  @override
-  void onReady() {
-    Future.delayed(const Duration(seconds: 1), () {
-      FlutterNativeSplash.remove(); // after 1 second.
-    });
-
-    super.onReady();
-  }
 
   final pageController = PageController();
   Rx<int> currentPageIndex = 0.obs;
@@ -28,6 +19,11 @@ class OnBoardingController extends GetxController {
 
   void nextPage() {
     if (currentPageIndex.value == 2) {
+      /// -- Local Storage
+      final storage = GetStorage();
+      storage.write('IsFirstTime', false);
+
+      /// LoginScreen
       Get.offAll(() => const LoginScreen());
     } else {
       int page = currentPageIndex.value + 1;

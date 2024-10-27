@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'features/onboarding/screens/onboarding.dart';
 import 'routes/app_routes.dart';
 import 'utils/utils.dart';
 
@@ -11,21 +10,22 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      getPages: AppRouters.pages,
       themeMode: ThemeMode.system,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
-      getPages: AppRouters.pages,
-      home: const OnBoardingScreen(),
-      unknownRoute: AppRouters.unknownRoute,
       debugShowCheckedModeBanner: false,
-      /* home: const Scaffold(
+      unknownRoute: AppRouters.unknownRoute,
+
+      /// - Show Loader or Circular Progress Indicator meanwhile Authentication Repository is deciding to show relevant screen.
+      home: const Scaffold(
         backgroundColor: TColors.primary,
         body: Center(
           child: CircularProgressIndicator(
             color: Colors.white,
           ),
         ),
-      ), */
+      ),
     );
   }
 }
