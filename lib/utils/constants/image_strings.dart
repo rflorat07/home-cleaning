@@ -23,4 +23,7 @@ class TImages {
 
   // -- Service Details
   static const String serviceMap = 'assets/images/service-map.png';
+
+  // -- Loading
+  static const String loading = 'assets/images/animation/process.gif';
 }

@@ -13,10 +13,13 @@ dependencies:
     sdk: flutter
 
   # Utility Packages
-  flutter_native_splash: ^2.4.0
-  smooth_page_indicator: ^1.2.0+3
+  intl: ^0.19.0
+  image_picker: ^1.1.2
   dotted_border: ^2.1.0
   flutter_svg: ^2.0.10+1
+  connectivity_plus: ^6.1.0
+  flutter_native_splash: ^2.4.0
+  smooth_page_indicator: ^1.2.0+3
 
   # Icons
   iconsax_plus: ^1.0.0
@@ -28,6 +31,8 @@ dependencies:
   # Firebase
   firebase_core: ^3.6.0
   firebase_auth: ^5.3.1
+  cloud_firestore: ^5.4.4
+  firebase_storage: ^12.3.4
 
   # Product Specific
   
@@ -49,6 +54,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/icons/tabs/
+    - assets/images/animation/
     - assets/images/on_boarding_images/
 
 #---------- LOCAL FONTS ----------#

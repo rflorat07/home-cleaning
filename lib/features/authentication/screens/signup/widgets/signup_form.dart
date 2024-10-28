@@ -1,10 +1,9 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../utils/utils.dart';
 import '../../../controllers/signup/signup.controller.dart';
-import '../../verify_code/verify_code.dart';
+import 'terms_conditions_checkbox.dart';
 
 class TSignupForm extends StatelessWidget {
   const TSignupForm({
@@ -28,14 +27,15 @@ class TSignupForm extends StatelessWidget {
                     .labelLarge!
                     .copyWith(fontWeight: FontWeight.w500)),
 
-            const SizedBox(height: TSizes.spaceBtwInputFields / 2),
+            const SizedBox(height: TSizes.size6),
 
             TextFormField(
-              controller: controller.email,
-              validator: (value) => TValidators.validateEmail(value),
+              controller: controller.name,
+              validator: (value) =>
+                  TValidators.validateEmptyText(TTexts.name, value),
             ),
 
-            const SizedBox(height: TSizes.spaceBtwInputFields),
+            const SizedBox(height: TSizes.size20),
 
             /// Email
             Text(TTexts.email,
@@ -44,14 +44,14 @@ class TSignupForm extends StatelessWidget {
                     .labelLarge!
                     .copyWith(fontWeight: FontWeight.w500)),
 
-            const SizedBox(height: TSizes.spaceBtwInputFields / 2),
+            const SizedBox(height: TSizes.size6),
 
             TextFormField(
               controller: controller.email,
               validator: (value) => TValidators.validateEmail(value),
             ),
 
-            const SizedBox(height: TSizes.spaceBtwInputFields),
+            const SizedBox(height: TSizes.size20),
 
             /// Password
             Text(TTexts.password,
@@ -60,10 +60,11 @@ class TSignupForm extends StatelessWidget {
                     .labelLarge!
                     .copyWith(fontWeight: FontWeight.w500)),
 
-            const SizedBox(height: TSizes.spaceBtwInputFields / 2),
+            const SizedBox(height: TSizes.size6),
 
             Obx(
               () => TextFormField(
+                expands: false,
                 controller: controller.password,
                 validator: (value) => TValidators.validatePassword(value),
                 obscureText: controller.hidePassword.value,
@@ -80,49 +81,11 @@ class TSignupForm extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: TSizes.spaceBtwInputFields / 2),
+            const SizedBox(height: TSizes.size16),
 
             /// Agree with Terms & Condition
-            Row(
-              children: [
-                SizedBox(
-                  width: TSizes.lg,
-                  height: TSizes.lg,
-                  child: Transform.scale(
-                    scale: 1.2,
-                    child: Checkbox(
-                      value: true,
-                      onChanged: (value) {},
-                    ),
-                  ),
-                ),
-                const SizedBox(width: TSizes.sm),
-                Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: TTexts.agree,
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyMedium!
-                            .copyWith(fontWeight: FontWeight.w500),
-                      ),
-                      TextSpan(
-                        text: TTexts.termsCondition,
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () => Get.to(() {}),
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                              fontWeight: FontWeight.w500,
-                              color: TColors.green,
-                              decoration: TextDecoration.underline,
-                              decorationColor: TColors.green,
-                            ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+            const TTermsAndConditionsCheckbox(),
+
             const SizedBox(height: TSizes.spaceBtwSections),
 
             /// Sign In button
@@ -131,11 +94,9 @@ class TSignupForm extends StatelessWidget {
               height: TSizes.buttonHeight,
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(padding: EdgeInsets.zero),
-                  onPressed: () => Get.to(() => const VerifyCodeScreen()),
+                  onPressed: () => controller.signup(),
                   child: const Text(TTexts.signUp)),
             ),
-
-            const SizedBox(height: TSizes.spaceBtwItems),
           ],
         ),
       ),

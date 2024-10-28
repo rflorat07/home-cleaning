@@ -16,7 +16,7 @@ class TValidators {
     final emailRegExp = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
 
     if (!emailRegExp.hasMatch(value)) {
-      return 'Invalid email addres';
+      return 'Invalid email address.';
     }
 
     return null;
@@ -24,7 +24,7 @@ class TValidators {
 
   static String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Password is required';
+      return 'Password is required.';
     }
 
     // Check for minimun password length
@@ -52,7 +52,7 @@ class TValidators {
 
   static String? validatePhoneNumber(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Phone number id required';
+      return 'Phone number id required.';
     }
 
     //Regular expression for phone number validation (assuming a 10-digit US phone number format)

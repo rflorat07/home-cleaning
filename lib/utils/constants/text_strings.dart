@@ -30,6 +30,12 @@ class TTexts {
       'Please enter the code we just sent to email';
   static const String receiveOtp = 'Didn’t receive OTP?';
   static const String resendCode = 'Resend code';
+  static const String congratulation = 'Congratulation';
+  static const String congratulationMessage =
+      'Your account has been created! Verify email to continue';
+  static const String acceptPrivacyPolicy = 'Accept Privacy Policy';
+  static const String acceptPrivacyPolicyMessage =
+      'In Order to create account, you must have to read and accept the privacy policy & Terms of use.';
 
   // -- Authentication Form Text
   static const String name = 'Name';
