@@ -19,6 +19,20 @@
 		F81DF59CA003ABC301067112 /* Pods_RunnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0CC2B4BCC71FE8AD4F14675 /* Pods_RunnerTests.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		3E5A496F2CD056D200C095CB /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = folder.rkassets;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# realitytool\n";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXContainerItemProxy section */
 		331C8085294A63A400263BE5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -205,6 +219,7 @@
 				3FCFFA45F332A67013313199 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
+				3E5A496F2CD056D200C095CB /* PBXBuildRule */,
 			);
 			dependencies = (
 			);

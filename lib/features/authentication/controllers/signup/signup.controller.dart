@@ -5,6 +5,7 @@ import '../../../../common/common.dart';
 import '../../../../data/repositories/authentication/authentication.repository.dart';
 import '../../../../data/repositories/user/user_repository.dart';
 import '../../../../utils/utils.dart';
+import '../../screens/verify_email/verify_email.dart';
 import '../network/network_manager.dart';
 
 class SignupController extends GetxController {
@@ -24,6 +25,17 @@ class SignupController extends GetxController {
 
   Future<void> signup() async {
     try {
+      // Form Validation
+      if (!signupFormKey.currentState!.validate()) return;
+
+      // Privacy Policy Check
+      if (!privacyPolicy.value) {
+        TLoaders.warningSnackBar(
+            title: TTexts.acceptPrivacyPolicy,
+            message: TTexts.acceptPrivacyPolicyMessage);
+        return;
+      }
+
       // Start Loading
       TFullScreenLoader.openLoadingDialog(
           'We are processing your information...', TImages.loading);
@@ -32,19 +44,6 @@ class SignupController extends GetxController {
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
         TFullScreenLoader.stopLoading();
-        return;
-      }
-      // Form Validation
-      if (!signupFormKey.currentState!.validate()) {
-        TFullScreenLoader.stopLoading();
-        return;
-      }
-
-      // Privacy Policy Check
-      if (!privacyPolicy.value) {
-        TLoaders.warningSnackBar(
-            title: TTexts.acceptPrivacyPolicy,
-            message: TTexts.acceptPrivacyPolicyMessage);
         return;
       }
 
@@ -64,18 +63,19 @@ class SignupController extends GetxController {
       final userRepository = Get.put(UserRepository());
       await userRepository.saveUserRecord(newUser);
 
+      TFullScreenLoader.stopLoading();
+
       // Show Success Message
       TLoaders.successSnackBar(
         title: TTexts.congratulation,
         message: TTexts.congratulationMessage,
       );
 
-      TFullScreenLoader.stopLoading();
+      // Move to verify email Screen
+      await Get.to(() => VerifyEmailScreen(email: email.text.trim()));
     } catch (e) {
       // Show some Generic error to the user
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
-    } finally {
-      // Remove Loader
       TFullScreenLoader.stopLoading();
     }
   }

@@ -39,13 +39,16 @@ class TCustomHeader extends StatelessWidget {
                   .apply(color: TColors.darkerGrey),
             ),
             if (info.isNotEmpty)
-              Text(
-                info,
-                textAlign: TextAlign.center,
-                style: Theme.of(context)
-                    .textTheme
-                    .labelLarge!
-                    .apply(color: TColors.green),
+              Padding(
+                padding: const EdgeInsets.only(top: TSizes.size4),
+                child: Text(
+                  info,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodySmall!
+                      .apply(color: TColors.green),
+                ),
               ),
           ],
         ),

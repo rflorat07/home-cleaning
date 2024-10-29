@@ -8,4 +8,5 @@ class TRoutes {
   static const yourProfile = '/yourprofile';
   static const manageAddress = '/manageaddress';
   static const myBookings = '/mybookings';
+  static const logout = '/logout';
 }

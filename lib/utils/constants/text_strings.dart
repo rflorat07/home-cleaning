@@ -25,17 +25,27 @@ class TTexts {
   static const String signupTitle = 'Create Account';
   static const String signupSubTitle =
       'Fill your information below or register \n with your social account.';
-  static const String verifyCodeTitle = 'Verify Code';
+  static const String verifyCodeTitle = 'Please verify your email';
   static const String verifyCodeSubTitle =
-      'Please enter the code we just sent to email';
-  static const String receiveOtp = 'Didn’t receive OTP?';
+      'You\'re almost there! We sent an email to';
+  static const String receiveOtp = 'Still can\'t find the email? No problem';
   static const String resendCode = 'Resend code';
-  static const String congratulation = 'Congratulation';
+  static const String resendEmail = 'Resend Verification Email';
+  static const String sendEmailInfo =
+      'Just click on the link in that email to complete your signup. If you don\'t see it, you may need to check your spam folder.';
+  static const String congratulation = 'Congratulations!';
   static const String congratulationMessage =
       'Your account has been created! Verify email to continue';
   static const String acceptPrivacyPolicy = 'Accept Privacy Policy';
   static const String acceptPrivacyPolicyMessage =
       'In Order to create account, you must have to read and accept the privacy policy & Terms of use.';
+  static const String ohSnap = 'Oh Snap!';
+  static const String emailSent = 'Email sent';
+  static const String checkEmail =
+      'Please Check your inbox and verify your email.';
+  static const String yourAccountCreatedTitle =
+      'Your Account successfully created!';
+  static const String yourAccountCreatedSubTitle = 'Your account is created!';
 
   // -- Authentication Form Text
   static const String name = 'Name';
@@ -74,6 +84,7 @@ class TTexts {
   static const String apply = 'Apply';
   static const String yesRemove = 'Yes, Remove';
   static const String eReceipt = 'E-Receipt';
+  static const String ctaContinue = 'Continue';
 
   // -- Home
   static const String search = 'Search..';

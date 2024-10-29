@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
+import '../../../data/repositories/authentication/authentication.repository.dart';
+import '../../../routes/routes.dart';
 import '../../../utils/utils.dart';
 import '../controllers/profile.controller.dart';
 
@@ -19,7 +21,13 @@ class ProfileListTile extends StatelessWidget {
         ...List.generate(
           controller.profileListTile.length,
           (index) => ListTile(
-            onTap: () => Get.toNamed(controller.profileListTile[index].router),
+            onTap: () {
+              if (controller.profileListTile[index].router == TRoutes.logout) {
+                AuthenticationRepository.instance.logout();
+              } else {
+                Get.toNamed(controller.profileListTile[index].router);
+              }
+            },
             title: Text(controller.profileListTile[index].title),
             leading: Icon(controller.profileListTile[index].icon),
             trailing: const Icon(IconsaxPlusLinear.arrow_right_3),

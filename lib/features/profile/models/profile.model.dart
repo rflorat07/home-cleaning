@@ -66,6 +66,6 @@ List<ProfileModel> demoProfileList = [
   ProfileModel(
     title: 'Log out',
     icon: IconsaxPlusLinear.logout_1,
-    router: '',
+    router: TRoutes.logout,
   ),
 ];

@@ -15,4 +15,5 @@ export 'widgets/icons/t_circular_icon.dart';
 export 'widgets/loaders/animation_loader.dart';
 export 'widgets/loaders/loaders.dart';
 export 'widgets/special_offer/special_offer.dart';
+export 'widgets/success_screen/success_screen.dart';
 export 'widgets/texts/section_heading.dart';
