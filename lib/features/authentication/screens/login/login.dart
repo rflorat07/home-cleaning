@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../../common/common.dart';
 import '../../../../utils/utils.dart';
@@ -10,34 +11,37 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: TSpacingStyle.paddingWithAppBarHeight,
-          child: Column(
-            children: [
-              /// Title & Sub-Title
-              TCustomHeader(
-                title: TTexts.loginTitle,
-                subTitle: TTexts.loginSubTitle,
-              ),
+    return const AnnotatedRegion(
+      value: SystemUiOverlayStyle.dark,
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: TSpacingStyle.paddingWithAppBarHeight,
+            child: Column(
+              children: [
+                /// Title & Sub-Title
+                TCustomHeader(
+                  title: TTexts.loginTitle,
+                  subTitle: TTexts.loginSubTitle,
+                ),
 
-              /// Form
-              TLoginForm(),
+                /// Form
+                TLoginForm(),
 
-              /// Divider
-              TFormDivider(dividerText: TTexts.orSignInWith),
+                /// Divider
+                TFormDivider(dividerText: TTexts.orSignInWith),
 
-              SizedBox(height: TSizes.spaceBtwSections),
+                SizedBox(height: TSizes.spaceBtwSections),
 
-              /// Social Buttons
-              TSocialButtons(),
+                /// Social Buttons
+                TSocialButtons(),
 
-              SizedBox(height: TSizes.spaceBtwSections),
+                SizedBox(height: TSizes.spaceBtwSections),
 
-              /// Footer
-              TLoginFooter()
-            ],
+                /// Footer
+                TLoginFooter()
+              ],
+            ),
           ),
         ),
       ),

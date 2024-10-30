@@ -15,7 +15,7 @@ class TLoginForm extends StatelessWidget {
     return Form(
       key: controller.loginFormKey,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSections),
+        padding: const EdgeInsets.only(top: TSizes.size54),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -26,14 +26,14 @@ class TLoginForm extends StatelessWidget {
                     .labelLarge!
                     .copyWith(fontWeight: FontWeight.w500)),
 
-            const SizedBox(height: TSizes.spaceBtwInputFields / 2),
+            const SizedBox(height: TSizes.size6),
 
             TextFormField(
               controller: controller.email,
               validator: (value) => TValidators.validateEmail(value),
             ),
 
-            const SizedBox(height: TSizes.spaceBtwInputFields),
+            const SizedBox(height: TSizes.size20),
 
             /// Password
             Text(TTexts.password,
@@ -42,7 +42,7 @@ class TLoginForm extends StatelessWidget {
                     .labelLarge!
                     .copyWith(fontWeight: FontWeight.w500)),
 
-            const SizedBox(height: TSizes.spaceBtwInputFields / 2),
+            const SizedBox(height: TSizes.size6),
 
             Obx(
               () => TextFormField(
@@ -62,25 +62,24 @@ class TLoginForm extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: TSizes.spaceBtwInputFields / 2),
+            const SizedBox(height: TSizes.size12),
 
             /// Remember Me & Forget Password
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 /// Forget Password
-                TextButton(
-                  onPressed: () => Get.to(() => null),
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    foregroundColor: TColors.green,
-                    textStyle: Theme.of(context).textTheme.labelLarge!.copyWith(
-                        fontWeight: FontWeight.w500,
-                        decoration: TextDecoration.underline,
-                        decorationColor: TColors.green,
-                        backgroundColor: Colors.transparent),
+                InkWell(
+                  onTap: () {},
+                  child: Text(
+                    TTexts.forgetPassword,
+                    style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                          color: TColors.green,
+                          fontWeight: FontWeight.w500,
+                          decorationColor: TColors.green,
+                          decoration: TextDecoration.underline,
+                        ),
                   ),
-                  child: const Text(TTexts.forgetPassword),
                 ),
               ],
             ),

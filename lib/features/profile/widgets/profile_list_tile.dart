@@ -23,7 +23,7 @@ class ProfileListTile extends StatelessWidget {
           (index) => ListTile(
             onTap: () {
               if (controller.profileListTile[index].router == TRoutes.logout) {
-                AuthenticationRepository.instance.logout();
+                _showLogoutBottomSheet(context);
               } else {
                 Get.toNamed(controller.profileListTile[index].router);
               }
@@ -35,6 +35,92 @@ class ProfileListTile extends StatelessWidget {
         ),
         const SizedBox(height: TSizes.defaultSpace),
       ],
+    );
+  }
+
+  void _showLogoutBottomSheet(BuildContext context) {
+    showModalBottomSheet<void>(
+      context: context,
+      enableDrag: false,
+      isDismissible: false,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(TSizes.size16)),
+      builder: (BuildContext context) {
+        final textTheme = Theme.of(context).textTheme;
+        return SafeArea(
+          child: SingleChildScrollView(
+            child: Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: TSizes.defaultSpace,
+                vertical: TSizes.size16,
+              ),
+              width: double.infinity,
+              child: Column(
+                children: [
+                  // Logout text
+                  Text(
+                    TTexts.logout,
+                    style: textTheme.headlineSmall!.copyWith(
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+
+                  // Divider
+                  const SizedBox(height: TSizes.spaceBtwItems),
+                  const Divider(),
+                  const SizedBox(height: TSizes.size12),
+
+                  // Are you sure you want to log out?
+                  Text(
+                    TTexts.logoutMessage,
+                    style:
+                        textTheme.titleSmall!.apply(color: TColors.darkerGrey),
+                  ),
+
+                  const SizedBox(height: TSizes.defaultSpace),
+                  // Button - Cancel - Remove
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // CTA Cancel
+                      Expanded(
+                        child: SizedBox(
+                          height: TSizes.size48,
+                          child: FilledButton(
+                            onPressed: Get.back,
+                            style: const ButtonStyle(
+                              backgroundColor:
+                                  WidgetStatePropertyAll(TColors.whiteSmoke),
+                            ),
+                            child: const Text(
+                              TTexts.cancel,
+                              style: TextStyle(color: TColors.green),
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      const SizedBox(width: TSizes.size10),
+
+                      // CTA Yes, Logout
+                      Expanded(
+                        child: SizedBox(
+                          height: TSizes.size48,
+                          child: FilledButton(
+                            onPressed: () =>
+                                AuthenticationRepository.instance.logout(),
+                            child: const Text(TTexts.yesLogout),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

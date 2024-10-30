@@ -8,6 +8,8 @@ class TFirebaseAuthExceptions implements Exception {
   /// error message
   String get message {
     switch (code) {
+      case 'invalid-credential':
+        return 'Sign in failed, check your email or password';
       case 'email-already-in-use':
         return 'The email address is already registered. Please use a different email address';
       case 'invalid-email':

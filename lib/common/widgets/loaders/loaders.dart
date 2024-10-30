@@ -18,7 +18,7 @@ class TLoaders extends StatelessWidget {
         colorText: TColors.white,
         backgroundColor: TColors.primary,
         snackPosition: SnackPosition.BOTTOM,
-        duration: const Duration(seconds: 3),
+        duration: const Duration(seconds: 5),
         margin: const EdgeInsets.all(10),
         icon: const Icon(Icons.check, color: TColors.white));
   }
@@ -28,9 +28,9 @@ class TLoaders extends StatelessWidget {
         isDismissible: true,
         shouldIconPulse: true,
         colorText: TColors.white,
-        backgroundColor: Colors.orange,
+        backgroundColor: TColors.warning,
         snackPosition: SnackPosition.BOTTOM,
-        duration: const Duration(seconds: 3),
+        duration: const Duration(seconds: 5),
         margin: const EdgeInsets.all(20),
         icon: const Icon(Icons.warning, color: TColors.white));
   }
@@ -40,9 +40,9 @@ class TLoaders extends StatelessWidget {
         isDismissible: true,
         shouldIconPulse: true,
         colorText: TColors.white,
-        backgroundColor: Colors.red.shade600,
+        backgroundColor: TColors.error,
         snackPosition: SnackPosition.BOTTOM,
-        duration: const Duration(seconds: 3),
+        duration: const Duration(seconds: 5),
         margin: const EdgeInsets.all(20),
         icon: const Icon(Icons.warning, color: TColors.white));
   }
