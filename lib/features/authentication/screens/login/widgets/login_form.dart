@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import '../../../../../utils/utils.dart';
 import '../../../controllers/login/login.controller.dart';
+import '../../forgot_password/forgot_password.dart';
 
 class TLoginForm extends StatelessWidget {
   const TLoginForm({
@@ -66,11 +67,33 @@ class TLoginForm extends StatelessWidget {
 
             /// Remember Me & Forget Password
             Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                /// Remember Me
+                Row(
+                  children: [
+                    SizedBox(
+                      height: TSizes.size24,
+                      width: TSizes.size24,
+                      child: Obx(
+                        () => Checkbox(
+                          value: controller.rememberMe.value,
+                          onChanged: (value) => controller.rememberMe.value =
+                              !controller.rememberMe.value,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: TSizes.size4),
+                    Text(
+                      TTexts.rememberMe,
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                  ],
+                ),
+
                 /// Forget Password
                 InkWell(
-                  onTap: () {},
+                  onTap: () => Get.to(() => const ForgotPasswordScreen()),
                   child: Text(
                     TTexts.forgetPassword,
                     style: Theme.of(context).textTheme.labelLarge!.copyWith(
@@ -83,6 +106,7 @@ class TLoginForm extends StatelessWidget {
                 ),
               ],
             ),
+
             const SizedBox(height: TSizes.spaceBtwSections),
 
             /// Sign In button

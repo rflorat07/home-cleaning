@@ -41,11 +41,16 @@ class TTexts {
       'In Order to create account, you must have to read and accept the privacy policy & Terms of use.';
   static const String ohSnap = 'Oh Snap!';
   static const String emailSent = 'Email sent';
+  static const String emailSentReset =
+      'Email Link Send to Reset your Password.';
   static const String checkEmail =
       'Please Check your inbox and verify your email.';
   static const String yourAccountCreatedTitle =
       'Your Account successfully created!';
   static const String yourAccountCreatedSubTitle = 'Your account is created!';
+  static const String forgotPasswordTitle = 'Forgot Password?';
+  static const String forgotPasswordSubTitle =
+      'Don\'t worry sometimes people can forget too, enter your email and we will send you a password reset link.';
 
   // -- Authentication Form Text
   static const String name = 'Name';
@@ -54,6 +59,7 @@ class TTexts {
   static const String gender = 'Gender';
   static const String signIn = 'Sign In';
   static const String signUp = 'Sign Up';
+  static const String submit = 'Submit';
   static const String agree = 'Agree with ';
   static const String password = 'Password';
   static const String phoneNumber = 'Phone Number';
@@ -63,6 +69,7 @@ class TTexts {
   static const String termsCondition = 'Terms & Condition';
   static const String signUpLabel = 'Don’t have an account? ';
   static const String signInpLabel = 'Already  have an account? ';
+  static const String rememberMe = 'Remember Me';
 
   // -- Tabs
   static const String homeTab = 'Home';
