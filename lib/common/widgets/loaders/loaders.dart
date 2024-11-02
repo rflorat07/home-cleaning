@@ -18,8 +18,8 @@ class TLoaders extends StatelessWidget {
         colorText: TColors.white,
         backgroundColor: TColors.primary,
         snackPosition: SnackPosition.BOTTOM,
-        duration: const Duration(seconds: 5),
-        margin: const EdgeInsets.all(10),
+        duration: const Duration(seconds: 3),
+        margin: const EdgeInsets.all(20),
         icon: const Icon(Icons.check, color: TColors.white));
   }
 
@@ -30,7 +30,7 @@ class TLoaders extends StatelessWidget {
         colorText: TColors.white,
         backgroundColor: TColors.warning,
         snackPosition: SnackPosition.BOTTOM,
-        duration: const Duration(seconds: 5),
+        duration: const Duration(seconds: 3),
         margin: const EdgeInsets.all(20),
         icon: const Icon(Icons.warning, color: TColors.white));
   }
@@ -42,7 +42,7 @@ class TLoaders extends StatelessWidget {
         colorText: TColors.white,
         backgroundColor: TColors.error,
         snackPosition: SnackPosition.BOTTOM,
-        duration: const Duration(seconds: 5),
+        duration: const Duration(seconds: 3),
         margin: const EdgeInsets.all(20),
         icon: const Icon(Icons.warning, color: TColors.white));
   }

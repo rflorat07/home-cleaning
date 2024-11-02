@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../common/widgets/icons/t_circular_icon.dart';
-import '../../../data/repositories/authentication/authentication.repository.dart';
 import '../../../utils/utils.dart';
+import '../controllers/user.controller.dart';
 
 class TProfileAvatar extends StatelessWidget {
   const TProfileAvatar({
@@ -12,6 +13,7 @@ class TProfileAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(UserController());
     return Center(
       child: Column(
         children: [
@@ -44,11 +46,15 @@ class TProfileAvatar extends StatelessWidget {
           const SizedBox(height: TSizes.spaceBtwItems),
 
           // Name
-          Text(AuthenticationRepository.instance.authUser?.email ?? '',
+          Obx(
+            () => Text(
+              controller.user.value.fullName,
               style: Theme.of(context)
                   .textTheme
                   .headlineSmall!
-                  .copyWith(fontWeight: FontWeight.w500)),
+                  .copyWith(fontWeight: FontWeight.w500),
+            ),
+          ),
         ],
       ),
     );

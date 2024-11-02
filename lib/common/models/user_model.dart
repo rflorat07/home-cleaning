@@ -5,6 +5,8 @@ class UserModel {
     required this.id,
     required this.name,
     required this.email,
+    required this.gender,
+    required this.phoneNumber,
     required this.profilePicture,
   });
 
@@ -17,7 +19,9 @@ class UserModel {
         id: document.id,
         name: data['Name'] ?? '',
         email: data['Email'] ?? '',
+        gender: data['Gender'] ?? '',
         profilePicture: data['ProfilePicture'] ?? '',
+        phoneNumber: data['PhoneNumber'] ?? '',
       );
     } else {
       return UserModel.empty();
@@ -25,6 +29,7 @@ class UserModel {
   }
 
   final String id, email;
+  String? phoneNumber, gender;
   String name, profilePicture;
 
   /// Helper function to get the full name
@@ -45,13 +50,21 @@ class UserModel {
   }
 
   /// Static function to create an emptu user model.
-  static UserModel empty() =>
-      UserModel(id: '', name: '', email: '', profilePicture: '');
+  static UserModel empty() => UserModel(
+        id: '',
+        name: '',
+        email: '',
+        gender: '',
+        phoneNumber: '',
+        profilePicture: '',
+      );
 
   Map<String, dynamic> toJson() {
     return {
       'Name': name,
       'Email': email,
+      'Gender': gender,
+      'PhoneNumber': phoneNumber,
       'ProfilePicture': profilePicture,
     };
   }

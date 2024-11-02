@@ -52,7 +52,7 @@ class TValidators {
 
   static String? validatePhoneNumber(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Phone number id required.';
+      return 'Phone number required.';
     }
 
     //Regular expression for phone number validation (assuming a 10-digit US phone number format)

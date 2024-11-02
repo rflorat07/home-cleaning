@@ -10,7 +10,7 @@ class YourProfileForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(YourProfileController());
+    final controller = YourProfileController.instance;
     return Form(
         key: controller.yourProfileFormKey,
         child: Column(
@@ -31,7 +31,8 @@ class YourProfileForm extends StatelessWidget {
                   const SizedBox(height: TSizes.size6),
                   TextFormField(
                     controller: controller.name,
-                    validator: (value) => TValidators.validateEmail(value),
+                    validator: (value) =>
+                        TValidators.validateEmptyText(TTexts.name, value),
                   ),
                 ],
               ),
@@ -53,7 +54,8 @@ class YourProfileForm extends StatelessWidget {
                   TextFormField(
                     keyboardType: TextInputType.phone,
                     controller: controller.phoneNumber,
-                    validator: (value) => TValidators.validateEmail(value),
+                    validator: (value) =>
+                        TValidators.validatePhoneNumber(value),
                   ),
                 ],
               ),
@@ -87,12 +89,18 @@ class YourProfileForm extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(TTexts.gender,
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelLarge!
-                          .copyWith(fontWeight: FontWeight.w500)),
+                  // Gender
+                  Text(
+                    TTexts.gender,
+                    style: Theme.of(context)
+                        .textTheme
+                        .labelLarge!
+                        .copyWith(fontWeight: FontWeight.w500),
+                  ),
+
                   const SizedBox(height: TSizes.size6),
+
+                  /// DropdownButton
                   Container(
                     height: TSizes.size44,
                     width: double.infinity,
@@ -102,30 +110,36 @@ class YourProfileForm extends StatelessWidget {
                       borderRadius: BorderRadius.circular(TSizes.size8),
                       border: Border.all(color: TColors.borderPrimary),
                     ),
-                    child: DropdownButton<String>(
-                      hint: const Text('Select'),
-                      isExpanded: true,
-                      elevation: 0,
-                      onChanged: (String? newValue) {},
-                      underline: const SizedBox(height: 0.0),
-                      dropdownColor: TColors.darkerGrey,
-                      style: const TextStyle(
-                        color: TColors.white,
-                        fontWeight: FontWeight.w400,
-                        fontSize: TSizes.fontSize12,
+                    child: Obx(
+                      () => DropdownButton<String>(
+                        hint: const Text('Select'),
+                        isExpanded: true,
+                        elevation: 10,
+                        value: controller.gender.value.isEmpty
+                            ? null
+                            : controller.gender.value,
+                        onChanged: (String? newValue) {
+                          controller.gender.value = newValue ?? '';
+                        },
+                        underline: const SizedBox(height: 0.0),
+                        dropdownColor: TColors.whiteSmoke,
+                        style: const TextStyle(
+                            fontSize: TSizes.fontSize15,
+                            color: TColors.black,
+                            fontWeight: FontWeight.w500),
+                        icon: const Padding(
+                          padding: EdgeInsets.only(left: TSizes.xs),
+                          child: Icon(IconsaxPlusLinear.arrow_down,
+                              color: TColors.green),
+                        ),
+                        items: controller.genders
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
                       ),
-                      icon: const Padding(
-                        padding: EdgeInsets.only(left: TSizes.xs),
-                        child: Icon(IconsaxPlusLinear.arrow_down,
-                            color: TColors.green),
-                      ),
-                      items: controller.genders
-                          .map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(value),
-                        );
-                      }).toList(),
                     ),
                   ),
                 ],

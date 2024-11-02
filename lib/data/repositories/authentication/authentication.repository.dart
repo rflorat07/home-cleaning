@@ -9,6 +9,7 @@ import '../../../features/authentication/screens/verify_email/verify_email.dart'
 import '../../../features/navigation/screens/navigation_menu.dart';
 import '../../../features/onboarding/screens/onboarding.dart';
 import '../../../utils/utils.dart';
+import '../user/user_repository.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
@@ -122,6 +123,46 @@ class AuthenticationRepository extends GetxController {
     try {
       await _firebaseAuth.signOut();
       Get.offAll(() => const LoginScreen());
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthExceptions(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseExceptions(e.code).message;
+    } on FormatException catch (_) {
+      throw TFormatExceptions();
+    } on PlatformException catch (e) {
+      throw TPlatformExceptions(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again.';
+    }
+  }
+
+  /// Delete user - Remove user Auth and Firestore Account
+  Future<void> deleteAccount() async {
+    try {
+      await UserRepository.instance
+          .removeUserRecord(_firebaseAuth.currentUser!.uid);
+      await _firebaseAuth.currentUser?.delete();
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthExceptions(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseExceptions(e.code).message;
+    } on FormatException catch (_) {
+      throw TFormatExceptions();
+    } on PlatformException catch (e) {
+      throw TPlatformExceptions(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again.';
+    }
+  }
+
+  Future<void> reAuthenticateWithEmailAndPassword(
+      String email, String password) async {
+    try {
+      // Create s credential
+      AuthCredential credential =
+          EmailAuthProvider.credential(email: email, password: password);
+      // ReAuthenticate
+      await _firebaseAuth.currentUser!.reauthenticateWithCredential(credential);
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthExceptions(e.code).message;
     } on FirebaseException catch (e) {
