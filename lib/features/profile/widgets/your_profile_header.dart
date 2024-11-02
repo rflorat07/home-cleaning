@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../common/common.dart';
 import '../../../utils/utils.dart';
+import '../controllers/user.controller.dart';
 
 class YourProfileHeader extends StatelessWidget {
   const YourProfileHeader({
@@ -11,13 +13,24 @@ class YourProfileHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
     return Center(
       child: Stack(
         alignment: AlignmentDirectional.topCenter,
         children: [
-          const CircleAvatar(
-            backgroundColor: TColors.lightSilver,
-            radius: TSizes.size60,
+          Obx(
+            () {
+              final networkImage = controller.user.value.profilePicture;
+              final image =
+                  networkImage.isNotEmpty ? networkImage : TImages.user;
+              return TCircularImage(
+                padding: 0,
+                width: TSizes.size120,
+                height: TSizes.size120,
+                image: image,
+                isNetworkImage: networkImage.isNotEmpty,
+              );
+            },
           ),
           Positioned(
             bottom: 0.0,
@@ -32,7 +45,7 @@ class YourProfileHeader extends StatelessWidget {
               backgroundColor: TColors.primary,
               icon: IconsaxPlusLinear.edit_2,
               iconColor: TColors.white,
-              onPressed: () {},
+              onPressed: () => controller.uploadUserProfilePicture(),
             ),
           ),
         ],

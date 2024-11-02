@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
-import '../../../common/widgets/icons/t_circular_icon.dart';
+import '../../../common/common.dart';
 import '../../../utils/utils.dart';
 import '../controllers/user.controller.dart';
 
@@ -20,9 +20,19 @@ class TProfileAvatar extends StatelessWidget {
           // Avatar
           Stack(
             children: [
-              const CircleAvatar(
-                backgroundColor: TColors.lightSilver,
-                radius: TSizes.avatarRadius,
+              Obx(
+                () {
+                  final networkImage = controller.user.value.profilePicture;
+                  final image =
+                      networkImage.isNotEmpty ? networkImage : TImages.user;
+                  return TCircularImage(
+                    padding: 0,
+                    width: TSizes.size100,
+                    height: TSizes.size100,
+                    image: image,
+                    isNetworkImage: networkImage.isNotEmpty,
+                  );
+                },
               ),
               Positioned(
                 bottom: 0.0,
@@ -37,7 +47,7 @@ class TProfileAvatar extends StatelessWidget {
                   backgroundColor: TColors.primary,
                   icon: IconsaxPlusLinear.edit_2,
                   iconColor: TColors.white,
-                  onPressed: () {},
+                  onPressed: () => controller.uploadUserProfilePicture(),
                 ),
               ),
             ],

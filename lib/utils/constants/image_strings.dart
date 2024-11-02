@@ -26,4 +26,7 @@ class TImages {
 
   // -- Loading
   static const String loading = 'assets/images/animation/process.gif';
+
+  // user
+  static const String user = 'assets/images/user/user.png';
 }
