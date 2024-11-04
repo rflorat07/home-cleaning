@@ -8,6 +8,7 @@ export 'widgets/appbar/appbar.dart';
 export 'widgets/authentication/custom_header.dart';
 export 'widgets/authentication/form_divider.dart';
 export 'widgets/authentication/social_buttons.dart';
+export 'widgets/carousel/carousel_view.dart';
 export 'widgets/containers/address_container.dart';
 export 'widgets/containers/bottom_navigation_container.dart';
 export 'widgets/containers/rounded_container.dart';

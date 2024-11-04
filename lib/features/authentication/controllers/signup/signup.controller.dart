@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../../../common/common.dart';
 import '../../../../data/repositories/authentication/authentication.repository.dart';
-import '../../../../data/repositories/user/user_repository.dart';
+import '../../../../data/repositories/user/user.repository.dart';
 import '../../../../utils/utils.dart';
 import '../../screens/verify_email/verify_email.dart';
 import '../network/network_manager.dart';

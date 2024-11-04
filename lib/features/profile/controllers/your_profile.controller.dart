@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../common/common.dart';
-import '../../../data/repositories/user/user_repository.dart';
+import '../../../data/repositories/user/user.repository.dart';
 import '../../../utils/utils.dart';
 import '../../authentication/controllers/network/network_manager.dart';
 import 'user.controller.dart';

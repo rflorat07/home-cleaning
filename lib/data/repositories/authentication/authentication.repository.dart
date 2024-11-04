@@ -9,7 +9,7 @@ import '../../../features/authentication/screens/verify_email/verify_email.dart'
 import '../../../features/navigation/screens/navigation_menu.dart';
 import '../../../features/onboarding/screens/onboarding.dart';
 import '../../../utils/utils.dart';
-import '../user/user_repository.dart';
+import '../user/user.repository.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();

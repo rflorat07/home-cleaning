@@ -15,47 +15,59 @@ class TSpecialOfferCarousel extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(SpecialOfferCarouselController());
 
-    return Column(
-      children: [
-        // CarouselView
-        Obx(
-          () => ConstrainedBox(
-            constraints:
-                const BoxConstraints(maxHeight: TSizes.carouselMaxHeight),
-            child: CarouselView(
-              itemSnapping: true,
-              shrinkExtent: THelperFunctions.screenWidth(context) * 0.8,
-              itemExtent: THelperFunctions.screenWidth(context) * 0.8,
+    return Obx(
+      () {
+        // Loader
+        if (controller.isLoading.value) {
+          return TCarouselView(
+              widthFactor: 0.8,
+              backgroundColor: Colors.transparent,
+              maxHeight: TSizes.carouselMaxHeight,
+              children: [
+                TShimmerEffect(
+                    width: THelperFunctions.screenWidth(context) * 0.8,
+                    height: TSizes.carouselMaxHeight),
+                TShimmerEffect(
+                    width: THelperFunctions.screenWidth(context) * 0.8,
+                    height: TSizes.carouselMaxHeight)
+              ]);
+        }
+
+        if (controller.specialOffers.isEmpty) {
+          return const Center(child: Text('No Data Found!'));
+        }
+
+        return Column(
+          children: [
+            // CarouselView
+            TCarouselView(
+              widthFactor: 0.8,
               backgroundColor: TColors.black,
-              shape: RoundedRectangleBorder(
-                borderRadius:
-                    BorderRadius.circular(TSizes.carouselBorderRadius),
-              ),
-              padding: const EdgeInsets.only(left: TSizes.defaultSpace),
+              maxHeight: TSizes.carouselMaxHeight,
               children: controller.specialOffers
                   .map((SpecialOfferModel item) => SpecialOfferCard(
                         specialOffer: item,
                       ))
                   .toList(),
             ),
-          ),
-        ),
 
-        const SizedBox(height: TSizes.defaultSpace / 2),
+            const SizedBox(height: TSizes.defaultSpace / 2),
 
-        // PageIndicator
-        SmoothPageIndicator(
-          count: controller.specialOffers.length,
-          controller: controller.smoothPageIndicatorController,
-          effect: ScrollingDotsEffect(
-            fixedCenter: false,
-            dotWidth: TSizes.carouselDotSize,
-            dotHeight: TSizes.carouselDotSize,
-            dotColor: TColors.green.withOpacity(0.2),
-            activeDotColor: TColors.green,
-          ),
-        ),
-      ],
+            // PageIndicator
+            SmoothPageIndicator(
+              count: controller.specialOffers.length,
+              controller: controller.smoothPageIndicatorController,
+              effect: ScrollingDotsEffect(
+                fixedCenter: false,
+                dotWidth: TSizes.carouselDotSize,
+                dotHeight: TSizes.carouselDotSize,
+                dotColor: TColors.green.withOpacity(0.2),
+                activeDotColor: TColors.green,
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }
