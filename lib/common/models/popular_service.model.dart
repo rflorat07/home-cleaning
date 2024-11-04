@@ -1,5 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class PopularServiceModel {
   PopularServiceModel({
+    this.id,
     required this.title,
     required this.name,
     required this.money,
@@ -9,7 +12,25 @@ class PopularServiceModel {
     this.imageUrl,
   });
 
-  final String? imageUrl;
+  /// Map Jsob oriented document snapshot from Firebase
+  factory PopularServiceModel.fromSnapshot(
+      DocumentSnapshot<Map<String, dynamic>> document) {
+    if (document.data() == null) return PopularServiceModel.empty();
+
+    final data = document.data()!;
+
+    return PopularServiceModel(
+      title: data['title'],
+      name: data['name'],
+      money: data['money'],
+      rating: data['rating'],
+      offer: data['offer'],
+      address: data['address'],
+      id: document.id,
+    );
+  }
+
+  final String? imageUrl, id;
   final String title, address, name, money, rating, offer;
 
   static PopularServiceModel empty() => PopularServiceModel(
@@ -21,6 +42,20 @@ class PopularServiceModel {
         offer: '',
         imageUrl: null,
       );
+
+  /// Convert model to Json structure
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'name': name,
+      'money': money,
+      'rating': rating,
+      'address': address,
+      'offer': offer,
+      'imageUrl': '',
+    };
+  }
 }
 
 // Our demo Popular

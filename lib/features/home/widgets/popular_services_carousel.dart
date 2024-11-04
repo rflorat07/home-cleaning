@@ -17,26 +17,33 @@ class TPopularServicesCarousel extends StatelessWidget {
     final controller = Get.put(PopularServicesCarouselController());
     final controllerServiceDetails = Get.put(ServiceDetailsController());
 
-    return ConstrainedBox(
-      constraints: const BoxConstraints(
-          maxHeight: TSizes.carouselPopularServicesMaxHeight),
-      child: CarouselView(
-        itemSnapping: true,
-        onTap: (index) => controllerServiceDetails.serviceDetails =
-            controller.popularServices[index],
-        overlayColor: WidgetStateProperty.all(Colors.transparent),
-        shrinkExtent: THelperFunctions.screenWidth(context) * 0.56,
-        itemExtent: THelperFunctions.screenWidth(context) * 0.56,
-        backgroundColor: TColors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(TSizes.carouselBorderRadius),
-        ),
-        padding: const EdgeInsets.only(left: TSizes.defaultSpace),
-        children: controller.popularServices
-            .map((PopularServiceModel item) =>
-                UncontainedLayoutPopularService(item: item))
-            .toList(),
-      ),
+    return Obx(
+      () {
+        if (controller.isLoading.value) {
+          return TCarouselView(
+              widthFactor: 0.56,
+              maxHeight: TSizes.carouselPopularServicesMaxHeight,
+              children: [
+                TShimmerEffect(
+                    width: THelperFunctions.screenWidth(context) * 0.56,
+                    height: TSizes.carouselPopularServicesMaxHeight),
+                TShimmerEffect(
+                    width: THelperFunctions.screenWidth(context) * 0.56,
+                    height: TSizes.carouselPopularServicesMaxHeight)
+              ]);
+        }
+
+        return TCarouselView(
+          widthFactor: 0.56,
+          maxHeight: TSizes.carouselPopularServicesMaxHeight,
+          onTap: (index) => controllerServiceDetails.serviceDetails =
+              controller.popularServices[index],
+          children: controller.popularServices
+              .map((PopularServiceModel item) =>
+                  UncontainedLayoutPopularService(item: item))
+              .toList(),
+        );
+      },
     );
   }
 }

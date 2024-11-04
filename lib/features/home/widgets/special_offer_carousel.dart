@@ -20,17 +20,18 @@ class TSpecialOfferCarousel extends StatelessWidget {
         // Loader
         if (controller.isLoading.value) {
           return TCarouselView(
-              widthFactor: 0.8,
-              backgroundColor: Colors.transparent,
-              maxHeight: TSizes.carouselMaxHeight,
-              children: [
-                TShimmerEffect(
-                    width: THelperFunctions.screenWidth(context) * 0.8,
-                    height: TSizes.carouselMaxHeight),
-                TShimmerEffect(
-                    width: THelperFunctions.screenWidth(context) * 0.8,
-                    height: TSizes.carouselMaxHeight)
-              ]);
+            widthFactor: 0.8,
+            backgroundColor: Colors.transparent,
+            maxHeight: TSizes.carouselMaxHeight,
+            children: [
+              TShimmerEffect(
+                  width: THelperFunctions.screenWidth(context) * 0.8,
+                  height: TSizes.carouselMaxHeight),
+              TShimmerEffect(
+                  width: THelperFunctions.screenWidth(context) * 0.8,
+                  height: TSizes.carouselMaxHeight)
+            ],
+          );
         }
 
         if (controller.specialOffers.isEmpty) {
