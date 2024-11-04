@@ -14,7 +14,7 @@ class TCategoryShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 80,
+      height: TSizes.size85,
       child: ListView.separated(
           shrinkWrap: true,
           itemCount: itemCount,

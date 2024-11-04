@@ -17,21 +17,25 @@ class TTopServiceProviderCarousel extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
       child: SizedBox(
         height: TSizes.categoriesMaxHeight,
-        child: ListView.separated(
-          scrollDirection: Axis.horizontal,
-          shrinkWrap: true,
-          itemCount: controller.topServiceProvider.length,
-          itemBuilder: (_, index) {
-            final item = controller.topServiceProvider[index];
-            return TopServiceProviderCard(
-              label: item.name,
-              imageUrl: item.imageUrl,
-              onTap: () => Get.to(() => const ServiceProviderDetailsScreen()),
-            );
-          },
-          separatorBuilder: (_, index) =>
-              const SizedBox(width: TSizes.defaultSpace),
-        ),
+        child: Obx(() {
+          if (controller.isLoading.value) return const TCategoryShimmer();
+
+          return ListView.separated(
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+            itemCount: controller.topServiceProvider.length,
+            itemBuilder: (_, index) {
+              final item = controller.topServiceProvider[index];
+              return TopServiceProviderCard(
+                label: item.name,
+                imageUrl: item.imageUrl,
+                onTap: () => Get.to(() => const ServiceProviderDetailsScreen()),
+              );
+            },
+            separatorBuilder: (_, index) =>
+                const SizedBox(width: TSizes.defaultSpace),
+          );
+        }),
       ),
     );
   }
