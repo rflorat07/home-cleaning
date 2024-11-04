@@ -52,8 +52,8 @@ class YourProfileController extends GetxController {
         'Name': name.text.trim(),
         'Email': email.text.trim(),
         'Gender': gender.value,
-        'ProfilePicture': '',
         'PhoneNumber': phoneNumber.text,
+        'ProfilePicture': userController.user.value.profilePicture,
       };
 
       await userRepository.updateSingleField(profile);

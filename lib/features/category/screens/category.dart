@@ -10,26 +10,28 @@ class CategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(CategoryControllers());
+    final controller = CategoryControllers.instance;
     return Scaffold(
       appBar: const TAppBar(
         showBackArrow: true,
         title: TTexts.category,
       ),
-      body: GridView.count(
-        mainAxisSpacing: TSizes.defaultSpace,
-        padding: const EdgeInsets.all(TSizes.defaultSpace),
-        physics: const BouncingScrollPhysics(),
-        crossAxisCount: 4,
-        children: List.generate(controller.categories.length, (index) {
-          final item = controller.categories[index];
-          return TRoundedIconText(
-            label: item.label,
-            icon: item.icon,
-            size: TSizes.iconLg,
-            onPressed: () {},
-          );
-        }),
+      body: Obx(
+        () => GridView.count(
+          mainAxisSpacing: TSizes.defaultSpace,
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
+          physics: const BouncingScrollPhysics(),
+          crossAxisCount: 4,
+          children: List.generate(controller.allCategories.length, (index) {
+            final item = controller.allCategories[index];
+            return TRoundedIconText(
+              label: item.label,
+              icon: item.icon,
+              size: TSizes.iconLg,
+              onPressed: () {},
+            );
+          }),
+        ),
       ),
     );
   }

@@ -15,7 +15,7 @@
 ///
 library;
 
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 class AppIcons {
   AppIcons._();
@@ -67,4 +67,27 @@ class AppIcons {
       IconData(0xe819, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData iron =
       IconData(0xe81a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+
+  static IconData getIconDataFromName(String name) {
+    final Map<String, IconData> iconData = {
+      'cleaning': AppIcons.cleaning,
+      'repairing': AppIcons.repairing,
+      'plumbing': AppIcons.plumbing,
+      'shifting': AppIcons.shifting,
+      'painting': AppIcons.painting,
+      'laundry': AppIcons.laundry,
+      'acRepair': AppIcons.acRepair,
+      'carRepair': AppIcons.carRepair,
+      'electrician': AppIcons.electrician,
+      'carpainter': AppIcons.carpainter,
+      'iron': AppIcons.iron,
+      'appliance': AppIcons.appliance,
+      'beauty': AppIcons.beauty,
+      'gardening': AppIcons.gardening,
+      'security': AppIcons.security,
+      'massage': AppIcons.massage,
+    };
+
+    return iconData[name] ?? Icons.close;
+  }
 }

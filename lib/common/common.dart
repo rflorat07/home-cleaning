@@ -1,3 +1,4 @@
+export 'models/category.model.dart';
 export 'models/popular_service.model.dart';
 export 'models/special_offer.model.dart';
 export 'models/top_service.model.dart';

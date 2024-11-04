@@ -25,9 +25,12 @@ class TCategoryShimmer extends StatelessWidget {
             return const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TShimmerEffect(width: 55, height: 55, radius: 55),
-                SizedBox(height: TSizes.spaceBtwItems / 2),
-                TShimmerEffect(width: 55, height: 8)
+                TShimmerEffect(
+                    width: TSizes.size60,
+                    height: TSizes.size60,
+                    radius: TSizes.size60),
+                SizedBox(height: TSizes.size4),
+                TShimmerEffect(width: TSizes.size60, height: TSizes.size8)
               ],
             );
           }),
