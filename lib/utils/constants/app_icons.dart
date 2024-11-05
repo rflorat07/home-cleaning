@@ -67,6 +67,8 @@ class AppIcons {
       IconData(0xe819, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData iron =
       IconData(0xe81a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData linearBookmark =
+      IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 
   static IconData getIconDataFromName(String name) {
     final Map<String, IconData> iconData = {

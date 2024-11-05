@@ -84,8 +84,8 @@ class UncontainedLayoutPopularService extends StatelessWidget {
                   radius: TSizes.borderRadiusLg / 2,
                   backgroundColor: TColors.white,
                   padding: const EdgeInsets.symmetric(
-                    vertical: TSizes.xs,
-                    horizontal: TSizes.sm,
+                    vertical: TSizes.size4,
+                    horizontal: TSizes.size8,
                   ),
                   child: Row(
                     children: [
@@ -94,7 +94,7 @@ class UncontainedLayoutPopularService extends StatelessWidget {
                         color: TColors.starYellow,
                         size: TSizes.iconSm,
                       ),
-                      const SizedBox(width: TSizes.xs / 2),
+                      const SizedBox(width: TSizes.size2),
                       Text(
                         item.rating,
                         style: textTheme.bodyLarge,
@@ -103,13 +103,15 @@ class UncontainedLayoutPopularService extends StatelessWidget {
                   ),
                 ),
                 // Bookmark
-                const TCircularIcon(
+                TCircularIcon(
                   size: TSizes.iconSm,
                   height: 29,
                   width: 29,
                   borderRadius: TSizes.borderRadiusLg / 2,
-                  padding: EdgeInsets.all(5),
-                  icon: AppIcons.bookmark,
+                  padding: const EdgeInsets.all(5),
+                  icon: item.isBookmark
+                      ? AppIcons.bookmark
+                      : AppIcons.linearBookmark,
                   iconColor: TColors.green,
                 ),
               ],

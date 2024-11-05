@@ -27,6 +27,38 @@ class PopularServicesRepository extends GetxController {
     }
   }
 
+  /// Get All Bookmark PopularServices
+  Future<List<PopularServiceModel>> getAllBookmarkPopularServices() async {
+    try {
+      final snapshot = await _db
+          .collection('Services')
+          .where('isBookmark', isEqualTo: true)
+          .get();
+      return snapshot.docs
+          .map((document) => PopularServiceModel.fromSnapshot(document))
+          .toList();
+    } on FirebaseException catch (e) {
+      throw TFirebaseExceptions(e.code).message;
+    } on PlatformException catch (e) {
+      throw TPlatformExceptions(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again.';
+    }
+  }
+
+  /// Remove Bookmark from service
+  Future<void> removeFromFavorites(Map<String, dynamic> json) async {
+    try {
+      await _db.collection('Services').doc(json['id']).update(json);
+    } on FirebaseException catch (e) {
+      throw TFirebaseExceptions(e.code).message;
+    } on PlatformException catch (e) {
+      throw TPlatformExceptions(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again.';
+    }
+  }
+
   /// Upload Dummy Data to Cloud Firebase
   Future<void> uploadDummyData(List<PopularServiceModel> items) async {
     try {

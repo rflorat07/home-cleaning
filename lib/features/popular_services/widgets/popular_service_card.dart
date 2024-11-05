@@ -11,11 +11,13 @@ class TPopularServiceCard extends StatelessWidget {
   const TPopularServiceCard({
     super.key,
     this.padding,
+    this.onPressed,
     required this.item,
     this.showBorder = true,
     this.showIconButton = true,
   });
 
+  final Function()? onPressed;
   final PopularServiceModel item;
   final EdgeInsetsGeometry? padding;
   final bool showBorder, showIconButton;
@@ -122,7 +124,11 @@ class TPopularServiceCard extends StatelessWidget {
                   if (showIconButton)
                     IconButton(
                       onPressed: () => _showBottomSheet(context, item),
-                      icon: const Icon(AppIcons.bookmark, color: TColors.green),
+                      icon: Icon(
+                          item.isBookmark
+                              ? AppIcons.bookmark
+                              : AppIcons.linearBookmark,
+                          color: TColors.green),
                       iconSize: TSizes.iconMd,
                     )
                   // Title - Icon - Name - Cost
@@ -195,7 +201,7 @@ class TPopularServiceCard extends StatelessWidget {
                       const SizedBox(width: TSizes.size10),
                       Expanded(
                         child: FilledButton(
-                          onPressed: Get.back,
+                          onPressed: onPressed,
                           child: const Text(TTexts.yesRemove),
                         ),
                       ),

@@ -5,7 +5,7 @@ import 'package:iconsax_plus/iconsax_plus.dart';
 import '../../../common/widgets/appbar/appbar.dart';
 import '../../../utils/utils.dart';
 import '../widgets/choice_chip_list.dart';
-import '../widgets/list_view.dart';
+import '../widgets/list_view_bookmark_card.dart';
 
 class BookmarkScreen extends StatelessWidget {
   const BookmarkScreen({super.key});
@@ -29,7 +29,7 @@ class BookmarkScreen extends StatelessWidget {
       body: const Column(
         children: [
           TChoiceChipList(),
-          ListViewPopularServiceCard(),
+          ListViewBookmarkCard(),
         ],
       ),
     );

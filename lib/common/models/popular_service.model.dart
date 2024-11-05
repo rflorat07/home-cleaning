@@ -9,6 +9,7 @@ class PopularServiceModel {
     required this.rating,
     required this.offer,
     required this.address,
+    required this.isBookmark,
     this.imageUrl,
   });
 
@@ -20,16 +21,18 @@ class PopularServiceModel {
     final data = document.data()!;
 
     return PopularServiceModel(
+      id: document.id,
       title: data['title'],
       name: data['name'],
       money: data['money'],
       rating: data['rating'],
       offer: data['offer'],
       address: data['address'],
-      id: document.id,
+      isBookmark: data['isBookmark'] ?? false,
     );
   }
 
+  bool isBookmark;
   final String? imageUrl, id;
   final String title, address, name, money, rating, offer;
 
@@ -41,6 +44,7 @@ class PopularServiceModel {
         address: '',
         offer: '',
         imageUrl: null,
+        isBookmark: false,
       );
 
   /// Convert model to Json structure
@@ -54,6 +58,7 @@ class PopularServiceModel {
       'address': address,
       'offer': offer,
       'imageUrl': '',
+      'isBookmark': isBookmark,
     };
   }
 }
@@ -69,6 +74,7 @@ List<PopularServiceModel> demoPopularService = [
     offer: 'Home Cleaning',
     address: '1012 Ocean avanue, New York, USA',
     imageUrl: null,
+    isBookmark: false,
   ),
   PopularServiceModel(
     title: 'Car Repairing Service',
@@ -78,6 +84,7 @@ List<PopularServiceModel> demoPopularService = [
     offer: 'Car Repair',
     address: '1012 Ocean avanue, New York, USA',
     imageUrl: null,
+    isBookmark: false,
   ),
   PopularServiceModel(
     title: 'Floor Cleaning',
@@ -87,6 +94,7 @@ List<PopularServiceModel> demoPopularService = [
     offer: 'Floor Cleaning',
     address: '1012 Ocean avanue, New York, USA',
     imageUrl: null,
+    isBookmark: false,
   ),
   PopularServiceModel(
     title: 'Glass Cleaning',
@@ -96,6 +104,7 @@ List<PopularServiceModel> demoPopularService = [
     offer: 'Glass Cleaning',
     address: '1012 Ocean avanue, New York, USA',
     imageUrl: null,
+    isBookmark: false,
   ),
   PopularServiceModel(
     title: 'Kitchen  Cleaning',
@@ -105,6 +114,7 @@ List<PopularServiceModel> demoPopularService = [
     offer: 'Kitchen Cleaning',
     address: '1012 Ocean avanue, New York, USA',
     imageUrl: null,
+    isBookmark: false,
   ),
   PopularServiceModel(
     title: 'Deep House Cleaning',
@@ -114,6 +124,7 @@ List<PopularServiceModel> demoPopularService = [
     offer: 'Home Cleaning',
     address: '1012 Ocean avanue, New York, USA',
     imageUrl: null,
+    isBookmark: false,
   ),
   PopularServiceModel(
     title: 'Floor Cleaning',
@@ -123,6 +134,7 @@ List<PopularServiceModel> demoPopularService = [
     offer: 'Floor Cleaning',
     address: '1012 Ocean avanue, New York, USA',
     imageUrl: null,
+    isBookmark: false,
   ),
   PopularServiceModel(
     title: 'Glass Cleaning',
@@ -132,6 +144,7 @@ List<PopularServiceModel> demoPopularService = [
     offer: 'Glass Cleaning',
     address: '1012 Ocean avanue, New York, USA',
     imageUrl: null,
+    isBookmark: false,
   ),
   PopularServiceModel(
     title: 'Kitchen  Cleaning',
@@ -141,5 +154,6 @@ List<PopularServiceModel> demoPopularService = [
     offer: 'Kitchen Cleaning',
     address: '1012 Ocean avanue, New York, USA',
     imageUrl: null,
+    isBookmark: false,
   ),
 ];
