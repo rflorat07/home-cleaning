@@ -12,28 +12,33 @@ class ListViewBookmarkCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(BookmarkControllers());
+    final controller = BookmarkControllers.instance;
 
     return Expanded(
       child: Obx(
-        () => ListView.separated(
-          padding: const EdgeInsets.only(
-              left: TSizes.defaultSpace,
-              right: TSizes.defaultSpace,
-              bottom: TSizes.defaultSpace),
-          physics: const BouncingScrollPhysics(),
-          itemCount: controller.bookmarkList.length,
-          itemBuilder: (context, index) {
-            return TPopularServiceCard(
-              item: controller.bookmarkList[index],
-              onPressed: () {
-                Get.back();
-                controller.removeFromFavorites(controller.bookmarkList[index]);
-              },
-            );
-          },
-          separatorBuilder: (context, index) =>
-              const SizedBox(height: TSizes.spaceBtwItems),
+        () => RefreshIndicator(
+          color: TColors.green,
+          backgroundColor: Colors.white,
+          onRefresh: () => controller.fetchBookmarkList(),
+          child: ListView.separated(
+            padding: const EdgeInsets.only(
+                left: TSizes.defaultSpace,
+                right: TSizes.defaultSpace,
+                bottom: TSizes.defaultSpace),
+            physics: const AlwaysScrollableScrollPhysics(),
+            itemCount: controller.allBookmark.length,
+            itemBuilder: (context, index) {
+              return TPopularServiceCard(
+                item: controller.allBookmark[index],
+                onPressed: () {
+                  Get.back();
+                  controller.removeFromFavorites(controller.allBookmark[index]);
+                },
+              );
+            },
+            separatorBuilder: (context, index) =>
+                const SizedBox(height: TSizes.spaceBtwItems),
+          ),
         ),
       ),
     );

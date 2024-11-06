@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../../../common/common.dart';
 import '../../../data/repositories/popular_services/popular_services.repository.dart';
+import '../../../utils/utils.dart';
+import '../../authentication/models/chip.model.dart';
 import '../../home/controllers/popular_services_carousel.controllers.dart';
 
 class BookmarkControllers extends GetxController {
@@ -12,21 +14,32 @@ class BookmarkControllers extends GetxController {
   final _popularServicesCarouselController =
       PopularServicesCarouselController.instance;
 
+  RxString chipSelected = 'All'.obs;
+  RxList<ChipModel> bookmarkChipList = <ChipModel>[].obs;
   RxList<PopularServiceModel> bookmarkList = <PopularServiceModel>[].obs;
 
   @override
   Future<void> onReady() async {
-    fetchBookmarkList();
+    initData();
     super.onReady();
+  }
+
+  Future<void> initData() async {
+    await fetchBookmarkList();
+    getBookmarkChipList();
   }
 
   Future<void> fetchBookmarkList() async {
     try {
       isLoading.value = true;
+      // Start Loading
+      TFullScreenLoader.openLoadingDialog();
       final bookmarks =
           await _popularServicesRepository.getAllBookmarkPopularServices();
       bookmarkList.assignAll(bookmarks);
+      TFullScreenLoader.stopLoading();
     } catch (e) {
+      TFullScreenLoader.stopLoading();
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     } finally {
       isLoading.value = false;
@@ -45,5 +58,28 @@ class BookmarkControllers extends GetxController {
     } finally {
       isLoading.value = false;
     }
+  }
+
+  void getBookmarkChipList() {
+    bookmarkChipList.assignAll(demoChip);
+  }
+
+  void setSelectedBookmarkChip(bool value, ChipModel chipItem) {
+    var chips = bookmarkChipList.map((item) {
+      item == chipItem ? item.selected = value : item.selected = false;
+      return item;
+    }).toList();
+
+    chipSelected.value = chipItem.title;
+    bookmarkChipList.assignAll(chips);
+  }
+
+  List<PopularServiceModel> get allBookmark {
+    return (chipSelected.toLowerCase() == 'all')
+        ? bookmarkList
+        : bookmarkList
+            .where((item) =>
+                item.offer.toLowerCase().contains(chipSelected.toLowerCase()))
+            .toList();
   }
 }

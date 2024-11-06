@@ -9,8 +9,8 @@ class ChipModel {
 }
 
 List<ChipModel> demoChip = [
-  ChipModel(title: 'ALL', selected: false),
-  ChipModel(title: 'Cleaning', selected: true),
+  ChipModel(title: 'All', selected: true),
+  ChipModel(title: 'Cleaning', selected: false),
   ChipModel(title: 'Repairing', selected: false),
   ChipModel(title: 'Plumbing', selected: false),
 ];

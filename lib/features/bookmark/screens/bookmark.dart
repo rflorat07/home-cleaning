@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../common/widgets/appbar/appbar.dart';
 import '../../../utils/utils.dart';
-import '../widgets/choice_chip_list.dart';
+import '../../search/screens/search.dart';
+import '../controllers/bookmark.controllers.dart';
+import '../widgets/choice_chip_bookmark_list.dart';
 import '../widgets/list_view_bookmark_card.dart';
 
 class BookmarkScreen extends StatelessWidget {
@@ -12,6 +15,7 @@ class BookmarkScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(BookmarkControllers());
     return Scaffold(
       appBar: TAppBar(
         systemOverlayStyle: SystemUiOverlayStyle.dark,
@@ -21,14 +25,14 @@ class BookmarkScreen extends StatelessWidget {
             iconSize: TSizes.appBarIconSize,
             style: OutlinedButton.styleFrom(
                 side: const BorderSide(color: TColors.borderPrimary)),
-            onPressed: () {},
+            onPressed: () => Get.to(() => const SearchScreen()),
             icon: const Icon(IconsaxPlusLinear.search_normal_1),
           )
         ],
       ),
       body: const Column(
         children: [
-          TChoiceChipList(),
+          ChoiceChipBookmarkList(),
           ListViewBookmarkCard(),
         ],
       ),
