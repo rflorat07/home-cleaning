@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 
 import '../../bookmark/screens/bookmark.dart';
-import '../../chat/screens/chat.dart';
 import '../../explore/screens/explore.dart';
 import '../../home/screens/home.dart';
 import '../../profile/screens/profile.dart';
@@ -13,7 +12,7 @@ class NavigatioController extends GetxController {
     const HomeScreen(),
     const ExploreScreen(),
     const BookmarkScreen(),
-    const ChatScreen(),
+    /* const ChatScreen(), */
     const ProfileScreen()
   ];
 }
