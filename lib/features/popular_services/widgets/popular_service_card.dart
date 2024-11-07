@@ -5,7 +5,7 @@ import 'package:iconsax_plus/iconsax_plus.dart';
 import '../../../common/models/popular_service.model.dart';
 import '../../../common/widgets/containers/rounded_container.dart';
 import '../../../utils/utils.dart';
-import '../controllers/service_details.controller.dart';
+import '../../home/controllers/popular_services_carousel.controllers.dart';
 
 class TPopularServiceCard extends StatelessWidget {
   const TPopularServiceCard({
@@ -25,7 +25,7 @@ class TPopularServiceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    final controllerServiceDetails = ServiceDetailsController.instance;
+    final controller = PopularServicesCarouselController.instance;
     return TRoundedContainer(
       height: TSizes.size135,
       radius: TSizes.borderRadiusLg,
@@ -33,7 +33,7 @@ class TPopularServiceCard extends StatelessWidget {
       showBorder: showBorder,
       padding: padding ?? const EdgeInsets.all(TSizes.size10),
       child: InkWell(
-        onTap: () => controllerServiceDetails.serviceDetails = item,
+        onTap: () => controller.openServiceDetails(item),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

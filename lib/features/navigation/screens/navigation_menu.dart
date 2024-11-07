@@ -18,13 +18,13 @@ class NavigationMenu extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border.all(color: TColors.borderPrimary),
             borderRadius: const BorderRadius.only(
-              topRight: Radius.circular(TSizes.borderRadiusXl),
-              topLeft: Radius.circular(TSizes.borderRadiusXl),
+              topRight: Radius.circular(TSizes.size20),
+              topLeft: Radius.circular(TSizes.size20),
             ),
           ),
           child: ClipRRect(
             borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(TSizes.borderRadiusXl)),
+                top: Radius.circular(TSizes.size20)),
             child: NavigationBar(
               selectedIndex: controller.selectedIndex.value,
               onDestinationSelected: (index) =>
@@ -49,10 +49,10 @@ class NavigationMenu extends StatelessWidget {
                     selectedIcon: TIcons.iconBookmarkTabSelected),
 
                 // Chat Tab
-                TNavigationDestination(
+                /* TNavigationDestination(
                     label: TTexts.chatTab,
                     icon: TIcons.iconChatTab,
-                    selectedIcon: TIcons.iconChatTabSelected),
+                    selectedIcon: TIcons.iconChatTabSelected), */
 
                 // Profile Tab
                 TNavigationDestination(

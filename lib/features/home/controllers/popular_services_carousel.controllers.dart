@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 
 import '../../../common/common.dart';
 import '../../../data/repositories/popular_services/popular_services.repository.dart';
+import '../../popular_services/screens/service_details.dart';
 
 class PopularServicesCarouselController extends GetxController {
   static PopularServicesCarouselController get instance => Get.find();
@@ -26,6 +27,14 @@ class PopularServicesCarouselController extends GetxController {
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     } finally {
       isLoading.value = false;
+    }
+  }
+
+  Future<void> openServiceDetails(PopularServiceModel service) async {
+    final result =
+        await Get.to(() => const ServiceDetailsScreen(), arguments: service.id);
+    if (result) {
+      fetchPopularServices();
     }
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../controllers/service_details.controller.dart';
 import '../widgets/service_details_appbar.dart';
@@ -12,7 +13,7 @@ class ServiceDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = ServiceDetailsController.instance;
+    final controller = Get.put(ServiceDetailsController());
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: const ServiceDetailsAppBar(),

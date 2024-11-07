@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../utils/utils.dart';
 import '../controllers/service_details.controller.dart';
@@ -10,7 +11,7 @@ class ServiceDetailsBookContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final serviceDetails = ServiceDetailsController.instance.serviceDetails;
+    final controller = ServiceDetailsController.instance;
     return Container(
       height: TSizes.size68,
       padding: const EdgeInsets.symmetric(
@@ -38,11 +39,13 @@ class ServiceDetailsBookContainer extends StatelessWidget {
                       .textTheme
                       .bodyMedium!
                       .apply(color: TColors.davyGrey)),
-              Text(serviceDetails.money,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium!
-                      .apply(color: TColors.green)),
+              Obx(
+                () => Text(controller.serviceSelected.value.money,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium!
+                        .apply(color: TColors.green)),
+              ),
             ],
           ),
           FilledButton(

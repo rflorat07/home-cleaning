@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 
 import '../../../common/common.dart';
 import '../../../data/repositories/popular_services/popular_services.repository.dart';
-import '../../../utils/utils.dart';
 import '../../authentication/models/chip.model.dart';
 import '../../home/controllers/popular_services_carousel.controllers.dart';
 
@@ -33,13 +32,10 @@ class BookmarkControllers extends GetxController {
     try {
       isLoading.value = true;
       // Start Loading
-      TFullScreenLoader.openLoadingDialog();
       final bookmarks =
           await _popularServicesRepository.getAllBookmarkPopularServices();
       bookmarkList.assignAll(bookmarks);
-      TFullScreenLoader.stopLoading();
     } catch (e) {
-      TFullScreenLoader.stopLoading();
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     } finally {
       isLoading.value = false;
@@ -50,7 +46,7 @@ class BookmarkControllers extends GetxController {
     try {
       isLoading.value = true;
       item.isBookmark = false;
-      await _popularServicesRepository.removeFromFavorites(item.toJson());
+      await _popularServicesRepository.updateBookmarks(item.toJson());
       await fetchBookmarkList();
       await _popularServicesCarouselController.fetchPopularServices();
     } catch (e) {
@@ -79,7 +75,7 @@ class BookmarkControllers extends GetxController {
         ? bookmarkList
         : bookmarkList
             .where((item) =>
-                item.offer.toLowerCase().contains(chipSelected.toLowerCase()))
+                item.title.toLowerCase().contains(chipSelected.toLowerCase()))
             .toList();
   }
 }

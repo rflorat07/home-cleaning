@@ -4,7 +4,6 @@ import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../common/common.dart';
 import '../../../utils/utils.dart';
-import '../../popular_services/controllers/service_details.controller.dart';
 import '../controllers/popular_services_carousel.controllers.dart';
 
 class TPopularServicesCarousel extends StatelessWidget {
@@ -15,8 +14,6 @@ class TPopularServicesCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(PopularServicesCarouselController());
-    final controllerServiceDetails = Get.put(ServiceDetailsController());
-
     return Obx(
       () {
         if (controller.isLoading.value) {
@@ -36,8 +33,8 @@ class TPopularServicesCarousel extends StatelessWidget {
         return TCarouselView(
           widthFactor: 0.56,
           maxHeight: TSizes.carouselPopularServicesMaxHeight,
-          onTap: (index) => controllerServiceDetails.serviceDetails =
-              controller.popularServices[index],
+          onTap: (index) =>
+              controller.openServiceDetails(controller.popularServices[index]),
           children: controller.popularServices
               .map((PopularServiceModel item) =>
                   UncontainedLayoutPopularService(item: item))

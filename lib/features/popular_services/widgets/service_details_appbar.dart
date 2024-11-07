@@ -15,30 +15,37 @@ class ServiceDetailsAppBar extends StatelessWidget
   Widget build(BuildContext context) {
     final controller = ServiceDetailsController.instance;
     return Obx(() {
-      return AppBar(
-        centerTitle: true,
-        backgroundColor: controller.appBarColor.value,
-        automaticallyImplyLeading: false,
-        leading: IconButton.filled(
-          onPressed: () => Get.back(),
-          iconSize: TSizes.appBarIconSize,
-          icon: const Icon(Icons.arrow_back),
-          style: IconButton.styleFrom(backgroundColor: TColors.white),
-        ),
-        actions: [
-          IconButton.filled(
-            onPressed: () {},
+      return Container(
+        color: controller.appBarColor.value,
+        padding: const EdgeInsets.symmetric(horizontal: TSizes.size16),
+        child: AppBar(
+          centerTitle: true,
+          automaticallyImplyLeading: false,
+          leading: IconButton.filled(
+            onPressed: () => Get.back(
+              result: controller.isBookmarkChanged.value,
+            ),
             iconSize: TSizes.appBarIconSize,
-            icon: const Icon(Icons.share, color: TColors.dark),
+            icon: const Icon(Icons.arrow_back),
             style: IconButton.styleFrom(backgroundColor: TColors.white),
           ),
-          IconButton.filled(
-            onPressed: () {},
-            iconSize: TSizes.appBarIconSize,
-            style: IconButton.styleFrom(backgroundColor: TColors.white),
-            icon: const Icon(IconsaxPlusLinear.heart, color: TColors.dark),
-          )
-        ],
+          actions: [
+            IconButton.filled(
+              onPressed: () {},
+              iconSize: TSizes.appBarIconSize,
+              icon: const Icon(Icons.share, color: TColors.dark),
+              style: IconButton.styleFrom(backgroundColor: TColors.white),
+            ),
+            IconButton.filled(
+              onPressed: () => controller.addToFavorites(),
+              iconSize: TSizes.appBarIconSize,
+              style: IconButton.styleFrom(backgroundColor: TColors.white),
+              icon: controller.serviceSelected.value.isBookmark
+                  ? const Icon(IconsaxPlusBold.heart, color: TColors.green)
+                  : const Icon(IconsaxPlusLinear.heart, color: TColors.dark),
+            )
+          ],
+        ),
       );
     });
   }
