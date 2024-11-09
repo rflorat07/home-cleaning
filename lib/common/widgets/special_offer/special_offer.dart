@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../utils/utils.dart';
@@ -22,7 +23,8 @@ class SpecialOfferCard extends StatelessWidget {
       padding: const EdgeInsets.all(TSizes.carouselPadding),
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage(specialOffer.imageUrl), fit: BoxFit.cover),
+            image: CachedNetworkImageProvider(specialOffer.imageUrl),
+            fit: BoxFit.cover),
         borderRadius:
             const BorderRadius.all(Radius.circular(TSizes.cardRadiusLg)),
       ),

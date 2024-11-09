@@ -38,35 +38,37 @@ class TSpecialOfferCarousel extends StatelessWidget {
           return const Center(child: Text('No Data Found!'));
         }
 
-        return Column(
-          children: [
-            // CarouselView
-            TCarouselView(
-              widthFactor: 0.8,
-              backgroundColor: TColors.black,
-              maxHeight: TSizes.carouselMaxHeight,
-              children: controller.specialOffers
-                  .map((SpecialOfferModel item) => SpecialOfferCard(
-                        specialOffer: item,
-                      ))
-                  .toList(),
-            ),
-
-            const SizedBox(height: TSizes.defaultSpace / 2),
-
-            // PageIndicator
-            SmoothPageIndicator(
-              count: controller.specialOffers.length,
-              controller: controller.smoothPageIndicatorController,
-              effect: ScrollingDotsEffect(
-                fixedCenter: false,
-                dotWidth: TSizes.carouselDotSize,
-                dotHeight: TSizes.carouselDotSize,
-                dotColor: TColors.green.withOpacity(0.2),
-                activeDotColor: TColors.green,
+        return Obx(
+          () => Column(
+            children: [
+              // CarouselView
+              TCarouselView(
+                widthFactor: 0.8,
+                backgroundColor: TColors.black,
+                maxHeight: TSizes.carouselMaxHeight,
+                children: controller.specialOffers
+                    .map((SpecialOfferModel item) => SpecialOfferCard(
+                          specialOffer: item,
+                        ))
+                    .toList(),
               ),
-            ),
-          ],
+
+              const SizedBox(height: TSizes.defaultSpace / 2),
+
+              // PageIndicator
+              SmoothPageIndicator(
+                count: controller.specialOffers.length,
+                controller: controller.smoothPageIndicatorController,
+                effect: ScrollingDotsEffect(
+                  fixedCenter: false,
+                  dotWidth: TSizes.carouselDotSize,
+                  dotHeight: TSizes.carouselDotSize,
+                  dotColor: TColors.green.withOpacity(0.2),
+                  activeDotColor: TColors.green,
+                ),
+              ),
+            ],
+          ),
         );
       },
     );

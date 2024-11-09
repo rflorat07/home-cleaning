@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../utils/utils.dart';
@@ -40,14 +41,16 @@ class TRoundedContainer extends StatelessWidget {
       padding: padding,
       margin: margin,
       decoration: BoxDecoration(
-          color: backgroundColor,
-          borderRadius: isBorderRadiusCircular
-              ? BorderRadius.circular(radius)
-              : borderRadius,
-          border: showBorder ? Border.all(color: borderColor) : null,
-          image: imageUrl != null
-              ? DecorationImage(image: AssetImage(imageUrl ?? ''), fit: fit)
-              : null),
+        color: backgroundColor,
+        borderRadius: isBorderRadiusCircular
+            ? BorderRadius.circular(radius)
+            : borderRadius,
+        border: showBorder ? Border.all(color: borderColor) : null,
+        image: imageUrl != null
+            ? DecorationImage(
+                image: CachedNetworkImageProvider(imageUrl!), fit: fit)
+            : null,
+      ),
       child: child,
     );
   }

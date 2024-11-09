@@ -2,15 +2,15 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class PopularServiceModel {
   PopularServiceModel({
-    this.id,
+    required this.id,
     required this.title,
     required this.name,
     required this.money,
     required this.rating,
     required this.offer,
     required this.address,
+    required this.imageUrl,
     required this.isBookmark,
-    this.imageUrl,
   });
 
   /// Map Jsob oriented document snapshot from Firebase
@@ -28,22 +28,23 @@ class PopularServiceModel {
       rating: data['rating'],
       offer: data['offer'],
       address: data['address'],
+      imageUrl: data['imageUrl'],
       isBookmark: data['isBookmark'] ?? false,
     );
   }
 
   bool isBookmark;
-  final String? imageUrl, id;
-  final String title, address, name, money, rating, offer;
+  final String id, imageUrl, title, address, name, money, rating, offer;
 
   static PopularServiceModel empty() => PopularServiceModel(
+        id: '',
         title: '',
         name: '',
         money: '',
         rating: '',
         address: '',
         offer: '',
-        imageUrl: null,
+        imageUrl: '',
         isBookmark: false,
       );
 
@@ -57,7 +58,7 @@ class PopularServiceModel {
       'rating': rating,
       'address': address,
       'offer': offer,
-      'imageUrl': '',
+      'imageUrl': imageUrl,
       'isBookmark': isBookmark,
     };
   }
@@ -67,93 +68,102 @@ class PopularServiceModel {
 
 List<PopularServiceModel> demoPopularService = [
   PopularServiceModel(
+    id: '1',
     title: 'Deep House Cleaning',
     name: 'Jenny Wilson',
     money: '\$180.00',
     rating: '4.8',
     offer: 'Home Cleaning',
     address: '1012 Ocean avanue, New York, USA',
-    imageUrl: null,
+    imageUrl: '',
     isBookmark: false,
   ),
   PopularServiceModel(
+    id: '1',
     title: 'Car Repairing Service',
     name: 'Leslie Alexander',
     money: '\$250.00',
     rating: '4.8',
     offer: 'Car Repair',
     address: '1012 Ocean avanue, New York, USA',
-    imageUrl: null,
+    imageUrl: '',
     isBookmark: false,
   ),
   PopularServiceModel(
+    id: '1',
     title: 'Floor Cleaning',
     name: 'Jenny Wilson',
     money: '\$60.00',
     rating: '4.5',
     offer: 'Floor Cleaning',
     address: '1012 Ocean avanue, New York, USA',
-    imageUrl: null,
+    imageUrl: '',
     isBookmark: false,
   ),
   PopularServiceModel(
+    id: '1',
     title: 'Glass Cleaning',
     name: 'Jenny Wilson',
     money: '\$60.00',
     rating: '4.1',
     offer: 'Glass Cleaning',
     address: '1012 Ocean avanue, New York, USA',
-    imageUrl: null,
+    imageUrl: '',
     isBookmark: false,
   ),
   PopularServiceModel(
+    id: '1',
     title: 'Kitchen  Cleaning',
     name: 'Jenny Wilson',
     money: '\$60.00',
     rating: '4.0',
     offer: 'Kitchen Cleaning',
     address: '1012 Ocean avanue, New York, USA',
-    imageUrl: null,
+    imageUrl: '',
     isBookmark: false,
   ),
   PopularServiceModel(
+    id: '1',
     title: 'Deep House Cleaning',
     name: 'Jenny Wilson',
     money: '\$180.00',
     rating: '4.8',
     offer: 'Home Cleaning',
     address: '1012 Ocean avanue, New York, USA',
-    imageUrl: null,
+    imageUrl: '',
     isBookmark: false,
   ),
   PopularServiceModel(
+    id: '1',
     title: 'Floor Cleaning',
     name: 'Jenny Wilson',
     money: '\$60.00',
     rating: '4.5',
     offer: 'Floor Cleaning',
     address: '1012 Ocean avanue, New York, USA',
-    imageUrl: null,
+    imageUrl: '',
     isBookmark: false,
   ),
   PopularServiceModel(
+    id: '1',
     title: 'Glass Cleaning',
     name: 'Jenny Wilson',
     money: '\$60.00',
     rating: '4.1',
     offer: 'Glass Cleaning',
     address: '1012 Ocean avanue, New York, USA',
-    imageUrl: null,
+    imageUrl: '',
     isBookmark: false,
   ),
   PopularServiceModel(
+    id: '1',
     title: 'Kitchen  Cleaning',
     name: 'Jenny Wilson',
     money: '\$60.00',
     rating: '4.0',
     offer: 'Kitchen Cleaning',
     address: '1012 Ocean avanue, New York, USA',
-    imageUrl: null,
+    imageUrl: '',
     isBookmark: false,
   ),
 ];

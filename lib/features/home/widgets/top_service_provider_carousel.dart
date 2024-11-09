@@ -60,11 +60,11 @@ class TopServiceProviderCard extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: onTap,
-          child: const TRoundedContainer(
+          child: TRoundedContainer(
             width: TSizes.iconXXL,
             height: TSizes.iconXXL,
             radius: TSizes.iconXXL,
-            //imageUrl: imageUrl,
+            imageUrl: imageUrl,
             backgroundColor: TColors.lightSilver,
           ),
         ),
