@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
-import '../../../common/models/popular_service.model.dart';
-import '../../../common/widgets/containers/rounded_container.dart';
+import '../../../common/common.dart';
 import '../../../utils/utils.dart';
 import '../../home/controllers/popular_services_carousel.controllers.dart';
 
@@ -18,7 +17,7 @@ class TPopularServiceCard extends StatelessWidget {
   });
 
   final Function()? onPressed;
-  final PopularServiceModel item;
+  final ServiceModel item;
   final EdgeInsetsGeometry? padding;
   final bool showBorder, showIconButton;
 
@@ -40,7 +39,7 @@ class TPopularServiceCard extends StatelessWidget {
             // Image Container
             TRoundedContainer(
               width: 110,
-              imageUrl: item.imageUrl,
+              imageUrl: item.thumbnail,
               radius: TSizes.borderRadiusLg,
               backgroundColor: TColors.lightSilver,
               padding: const EdgeInsets.all(TSizes.defaultSpace / 2),
@@ -66,7 +65,7 @@ class TPopularServiceCard extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(
                               vertical: TSizes.xs, horizontal: TSizes.sm),
                           child: Text(
-                            item.offer,
+                            item.category,
                             overflow: TextOverflow.ellipsis,
                             style: textTheme.labelSmall!.copyWith(
                                 color: TColors.green,
@@ -110,7 +109,7 @@ class TPopularServiceCard extends StatelessWidget {
 
                         // Cost
                         Text(
-                          item.money,
+                          item.price.toString(),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style:
@@ -143,7 +142,7 @@ class TPopularServiceCard extends StatelessWidget {
     );
   }
 
-  void _showBottomSheet(BuildContext context, PopularServiceModel item) {
+  void _showBottomSheet(BuildContext context, ServiceModel item) {
     showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,

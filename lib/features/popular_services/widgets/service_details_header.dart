@@ -14,6 +14,7 @@ class ServiceDetailsHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = ServiceDetailsController.instance;
+    final serviceSelected = controller.serviceSelected;
     return Obx(
       () => Container(
         width: double.infinity,
@@ -23,7 +24,8 @@ class ServiceDetailsHeader extends StatelessWidget {
           color: TColors.lightSilver,
           image: DecorationImage(
               image: CachedNetworkImageProvider(
-                  controller.serviceSelected.value.imageUrl),
+                serviceSelected.value.thumbnail,
+              ),
               fit: BoxFit.cover),
         ),
         child: Stack(
@@ -76,31 +78,35 @@ class ServiceDetailsHeader extends StatelessWidget {
                     spacing: TSizes.xs,
                     children: [
                       ...List.generate(
-                        5,
-                        (index) => const TRoundedContainer(
+                        serviceSelected.value.images.length > 5
+                            ? 5
+                            : serviceSelected.value.images.length,
+                        (index) => TRoundedContainer(
                           width: TSizes.size49,
                           height: TSizes.size49,
                           radius: TSizes.cardRadiusXs,
+                          imageUrl: serviceSelected.value.images[index],
                           backgroundColor: TColors.lightSilver,
                         ),
                       ),
-                      TRoundedContainer(
-                        width: TSizes.size49,
-                        height: TSizes.size49,
-                        radius: TSizes.cardRadiusXs,
-                        backgroundColor: TColors.darkerGrey.withOpacity(0.6),
-                        child: Center(
-                          child: Text(
-                            '+10',
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelLarge!
-                                .copyWith(
-                                    color: TColors.white,
-                                    fontWeight: FontWeight.w600),
+                      if (serviceSelected.value.images.length > 5)
+                        TRoundedContainer(
+                          width: TSizes.size49,
+                          height: TSizes.size49,
+                          radius: TSizes.cardRadiusXs,
+                          backgroundColor: TColors.darkerGrey.withOpacity(0.6),
+                          child: Center(
+                            child: Text(
+                              '+ ${serviceSelected.value.images.length - 5}',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .labelLarge!
+                                  .copyWith(
+                                      color: TColors.white,
+                                      fontWeight: FontWeight.w600),
+                            ),
                           ),
                         ),
-                      ),
                     ],
                   ),
                 ),

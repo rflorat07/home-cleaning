@@ -40,7 +40,7 @@ class ServiceDetailsBookContainer extends StatelessWidget {
                       .bodyMedium!
                       .apply(color: TColors.davyGrey)),
               Obx(
-                () => Text(controller.serviceSelected.value.money,
+                () => Text(controller.serviceSelected.value.price.toString(),
                     style: Theme.of(context)
                         .textTheme
                         .titleMedium!

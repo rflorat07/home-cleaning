@@ -1,8 +1,10 @@
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-import '../../../common/models/popular_service.model.dart';
+import '../../../common/common.dart';
 import '../../../utils/utils.dart';
 
 class PopularServicesRepository extends GetxController {
@@ -12,11 +14,11 @@ class PopularServicesRepository extends GetxController {
   final _db = FirebaseFirestore.instance;
 
   /// Get All PopularServices
-  Future<List<PopularServiceModel>> getAllPopularServices() async {
+  Future<List<ServiceModel>> getAllPopularServices() async {
     try {
       final snapshot = await _db.collection('Services').get();
       return snapshot.docs
-          .map((document) => PopularServiceModel.fromSnapshot(document))
+          .map((document) => ServiceModel.fromSnapshot(document))
           .toList();
     } on FirebaseException catch (e) {
       throw TFirebaseExceptions(e.code).message;
@@ -28,14 +30,14 @@ class PopularServicesRepository extends GetxController {
   }
 
   /// Get All Bookmark PopularServices
-  Future<List<PopularServiceModel>> getAllBookmarkPopularServices() async {
+  Future<List<ServiceModel>> getAllBookmarkPopularServices() async {
     try {
       final snapshot = await _db
           .collection('Services')
           .where('isBookmark', isEqualTo: true)
           .get();
       return snapshot.docs
-          .map((document) => PopularServiceModel.fromSnapshot(document))
+          .map((document) => ServiceModel.fromSnapshot(document))
           .toList();
     } on FirebaseException catch (e) {
       throw TFirebaseExceptions(e.code).message;
@@ -60,13 +62,13 @@ class PopularServicesRepository extends GetxController {
   }
 
   /// Get Service Details from Cloud Firebase
-  Future<PopularServiceModel> fetchServiceDetails(String id) async {
+  Future<ServiceModel> fetchServiceDetails(String id) async {
     try {
       final documentSnapshot = await _db.collection('Services').doc(id).get();
       if (documentSnapshot.exists) {
-        return PopularServiceModel.fromSnapshot(documentSnapshot);
+        return ServiceModel.fromSnapshot(documentSnapshot);
       } else {
-        return PopularServiceModel.empty();
+        return ServiceModel.empty();
       }
     } on FirebaseException catch (e) {
       throw TFirebaseExceptions(e.code).message;
@@ -78,12 +80,12 @@ class PopularServicesRepository extends GetxController {
   }
 
   /// Upload Dummy Data to Cloud Firebase
-  Future<void> uploadDummyData(List<PopularServiceModel> items) async {
+  Future<void> uploadDummyData(List<ServiceModel> items) async {
     try {
       // Loop through each
       for (var item in items) {
         // Store in Firestore
-        await _db.collection('Services').doc(item.id).set(item.toJson());
+        await _db.collection('Services').doc().set(item.toJson());
       }
     } on FirebaseException catch (e) {
       throw TFirebaseExceptions(e.code).message;
@@ -93,4 +95,9 @@ class PopularServicesRepository extends GetxController {
       throw 'Something went wrong. Please try again.';
     }
   }
+}
+
+Future<Map<String, dynamic>> loadJsonFromAssets(String filePath) async {
+  String jsonString = await rootBundle.loadString(filePath);
+  return jsonDecode(jsonString);
 }

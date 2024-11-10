@@ -34,7 +34,7 @@ class ServiceDetailsBody extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(
                       vertical: TSizes.size4, horizontal: TSizes.size8),
                   child: Text(
-                    controller.serviceSelected.value.offer,
+                    controller.serviceSelected.value.category,
                     overflow: TextOverflow.ellipsis,
                     style: Theme.of(context)
                         .textTheme

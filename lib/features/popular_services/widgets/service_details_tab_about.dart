@@ -109,19 +109,21 @@ class ServiceDetailTabAbout extends StatelessWidget {
             Column(
               children: [
                 ...List.generate(
-                    7,
+                    controller.serviceSelected.value.workingHours.length,
                     (index) => Container(
                           padding: const EdgeInsets.only(bottom: TSizes.size12),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                'Monday',
+                                controller.serviceSelected.value
+                                    .workingHours[index].label,
                                 style: textTheme.bodyMedium!
                                     .apply(color: TColors.darkerGrey),
                               ),
-                              const Text(
-                                '00:00 - 00:00',
+                              Text(
+                                controller.serviceSelected.value
+                                    .workingHours[index].hours,
                               )
                             ],
                           ),
@@ -160,6 +162,7 @@ class ServiceDetailTabAbout extends StatelessWidget {
               radius: TSizes.size12,
               width: double.infinity,
               height: TSizes.size200,
+              isNetworkImage: false,
               imageUrl: TImages.serviceMap,
             ),
           ],

@@ -10,7 +10,7 @@ class PopularServicesCarouselController extends GetxController {
   final isLoading = false.obs;
   final carouselCurrentIndex = 0.obs;
   final _popularServicesRepository = Get.put(PopularServicesRepository());
-  RxList<PopularServiceModel> popularServices = <PopularServiceModel>[].obs;
+  RxList<ServiceModel> popularServices = <ServiceModel>[].obs;
 
   @override
   Future<void> onInit() async {
@@ -30,7 +30,7 @@ class PopularServicesCarouselController extends GetxController {
     }
   }
 
-  Future<void> openServiceDetails(PopularServiceModel service) async {
+  Future<void> openServiceDetails(ServiceModel service) async {
     final result =
         await Get.to(() => const ServiceDetailsScreen(), arguments: service.id);
     if (result) {

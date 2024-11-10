@@ -1,8 +1,4 @@
-export 'models/category.model.dart';
-export 'models/popular_service.model.dart';
-export 'models/special_offer.model.dart';
-export 'models/top_service.model.dart';
-export 'models/user_model.dart';
+export 'models/models.dart';
 export 'styles/spacing_styles.dart';
 export 'widgets/appbar/appbar.dart';
 export 'widgets/authentication/custom_header.dart';

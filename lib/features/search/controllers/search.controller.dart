@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../common/models/popular_service.model.dart';
+import '../../../common/common.dart';
+import '../../home/controllers/popular_services_carousel.controllers.dart';
 
 class TSearchController extends GetxController {
   static TSearchController get instance => Get.find();
 
   var searchTerm = ''.obs;
+  final controller = PopularServicesCarouselController.instance;
   final TextEditingController searchTextController = TextEditingController();
-  RxList<PopularServiceModel> popularServices = <PopularServiceModel>[].obs;
+  RxList<ServiceModel> popularServices = <ServiceModel>[].obs;
 
   @override
   void onInit() {
@@ -17,16 +19,17 @@ class TSearchController extends GetxController {
   }
 
   Future<void> fetchPopularServices() async {
-    popularServices.assignAll(demoPopularService);
+    popularServices.assignAll(controller.popularServices);
   }
 
-  List<PopularServiceModel> get filteredItems {
+  List<ServiceModel> get filteredItems {
     if (searchTerm.value.isEmpty) {
       return popularServices;
     } else {
       return popularServices
-          .where((item) =>
-              item.offer.toLowerCase().contains(searchTerm.value.toLowerCase()))
+          .where((item) => item.category
+              .toLowerCase()
+              .contains(searchTerm.value.toLowerCase()))
           .toList();
     }
   }

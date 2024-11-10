@@ -12,7 +12,7 @@ class ServiceDetailsController extends GetxController {
   RxBool isLoading = false.obs;
   RxBool isBookmarkChanged = false.obs;
   Rx<Color> appBarColor = Colors.transparent.obs;
-  Rx<PopularServiceModel> serviceSelected = PopularServiceModel.empty().obs;
+  Rx<ServiceModel> serviceSelected = ServiceModel.empty().obs;
 
   final ScrollController scrollController = ScrollController();
   final _popularServicesRepository = Get.put(PopularServicesRepository());

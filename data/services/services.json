@@ -1,0 +1,399 @@
+{
+    "result": [
+        {
+            "id": "",
+            "name": "Leanne Graham",
+            "title": "AC Repairing Service",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "address": "1012 Ocean avenue, New York, USA",
+            "category": "AC Repairing",
+            "price": 120.00,
+            "rating": 4.0,
+            "isBookmark": true,
+            "phone": "1-770-736-8031",
+            "reviews": [
+                {
+                    "rating": 4.5,
+                    "avatar": "https://dummyjson.com/image/150",
+                    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+                    "date": "2024-05-23T08:56:21.618Z",
+                    "reviewerName": "John Doe",
+                    "reviewerEmail": "john.doe@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "avatar": "https://dummyjson.com/image/150",
+                    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+                    "date": "2024-05-23T08:56:21.618Z",
+                    "reviewerName": "Nolan Gonzalez",
+                    "reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "avatar": "https://dummyjson.com/image/150",
+                    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+                    "date": "2024-05-23T08:56:21.618Z",
+                    "reviewerName": "Scarlett Wright",
+                    "reviewerEmail": "scarlett.wright@x.dummyjson.com"
+                }
+            ],
+            "images": [
+                "https://dummyjson.com/image/150",
+                "https://dummyjson.com/image/150",
+                "https://dummyjson.com/image/150",
+                "https://dummyjson.com/image/150"
+            ],
+            "workingHours": [
+                {
+                    "label": "Monday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Tuesday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Wednesday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Thursday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Friday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Saturday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Sunday",
+                    "hours": "09:00 - 18:00"
+                }
+            ],
+            "geo": {
+                "lat": 45.465454,
+                "lng": 9.186516
+            },
+            "thumbnail": "https://firebasestorage.googleapis.com/v0/b/home-cleaning-app-34752.appspot.com/o/Services%2FRepairing%2FAC_Repairing_mario.jpg?alt=media&token=dfdd24d3-b0b8-40d6-b731-713798b01d83"
+        },
+        {
+            "id": "",
+            "name": "David Lehman",
+            "title": "Plumbing Service",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "address": "1012 Ocean avenue, New York, USA",
+            "category": "Plumbing Service",
+            "price": 75.00,
+            "rating": 4.1,
+            "isBookmark": true,
+            "phone": "1-770-736-8031",
+            "reviews": [
+                {
+                    "rating": 4.5,
+                    "avatar": "https://dummyjson.com/image/150",
+                    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+                    "date": "2024-05-23T08:56:21.618Z",
+                    "reviewerName": "John Doe",
+                    "reviewerEmail": "john.doe@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "avatar": "https://dummyjson.com/image/150",
+                    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+                    "date": "2024-05-23T08:56:21.618Z",
+                    "reviewerName": "Nolan Gonzalez",
+                    "reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "avatar": "https://dummyjson.com/image/150",
+                    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+                    "date": "2024-05-23T08:56:21.618Z",
+                    "reviewerName": "Scarlett Wright",
+                    "reviewerEmail": "scarlett.wright@x.dummyjson.com"
+                }
+            ],
+            "images": [
+                "https://dummyjson.com/image/150",
+                "https://dummyjson.com/image/150",
+                "https://dummyjson.com/image/150",
+                "https://dummyjson.com/image/150"
+            ],
+            "workingHours": [
+                {
+                    "label": "Monday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Tuesday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Wednesday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Thursday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Friday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Saturday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Sunday",
+                    "hours": "09:00 - 18:00"
+                }
+            ],
+            "geo": {
+                "lat": 45.465454,
+                "lng": 9.186516
+            },
+            "thumbnail": "https://firebasestorage.googleapis.com/v0/b/home-cleaning-app-34752.appspot.com/o/Services%2FRepairing%2Fplumbing_pepe.jpg?alt=media&token=df21b14c-5da3-4b24-beb8-d27f11a93335"
+        },
+        {
+            "id": "",
+            "name": "Justin Fields",
+            "title": "Painting services",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "address": "1012 Ocean avenue, New York, USA",
+            "category": "Painting services",
+            "price": 90.00,
+            "rating": 4.5,
+            "isBookmark": true,
+            "phone": "1-770-736-8031",
+            "reviews": [
+                {
+                    "rating": 4.5,
+                    "avatar": "https://dummyjson.com/image/150",
+                    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+                    "date": "2024-05-23T08:56:21.618Z",
+                    "reviewerName": "John Doe",
+                    "reviewerEmail": "john.doe@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "avatar": "https://dummyjson.com/image/150",
+                    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+                    "date": "2024-05-23T08:56:21.618Z",
+                    "reviewerName": "Nolan Gonzalez",
+                    "reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "avatar": "https://dummyjson.com/image/150",
+                    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+                    "date": "2024-05-23T08:56:21.618Z",
+                    "reviewerName": "Scarlett Wright",
+                    "reviewerEmail": "scarlett.wright@x.dummyjson.com"
+                }
+            ],
+            "images": [
+                "https://dummyjson.com/image/150",
+                "https://dummyjson.com/image/150",
+                "https://dummyjson.com/image/150",
+                "https://dummyjson.com/image/150"
+            ],
+            "workingHours": [
+                {
+                    "label": "Monday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Tuesday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Wednesday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Thursday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Friday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Saturday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Sunday",
+                    "hours": "09:00 - 18:00"
+                }
+            ],
+            "geo": {
+                "lat": 45.465454,
+                "lng": 9.186516
+            },
+            "thumbnail": "https://firebasestorage.googleapis.com/v0/b/home-cleaning-app-34752.appspot.com/o/Services%2FPainting%2Fpainting_services_smith.jpg?alt=media&token=46a5e3be-5e55-4652-be8b-963c12733533"
+        },
+        {
+            "id": "",
+            "name": "Ernest Durham",
+            "title": "Deep House Cleaning",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "address": "1012 Ocean avenue, New York, USA",
+            "category": "House Cleaning",
+            "price": 180.00,
+            "rating": 4.8,
+            "isBookmark": true,
+            "phone": "1-770-736-8031",
+            "reviews": [
+                {
+                    "rating": 4.5,
+                    "avatar": "https://dummyjson.com/image/150",
+                    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+                    "date": "2024-05-23T08:56:21.618Z",
+                    "reviewerName": "John Doe",
+                    "reviewerEmail": "john.doe@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "avatar": "https://dummyjson.com/image/150",
+                    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+                    "date": "2024-05-23T08:56:21.618Z",
+                    "reviewerName": "Nolan Gonzalez",
+                    "reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "avatar": "https://dummyjson.com/image/150",
+                    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+                    "date": "2024-05-23T08:56:21.618Z",
+                    "reviewerName": "Scarlett Wright",
+                    "reviewerEmail": "scarlett.wright@x.dummyjson.com"
+                }
+            ],
+            "images": [
+                "https://dummyjson.com/image/150",
+                "https://dummyjson.com/image/150",
+                "https://dummyjson.com/image/150",
+                "https://dummyjson.com/image/150"
+            ],
+            "workingHours": [
+                {
+                    "label": "Monday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Tuesday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Wednesday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Thursday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Friday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Saturday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Sunday",
+                    "hours": "09:00 - 18:00"
+                }
+            ],
+            "geo": {
+                "lat": 45.465454,
+                "lng": 9.186516
+            },
+            "thumbnail": "https://firebasestorage.googleapis.com/v0/b/home-cleaning-app-34752.appspot.com/o/Services%2FCleaning%2FDeep_House_Cleaning_maria.jpg?alt=media&token=5a5b44db-4af1-4267-936c-dba589dbbe45"
+        },
+        {
+            "id": "",
+            "name": "Leslie Alexander",
+            "title": "Car Repairing Service",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "address": "1012 Ocean avenue, New York, USA",
+            "category": "Car Repairing",
+            "price": 240.00,
+            "rating": 4.0,
+            "isBookmark": true,
+            "phone": "1-770-736-8031",
+            "reviews": [
+                {
+                    "rating": 4.5,
+                    "avatar": "https://dummyjson.com/image/150",
+                    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+                    "date": "2024-05-23T08:56:21.618Z",
+                    "reviewerName": "John Doe",
+                    "reviewerEmail": "john.doe@x.dummyjson.com"
+                },
+                {
+                    "rating": 4,
+                    "avatar": "https://dummyjson.com/image/150",
+                    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+                    "date": "2024-05-23T08:56:21.618Z",
+                    "reviewerName": "Nolan Gonzalez",
+                    "reviewerEmail": "nolan.gonzalez@x.dummyjson.com"
+                },
+                {
+                    "rating": 5,
+                    "avatar": "https://dummyjson.com/image/150",
+                    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+                    "date": "2024-05-23T08:56:21.618Z",
+                    "reviewerName": "Scarlett Wright",
+                    "reviewerEmail": "scarlett.wright@x.dummyjson.com"
+                }
+            ],
+            "images": [
+                "https://dummyjson.com/image/150",
+                "https://dummyjson.com/image/150",
+                "https://dummyjson.com/image/150",
+                "https://dummyjson.com/image/150"
+            ],
+            "workingHours": [
+                {
+                    "label": "Monday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Tuesday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Wednesday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Thursday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Friday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Saturday",
+                    "hours": "09:00 - 18:00"
+                },
+                {
+                    "label": "Sunday",
+                    "hours": "09:00 - 18:00"
+                }
+            ],
+            "geo": {
+                "lat": 45.465454,
+                "lng": 9.186516
+            },
+            "thumbnail": "https://firebasestorage.googleapis.com/v0/b/home-cleaning-app-34752.appspot.com/o/Services%2FRepairing%2Fcar_repairing_marks.jpg?alt=media&token=a6bbdca3-286c-4e83-b4a8-6b05a375f1c6"
+        }
+    ]
+}

@@ -36,7 +36,7 @@ class TPopularServicesCarousel extends StatelessWidget {
           onTap: (index) =>
               controller.openServiceDetails(controller.popularServices[index]),
           children: controller.popularServices
-              .map((PopularServiceModel item) =>
+              .map((ServiceModel item) =>
                   UncontainedLayoutPopularService(item: item))
               .toList(),
         );
@@ -52,7 +52,7 @@ class UncontainedLayoutPopularService extends StatelessWidget {
     required this.item,
   });
 
-  final PopularServiceModel item;
+  final ServiceModel item;
   final EdgeInsetsGeometry? padding;
 
   @override
@@ -70,7 +70,7 @@ class UncontainedLayoutPopularService extends StatelessWidget {
             backgroundColor: TColors.lightSilver,
             padding: const EdgeInsets.all(TSizes.defaultSpace / 2),
             //width: THelperFunctions.screenWidth(context) * 0.56,
-            imageUrl: item.imageUrl,
+            imageUrl: item.thumbnail,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -93,7 +93,7 @@ class UncontainedLayoutPopularService extends StatelessWidget {
                       ),
                       const SizedBox(width: TSizes.size2),
                       Text(
-                        item.rating,
+                        item.rating.toString(),
                         style: textTheme.bodyLarge,
                       ),
                     ],
@@ -153,7 +153,7 @@ class UncontainedLayoutPopularService extends StatelessWidget {
 
                   // Cost
                   Text(
-                    item.money,
+                    item.price.toString(),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: textTheme.bodyLarge!.apply(color: TColors.green),

@@ -15,6 +15,7 @@ class TRoundedContainer extends StatelessWidget {
     this.borderRadius,
     this.showBorder = false,
     this.fit = BoxFit.cover,
+    this.isNetworkImage = true,
     this.radius = TSizes.size16,
     this.isBorderRadiusCircular = true,
     this.backgroundColor = TColors.white,
@@ -31,7 +32,7 @@ class TRoundedContainer extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
   final BorderRadius? borderRadius;
-  final bool showBorder, isBorderRadiusCircular;
+  final bool showBorder, isBorderRadiusCircular, isNetworkImage;
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +48,10 @@ class TRoundedContainer extends StatelessWidget {
             : borderRadius,
         border: showBorder ? Border.all(color: borderColor) : null,
         image: imageUrl != null
-            ? DecorationImage(
-                image: CachedNetworkImageProvider(imageUrl!), fit: fit)
+            ? isNetworkImage
+                ? DecorationImage(
+                    image: CachedNetworkImageProvider(imageUrl!), fit: fit)
+                : DecorationImage(image: AssetImage(imageUrl ?? ''), fit: fit)
             : null,
       ),
       child: child,

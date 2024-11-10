@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../common/common.dart';
 import '../../../utils/utils.dart';
+import '../controllers/service_details.controller.dart';
 
 class ServiceDetailTabGallery extends StatelessWidget {
   const ServiceDetailTabGallery({
@@ -11,6 +12,7 @@ class ServiceDetailTabGallery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+    final controller = ServiceDetailsController.instance;
     return Container(
       padding: const EdgeInsets.all(TSizes.defaultSpace),
       child: Column(
@@ -18,7 +20,8 @@ class ServiceDetailTabGallery extends StatelessWidget {
         children: [
           //  Gallery Heading
           TSectionHeading(
-            title: '${TTexts.galleryTab}(6)',
+            title:
+                '${TTexts.galleryTab}(${controller.serviceSelected.value.images.length})',
             textStyle: textTheme.bodyLarge,
             buttonTitle: TTexts.viewAll,
             textButtonStyle: textTheme.bodyLarge!.apply(color: TColors.green),
@@ -38,9 +41,12 @@ class ServiceDetailTabGallery extends StatelessWidget {
               crossAxisCount: 2,
               children: [
                 ...List.generate(
-                  6,
-                  (_) => const TRoundedContainer(
+                  controller.serviceSelected.value.images.length > 6
+                      ? 6
+                      : controller.serviceSelected.value.images.length,
+                  (index) => TRoundedContainer(
                     radius: TSizes.size6,
+                    imageUrl: controller.serviceSelected.value.images[index],
                     backgroundColor: TColors.lightSilver,
                   ),
                 )

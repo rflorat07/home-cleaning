@@ -15,7 +15,7 @@ class BookmarkControllers extends GetxController {
 
   RxString chipSelected = 'All'.obs;
   RxList<ChipModel> bookmarkChipList = <ChipModel>[].obs;
-  RxList<PopularServiceModel> bookmarkList = <PopularServiceModel>[].obs;
+  RxList<ServiceModel> bookmarkList = <ServiceModel>[].obs;
 
   @override
   Future<void> onReady() async {
@@ -42,7 +42,7 @@ class BookmarkControllers extends GetxController {
     }
   }
 
-  Future<void> removeFromFavorites(PopularServiceModel item) async {
+  Future<void> removeFromFavorites(ServiceModel item) async {
     try {
       isLoading.value = true;
       item.isBookmark = false;
@@ -70,7 +70,7 @@ class BookmarkControllers extends GetxController {
     bookmarkChipList.assignAll(chips);
   }
 
-  List<PopularServiceModel> get allBookmark {
+  List<ServiceModel> get allBookmark {
     return (chipSelected.toLowerCase() == 'all')
         ? bookmarkList
         : bookmarkList
