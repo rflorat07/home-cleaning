@@ -96,16 +96,20 @@ class ServiceDetailsHeader extends StatelessWidget {
                           width: TSizes.size49,
                           height: TSizes.size49,
                           radius: TSizes.cardRadiusXs,
+                          imageUrl: serviceSelected.value.images[6],
                           backgroundColor: TColors.darkerGrey.withOpacity(0.6),
-                          child: Center(
-                            child: Text(
-                              '+ ${serviceSelected.value.images.length - 5}',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .labelLarge!
-                                  .copyWith(
-                                      color: TColors.white,
-                                      fontWeight: FontWeight.w600),
+                          child: Container(
+                            color: Colors.black.withOpacity(0.4),
+                            child: Center(
+                              child: Text(
+                                '+ ${serviceSelected.value.images.length - 5}',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .labelLarge!
+                                    .copyWith(
+                                        color: TColors.white,
+                                        fontWeight: FontWeight.w600),
+                              ),
                             ),
                           ),
                         ),

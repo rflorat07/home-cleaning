@@ -153,7 +153,7 @@ class UncontainedLayoutPopularService extends StatelessWidget {
 
                   // Cost
                   Text(
-                    item.price.toString(),
+                    '\$ ${item.price.toStringAsFixed(2)}',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: textTheme.bodyLarge!.apply(color: TColors.green),

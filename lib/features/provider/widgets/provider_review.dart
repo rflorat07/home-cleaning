@@ -54,7 +54,7 @@ class ProviderReview extends StatelessWidget {
                       // Months
                       Text(
                         controller.providerDetails.value.reviews[index]
-                            .getFormattedDate(),
+                            .timeagoFormat(),
                         style: textTheme.labelLarge!
                             .apply(color: TColors.darkerGrey),
                       )

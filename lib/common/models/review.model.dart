@@ -1,4 +1,5 @@
 import 'package:intl/intl.dart';
+import 'package:timeago/timeago.dart' as timeago;
 
 class ReviewModel {
   ReviewModel({
@@ -47,5 +48,9 @@ class ReviewModel {
     var outputDate = outputFormat.format(inputDate);
 
     return outputDate.toString();
+  }
+
+  String timeagoFormat() {
+    return timeago.format(date);
   }
 }
