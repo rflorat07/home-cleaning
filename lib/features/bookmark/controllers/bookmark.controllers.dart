@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 import '../../../common/common.dart';
-import '../../../data/repositories/popular_services/popular_services.repository.dart';
+import '../../../data/repositories/services/services.repository.dart';
 import '../../authentication/models/chip.model.dart';
 import '../../home/controllers/popular_services_carousel.controllers.dart';
 
@@ -9,7 +9,7 @@ class BookmarkControllers extends GetxController {
   static BookmarkControllers get instance => Get.find();
 
   final isLoading = false.obs;
-  final _popularServicesRepository = Get.put(PopularServicesRepository());
+  final _popularServicesRepository = Get.put(ServicesRepository());
   final _popularServicesCarouselController =
       PopularServicesCarouselController.instance;
 

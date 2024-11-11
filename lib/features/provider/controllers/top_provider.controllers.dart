@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 import '../../../common/common.dart';
-import '../../../data/repositories/service_provider/service_provider.repository.dart';
+import '../../../data/repositories/provider/provider.repository.dart';
 import '../screens/provider_details.dart';
 
 class TopProviderControlller extends GetxController {

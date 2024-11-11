@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 import '../../../common/common.dart';
 import '../../../utils/utils.dart';
 
-class PopularServicesRepository extends GetxController {
-  static PopularServicesRepository get instance => Get.find();
+class ServicesRepository extends GetxController {
+  static ServicesRepository get instance => Get.find();
 
   /// Variables
   final _db = FirebaseFirestore.instance;

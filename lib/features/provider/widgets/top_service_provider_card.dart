@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../../common/common.dart';
 import '../../../utils/utils.dart';
-import '../screens/provider_details.dart';
+import '../controllers/top_provider.controllers.dart';
 
 class TopServiceProviderCard extends StatelessWidget {
   const TopServiceProviderCard({
@@ -16,6 +15,7 @@ class TopServiceProviderCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+    final controller = TopProviderControlller.instance;
     return TRoundedContainer(
       height: 176,
       radius: TSizes.borderRadiusLg,
@@ -29,10 +29,10 @@ class TopServiceProviderCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Image Container
-                const TRoundedContainer(
+                TRoundedContainer(
                   height: 104,
                   width: 90,
-                  imageUrl: null, //item.imageUrl,
+                  imageUrl: item.thumbnail,
                   radius: TSizes.borderRadiusMd,
                   backgroundColor: TColors.lightSilver,
                 ),
@@ -109,7 +109,7 @@ class TopServiceProviderCard extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                item.rating.toString(),
+                                '${item.rating}',
                                 style: textTheme.bodySmall!
                                     .apply(color: TColors.darkerGrey),
                               ),
@@ -126,7 +126,7 @@ class TopServiceProviderCard extends StatelessWidget {
 
                           // Reviews
                           Text(
-                            '${item.reviews} Reviews',
+                            '${item.reviews.length} Reviews',
                             style: textTheme.labelMedium!.copyWith(
                               color: TColors.darkerGrey,
                             ),
@@ -145,7 +145,7 @@ class TopServiceProviderCard extends StatelessWidget {
             width: double.infinity,
             height: TSizes.buttonMaxHeight,
             child: TextButton(
-              onPressed: () => Get.to(() => const ProviderDetailsScreen()),
+              onPressed: () => controller.openProviderDetails(item),
               style: TextButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),

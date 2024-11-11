@@ -19,38 +19,40 @@ class ProviderDetailTabServices extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.all(TSizes.defaultSpace),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          //  Gallery Heading
-          TSectionHeading(
-            title:
-                '${TTexts.servicesTab} (${controller.providerDetails.value.services.length})',
-            textStyle: textTheme.bodyLarge,
-            buttonTitle: TTexts.viewAll,
-            textButtonStyle: textTheme.bodyLarge!.apply(color: TColors.green),
-            onPressed: () => Get.to(() => const PopularServicesScreen()),
-          ),
-
-          const SizedBox(height: TSizes.spaceBtwItems),
-
-          // Gallery IMG
-          SizedBox(
-            height: (TSizes.size135 + 24) * 6,
-            child: ListView.separated(
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: controller.providerDetails.value.services.length > 6
-                  ? 6
-                  : controller.providerDetails.value.services.length,
-              itemBuilder: (context, index) {
-                return TPopularServiceCard(
-                    item: controller.providerDetails.value.services[index]);
-              },
-              separatorBuilder: (context, index) =>
-                  const SizedBox(height: TSizes.spaceBtwItems),
+      child: Obx(
+        () => Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //  Gallery Heading
+            TSectionHeading(
+              title:
+                  '${TTexts.servicesTab} (${controller.servicesDetails.length})',
+              textStyle: textTheme.bodyLarge,
+              buttonTitle: TTexts.viewAll,
+              textButtonStyle: textTheme.bodyLarge!.apply(color: TColors.green),
+              onPressed: () => Get.to(() => const PopularServicesScreen()),
             ),
-          ),
-        ],
+
+            const SizedBox(height: TSizes.spaceBtwItems),
+
+            // Gallery IMG
+            SizedBox(
+              height: (TSizes.size135 + 24) * 6,
+              child: ListView.separated(
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: controller.servicesDetails.length > 6
+                    ? 6
+                    : controller.servicesDetails.length,
+                itemBuilder: (context, index) {
+                  return TPopularServiceCard(
+                      item: controller.servicesDetails[index]);
+                },
+                separatorBuilder: (context, index) =>
+                    const SizedBox(height: TSizes.spaceBtwItems),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

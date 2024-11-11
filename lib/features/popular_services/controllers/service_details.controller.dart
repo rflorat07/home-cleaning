@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../common/common.dart';
-import '../../../data/repositories/popular_services/popular_services.repository.dart';
+import '../../../data/repositories/services/services.repository.dart';
 import '../../../utils/utils.dart';
 
 class ServiceDetailsController extends GetxController {
@@ -15,7 +15,7 @@ class ServiceDetailsController extends GetxController {
   Rx<ServiceModel> serviceSelected = ServiceModel.empty().obs;
 
   final ScrollController scrollController = ScrollController();
-  final _popularServicesRepository = Get.put(PopularServicesRepository());
+  final _popularServicesRepository = Get.put(ServicesRepository());
 
   @override
   void onInit() {
