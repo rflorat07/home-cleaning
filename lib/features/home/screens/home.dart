@@ -5,8 +5,8 @@ import '../../../common/common.dart';
 import '../../../utils/utils.dart';
 import '../../category/screens/category.dart';
 import '../../popular_services/screens/popular_services.dart';
+import '../../provider/screens/top_providers.dart';
 import '../../special/screens/Special_for_you.dart';
-import '../../top_service/screens/top_service_provider.dart';
 import '../widgets/categories_carousel.dart';
 import '../widgets/popular_services_carousel.dart';
 import '../widgets/primary_header_container.dart';
@@ -75,7 +75,7 @@ class HomeScreen extends StatelessWidget {
             TSectionHeading(
               title: TTexts.topServiceProvider,
               horizontal: TSizes.defaultSpace,
-              onPressed: () => Get.to(() => const TopServiceProviderScreen()),
+              onPressed: () => Get.to(() => const TopProvidersScreen()),
             ),
 
             const SizedBox(height: TSizes.spaceBtwItems),

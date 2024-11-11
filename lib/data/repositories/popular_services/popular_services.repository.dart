@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -78,26 +76,4 @@ class PopularServicesRepository extends GetxController {
       throw 'Something went wrong. Please try again.';
     }
   }
-
-  /// Upload Dummy Data to Cloud Firebase
-  Future<void> uploadDummyData(List<ServiceModel> items) async {
-    try {
-      // Loop through each
-      for (var item in items) {
-        // Store in Firestore
-        await _db.collection('Services').doc().set(item.toJson());
-      }
-    } on FirebaseException catch (e) {
-      throw TFirebaseExceptions(e.code).message;
-    } on PlatformException catch (e) {
-      throw TPlatformExceptions(e.code).message;
-    } catch (e) {
-      throw 'Something went wrong. Please try again.';
-    }
-  }
-}
-
-Future<Map<String, dynamic>> loadJsonFromAssets(String filePath) async {
-  String jsonString = await rootBundle.loadString(filePath);
-  return jsonDecode(jsonString);
 }

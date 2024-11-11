@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../utils/utils.dart';
-import '../../popular_services/controllers/service_details.controller.dart';
-import '../../popular_services/widgets/service_detail_tab_gallery.dart';
-import '../../popular_services/widgets/service_detail_tab_review.dart';
-import '../../popular_services/widgets/service_details_tab_about.dart';
-import 'service_provider_detail_tab_services.dart';
+import '../controllers/provider_details.controller.dart';
+import 'provider_detail_tab_gallery.dart';
+import 'provider_detail_tab_review.dart';
+import 'provider_detail_tab_services.dart';
+import 'provider_details_tab_about.dart';
 
-class ServiceProviderDetailsTabs extends StatelessWidget {
-  const ServiceProviderDetailsTabs({super.key});
+class ProviderDetailsTabs extends StatelessWidget {
+  const ProviderDetailsTabs({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = ServiceDetailsController.instance;
+    final controller = ProviderDetailsController.instance;
 
     List<Widget> tabBarView = [
-      const ServiceProviderDetailTabServices(),
-      const ServiceDetailTabAbout(),
-      const ServiceDetailTabGallery(),
-      const ServiceDetailTabReview(),
+      const ProviderDetailTabServices(),
+      const ProviderDetailTabAbout(),
+      const ProviderDetailTabGallery(),
+      const ProviderDetailTabReview(),
     ];
     return Column(
       children: [

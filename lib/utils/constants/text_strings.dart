@@ -134,4 +134,10 @@ class TTexts {
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Read more';
   static const String loremIpsum =
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt';
+
+// --- Provider Detail
+  static const String rating = 'Rating';
+  static const String review = 'Review';
+  static const String customer = 'Customer';
+  static const String yearsExp = 'Years Exp.';
 }

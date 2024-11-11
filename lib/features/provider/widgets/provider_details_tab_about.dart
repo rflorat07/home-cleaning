@@ -7,17 +7,17 @@ import '../../../common/widgets/containers/rounded_container.dart';
 import '../../../common/widgets/icons/t_circular_icon.dart';
 import '../../../common/widgets/texts/section_heading.dart';
 import '../../../utils/utils.dart';
-import '../controllers/service_details.controller.dart';
+import '../controllers/provider_details.controller.dart';
 
-class ServiceDetailTabAbout extends StatelessWidget {
-  const ServiceDetailTabAbout({
+class ProviderDetailTabAbout extends StatelessWidget {
+  const ProviderDetailTabAbout({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    final controller = ServiceDetailsController.instance;
+    final controller = ProviderDetailsController.instance;
     return Container(
       padding: const EdgeInsets.all(TSizes.defaultSpace),
       child: Obx(
@@ -55,20 +55,20 @@ class ServiceDetailTabAbout extends StatelessWidget {
                   children: [
                     // Circle Avatar
                     CircleAvatar(
-                        radius: TSizes.size24,
-                        backgroundImage: controller.isLoading.value
-                            ? null
-                            : CachedNetworkImageProvider(
-                                controller.serviceSelected.value.thumbnail,
-                              ),
-                        backgroundColor: TColors.lightSilver),
+                      radius: TSizes.size24,
+                      backgroundImage: controller.isLoading.value
+                          ? null
+                          : CachedNetworkImageProvider(
+                              controller.providerDetails.value.thumbnail),
+                      backgroundColor: TColors.lightSilver,
+                    ),
                     const SizedBox(width: TSizes.size12),
 
                     // Name
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(controller.serviceSelected.value.name,
+                        Text(controller.providerDetails.value.name,
                             style: textTheme.bodyLarge!
                                 .copyWith(fontWeight: FontWeight.w600)),
                         // Service Provider
@@ -115,20 +115,20 @@ class ServiceDetailTabAbout extends StatelessWidget {
             Column(
               children: [
                 ...List.generate(
-                    controller.serviceSelected.value.workingHours.length,
+                    controller.providerDetails.value.workingHours.length,
                     (index) => Container(
                           padding: const EdgeInsets.only(bottom: TSizes.size12),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                controller.serviceSelected.value
+                                controller.providerDetails.value
                                     .workingHours[index].label,
                                 style: textTheme.bodyMedium!
                                     .apply(color: TColors.darkerGrey),
                               ),
                               Text(
-                                controller.serviceSelected.value
+                                controller.providerDetails.value
                                     .workingHours[index].hours,
                               )
                             ],
@@ -156,7 +156,7 @@ class ServiceDetailTabAbout extends StatelessWidget {
                 const Icon(IconsaxPlusLinear.location, size: TSizes.size18),
                 const SizedBox(width: TSizes.size4),
                 Text(
-                  controller.serviceSelected.value.address,
+                  controller.providerDetails.value.address,
                   style: textTheme.bodyMedium!.apply(color: TColors.darkerGrey),
                 )
               ],

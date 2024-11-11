@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../utils/constants/image_strings.dart';
 
-class TopServiceModel {
-  TopServiceModel({
+class ProviderModel {
+  ProviderModel({
     required this.id,
     required this.title,
     required this.name,
@@ -13,13 +13,13 @@ class TopServiceModel {
     required this.imageUrl,
   });
 
-  factory TopServiceModel.fromSnapshot(
+  factory ProviderModel.fromSnapshot(
       DocumentSnapshot<Map<String, dynamic>> document) {
-    if (document.data() == null) return TopServiceModel.empty();
+    if (document.data() == null) return ProviderModel.empty();
 
     final data = document.data()!;
 
-    return TopServiceModel(
+    return ProviderModel(
       id: document.id,
       title: data['title'],
       name: data['name'],
@@ -32,7 +32,7 @@ class TopServiceModel {
 
   final String id, title, name, service, rating, reviews, imageUrl;
 
-  static TopServiceModel empty() => TopServiceModel(
+  static ProviderModel empty() => ProviderModel(
         id: '',
         title: '',
         name: '',
@@ -56,10 +56,10 @@ class TopServiceModel {
   }
 }
 
-// Our demo TopServiceModel
+// Our demo ProviderModel
 
-List<TopServiceModel> demoTopService = [
-  TopServiceModel(
+List<ProviderModel> demoTopService = [
+  ProviderModel(
     id: '1',
     title: 'Proffesional Services',
     name: 'Esther T.',
@@ -68,7 +68,7 @@ List<TopServiceModel> demoTopService = [
     reviews: '49',
     imageUrl: TImages.carouselSpecial,
   ),
-  TopServiceModel(
+  ProviderModel(
     id: '2',
     title: 'Proffesional Services',
     name: 'Jenny M.',
@@ -77,7 +77,7 @@ List<TopServiceModel> demoTopService = [
     reviews: '48',
     imageUrl: TImages.carouselSpecial,
   ),
-  TopServiceModel(
+  ProviderModel(
     id: '3',
     title: 'Proffesional Services',
     name: 'Jacob U.',
@@ -86,7 +86,7 @@ List<TopServiceModel> demoTopService = [
     reviews: '60',
     imageUrl: TImages.carouselSpecial,
   ),
-  TopServiceModel(
+  ProviderModel(
     id: '4',
     title: 'Proffesional Services',
     name: 'Bessi K.',
@@ -95,7 +95,7 @@ List<TopServiceModel> demoTopService = [
     reviews: '20',
     imageUrl: TImages.carouselSpecial,
   ),
-  TopServiceModel(
+  ProviderModel(
     id: '5',
     title: 'Proffesional Services',
     name: 'Jenny Wilson',

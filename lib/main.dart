@@ -22,5 +22,10 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
       .then((FirebaseApp value) => Get.put(AuthenticationRepository()));
 
+  /* final controller = Get.put(DummyRepository());
+  await controller.uploadDummyData(
+      '/Users/rogerflorat/Development/Home Cleaning APP/home_cleaning/data/providers/providers.json',
+      'Providers'); */
+
   runApp(const App());
 }

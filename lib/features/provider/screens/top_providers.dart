@@ -3,15 +3,15 @@ import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../common/common.dart';
 import '../../../utils/utils.dart';
-import '../../home/controllers/top_service_provider_carousel.controllers.dart';
+import '../controllers/top_provider.controllers.dart';
 import '../widgets/top_service_provider_card.dart';
 
-class TopServiceProviderScreen extends StatelessWidget {
-  const TopServiceProviderScreen({super.key});
+class TopProvidersScreen extends StatelessWidget {
+  const TopProvidersScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final controller = TopServiceProviderCarouselControlller.instance;
+    final controller = TopProviderControlller.instance;
     return Scaffold(
       appBar: TAppBar(
         showBackArrow: true,
@@ -29,10 +29,9 @@ class TopServiceProviderScreen extends StatelessWidget {
       body: ListView.separated(
         padding: const EdgeInsets.all(TSizes.defaultSpace),
         physics: const BouncingScrollPhysics(),
-        itemCount: controller.topServiceProvider.length,
+        itemCount: controller.topProviders.length,
         itemBuilder: (context, index) {
-          return TopServiceProviderCard(
-              item: controller.topServiceProvider[index]);
+          return TopServiceProviderCard(item: controller.topProviders[index]);
         },
         separatorBuilder: (context, index) =>
             const SizedBox(height: TSizes.spaceBtwItems),

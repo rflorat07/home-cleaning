@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../common/models/top_service.model.dart';
-import '../../../common/widgets/containers/rounded_container.dart';
+import '../../../common/common.dart';
 import '../../../utils/utils.dart';
-import '../screens/service_provider_details.dart';
+import '../screens/provider_details.dart';
 
 class TopServiceProviderCard extends StatelessWidget {
   const TopServiceProviderCard({
@@ -12,7 +11,7 @@ class TopServiceProviderCard extends StatelessWidget {
     required this.item,
   });
 
-  final TopServiceModel item;
+  final ProviderModel item;
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +85,7 @@ class TopServiceProviderCard extends StatelessWidget {
 
                       // Service
                       Text(
-                        item.service,
+                        item.category,
                         overflow: TextOverflow.ellipsis,
                         style: textTheme.labelLarge!
                             .apply(color: TColors.darkerGrey),
@@ -110,7 +109,7 @@ class TopServiceProviderCard extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                item.rating,
+                                item.rating.toString(),
                                 style: textTheme.bodySmall!
                                     .apply(color: TColors.darkerGrey),
                               ),
@@ -146,8 +145,7 @@ class TopServiceProviderCard extends StatelessWidget {
             width: double.infinity,
             height: TSizes.buttonMaxHeight,
             child: TextButton(
-              onPressed: () =>
-                  Get.to(() => const ServiceProviderDetailsScreen()),
+              onPressed: () => Get.to(() => const ProviderDetailsScreen()),
               style: TextButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(TSizes.borderRadiusMd),

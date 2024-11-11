@@ -5,18 +5,18 @@ import 'package:get/get.dart';
 import '../../../common/common.dart';
 import '../../../utils/utils.dart';
 
-class TopServiceProviderRepository extends GetxController {
-  static TopServiceProviderRepository get instance => Get.find();
+class TopProviderRepository extends GetxController {
+  static TopProviderRepository get instance => Get.find();
 
   /// Variables
   final _db = FirebaseFirestore.instance;
 
   /// Get All TopServiceProvider
-  Future<List<TopServiceModel>> getAllTopService() async {
+  Future<List<ProviderModel>> getTopProviders() async {
     try {
       final snapshot = await _db.collection('Providers').get();
       return snapshot.docs
-          .map((document) => TopServiceModel.fromSnapshot(document))
+          .map((document) => ProviderModel.fromSnapshot(document))
           .toList();
     } on FirebaseException catch (e) {
       throw TFirebaseExceptions(e.code).message;
@@ -27,13 +27,14 @@ class TopServiceProviderRepository extends GetxController {
     }
   }
 
-  /// Upload Dummy Data to Cloud Firebase
-  Future<void> uploadDummyData(List<TopServiceModel> items) async {
+  /// Get Provider Details from Cloud Firebase
+  Future<ProviderModel> fetchProviderDetails(String id) async {
     try {
-      // Loop through each
-      for (var item in items) {
-        // Store in Firestore
-        await _db.collection('Providers').doc(item.id).set(item.toJson());
+      final documentSnapshot = await _db.collection('Providers').doc(id).get();
+      if (documentSnapshot.exists) {
+        return ProviderModel.fromSnapshot(documentSnapshot);
+      } else {
+        return ProviderModel.empty();
       }
     } on FirebaseException catch (e) {
       throw TFirebaseExceptions(e.code).message;

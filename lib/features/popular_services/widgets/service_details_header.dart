@@ -22,11 +22,13 @@ class ServiceDetailsHeader extends StatelessWidget {
         height: TDeviceUtils.getScreenHeight(context) * 0.4,
         decoration: BoxDecoration(
           color: TColors.lightSilver,
-          image: DecorationImage(
-              image: CachedNetworkImageProvider(
-                serviceSelected.value.thumbnail,
-              ),
-              fit: BoxFit.cover),
+          image: controller.isLoading.value
+              ? null
+              : DecorationImage(
+                  image: CachedNetworkImageProvider(
+                    serviceSelected.value.thumbnail,
+                  ),
+                  fit: BoxFit.cover),
         ),
         child: Stack(
           alignment: AlignmentDirectional.center,
