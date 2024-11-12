@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../common/common.dart';
 import '../../../utils/utils.dart';
@@ -25,6 +26,13 @@ class ServiceDetailTabGallery extends StatelessWidget {
             textStyle: textTheme.bodyLarge,
             buttonTitle: TTexts.viewAll,
             textButtonStyle: textTheme.bodyLarge!.apply(color: TColors.green),
+            onPressed: () {
+              Get.to(
+                () => GalleryPhotoViewWrapper(
+                  galleryItems: controller.serviceSelected.value.images,
+                ),
+              );
+            },
           ),
 
           const SizedBox(height: TSizes.spaceBtwItems),
@@ -48,6 +56,14 @@ class ServiceDetailTabGallery extends StatelessWidget {
                     radius: TSizes.size6,
                     imageUrl: controller.serviceSelected.value.images[index],
                     backgroundColor: TColors.lightSilver,
+                    onTap: () {
+                      Get.to(
+                        () => GalleryPhotoViewWrapper(
+                          initialIndex: index,
+                          galleryItems: controller.serviceSelected.value.images,
+                        ),
+                      );
+                    },
                   ),
                 )
               ],

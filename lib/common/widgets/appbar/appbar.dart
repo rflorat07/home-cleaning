@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../utils/utils.dart';
 
@@ -15,6 +16,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.showBackArrow = false,
     this.backgroundColor = Colors.transparent,
     this.systemOverlayStyle = SystemUiOverlayStyle.dark,
+    this.backArrowBackgroundColor = Colors.transparent,
   });
 
   ///  * Title String or Widget.
@@ -24,7 +26,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget>? actions;
   final VoidCallback? leadingOnPressed;
   final SystemUiOverlayStyle systemOverlayStyle;
-  final Color backgroundColor;
+  final Color backgroundColor, backArrowBackgroundColor;
   final PreferredSizeWidget? bottom;
 
   @override
@@ -41,10 +43,10 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
             ? IconButton.outlined(
                 iconSize: TSizes.appBarIconSize,
                 style: OutlinedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
+                    backgroundColor: backArrowBackgroundColor,
                     side: const BorderSide(color: TColors.borderPrimary)),
                 onPressed: () => Get.back(),
-                icon: const Icon(Icons.arrow_back),
+                icon: const Icon(IconsaxPlusLinear.arrow_left),
               )
             : leadingIcon != null
                 ? IconButton(

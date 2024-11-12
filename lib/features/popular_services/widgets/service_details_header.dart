@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../common/widgets/containers/rounded_container.dart';
+import '../../../common/common.dart';
 import '../../../utils/utils.dart';
 import '../controllers/service_details.controller.dart';
 
@@ -89,6 +89,14 @@ class ServiceDetailsHeader extends StatelessWidget {
                           radius: TSizes.cardRadiusXs,
                           imageUrl: serviceSelected.value.images[index],
                           backgroundColor: TColors.lightSilver,
+                          onTap: () {
+                            Get.to(
+                              () => GalleryPhotoViewWrapper(
+                                initialIndex: index,
+                                galleryItems: serviceSelected.value.images,
+                              ),
+                            );
+                          },
                         ),
                       ),
                       if (serviceSelected.value.images.length > 5)

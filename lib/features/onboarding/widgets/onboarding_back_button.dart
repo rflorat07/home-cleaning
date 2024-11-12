@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../utils/utils.dart';
 import '../controllers/onboarding.controller.dart';
@@ -26,7 +27,8 @@ class OnBoardingBackButton extends StatelessWidget {
                   fixedSize:
                       const Size(TSizes.buttonWidth, TSizes.buttonHeight),
                   backgroundColor: dark ? TColors.white : TColors.white),
-              child: const Icon(Icons.arrow_back, color: TColors.green),
+              child: const Icon(IconsaxPlusLinear.arrow_left,
+                  color: TColors.green),
             ),
           ));
   }

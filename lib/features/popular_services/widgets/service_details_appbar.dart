@@ -26,7 +26,7 @@ class ServiceDetailsAppBar extends StatelessWidget
               result: controller.isBookmarkChanged.value,
             ),
             iconSize: TSizes.appBarIconSize,
-            icon: const Icon(Icons.arrow_back),
+            icon: const Icon(IconsaxPlusLinear.arrow_left),
             style: IconButton.styleFrom(backgroundColor: TColors.white),
           ),
           actions: [

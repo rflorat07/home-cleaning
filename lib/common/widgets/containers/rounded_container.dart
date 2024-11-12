@@ -8,6 +8,7 @@ class TRoundedContainer extends StatelessWidget {
     super.key,
     this.child,
     this.width,
+    this.onTap,
     this.height,
     this.margin,
     this.padding,
@@ -25,6 +26,7 @@ class TRoundedContainer extends StatelessWidget {
   final BoxFit? fit;
   final double radius;
   final Widget? child;
+  final Function()? onTap;
   final String? imageUrl;
   final Color borderColor;
   final Color backgroundColor;
@@ -36,25 +38,28 @@ class TRoundedContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      height: height,
-      padding: padding,
-      margin: margin,
-      decoration: BoxDecoration(
-        color: backgroundColor,
-        borderRadius: isBorderRadiusCircular
-            ? BorderRadius.circular(radius)
-            : borderRadius,
-        border: showBorder ? Border.all(color: borderColor) : null,
-        image: imageUrl != null
-            ? isNetworkImage
-                ? DecorationImage(
-                    image: CachedNetworkImageProvider(imageUrl!), fit: fit)
-                : DecorationImage(image: AssetImage(imageUrl ?? ''), fit: fit)
-            : null,
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        width: width,
+        height: height,
+        padding: padding,
+        margin: margin,
+        decoration: BoxDecoration(
+          color: backgroundColor,
+          borderRadius: isBorderRadiusCircular
+              ? BorderRadius.circular(radius)
+              : borderRadius,
+          border: showBorder ? Border.all(color: borderColor) : null,
+          image: imageUrl != null
+              ? isNetworkImage
+                  ? DecorationImage(
+                      image: CachedNetworkImageProvider(imageUrl!), fit: fit)
+                  : DecorationImage(image: AssetImage(imageUrl ?? ''), fit: fit)
+              : null,
+        ),
+        child: child,
       ),
-      child: child,
     );
   }
 }
