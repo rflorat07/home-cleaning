@@ -62,23 +62,29 @@ class TopServiceProviderCard extends StatelessWidget {
         GestureDetector(
           onTap: onTap,
           child: TRoundedContainer(
-            width: TSizes.iconXXL,
-            height: TSizes.iconXXL,
-            radius: TSizes.iconXXL,
+            width: TSizes.size64,
+            height: TSizes.size64,
+            radius: TSizes.size64,
             imageUrl: imageUrl,
             backgroundColor: TColors.lightSilver,
           ),
         ),
-        const SizedBox(height: TSizes.xs),
-        Text(
-          label,
-          maxLines: 1,
-          textAlign: TextAlign.center,
-          overflow: TextOverflow.ellipsis,
-          style: Theme.of(context)
-              .textTheme
-              .labelLarge!
-              .copyWith(fontWeight: FontWeight.w500),
+        const SizedBox(height: TSizes.size2),
+        Expanded(
+          child: Container(
+            width: TSizes.size64,
+            margin: const EdgeInsets.symmetric(horizontal: TSizes.size4),
+            child: Text(
+              label,
+              maxLines: 1,
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              style: Theme.of(context)
+                  .textTheme
+                  .labelLarge!
+                  .copyWith(fontWeight: FontWeight.w500),
+            ),
+          ),
         )
       ],
     );
