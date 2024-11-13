@@ -8,6 +8,8 @@ import '../features/profile/screens/your_profile.dart';
 import 'routes.dart';
 
 class AppRouters {
+  AppRouters._();
+
   static final pages = [
     GetPage(name: TRoutes.home, page: () => const NavigationMenu()),
     GetPage(name: TRoutes.explore, page: () => const ExploreScreen()),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../common/common.dart';
 import '../../../utils/utils.dart';
 import '../controllers/service_details.controller.dart';
 
@@ -40,12 +41,9 @@ class ServiceDetailsBookContainer extends StatelessWidget {
                       .bodyMedium!
                       .apply(color: TColors.davyGrey)),
               Obx(
-                () => Text(
-                    '\$ ${controller.serviceSelected.value.price.toStringAsFixed(2)}',
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleMedium!
-                        .apply(color: TColors.green)),
+                () => // Cost
+                    CustomMoneyDisplay(
+                        amount: controller.serviceSelected.value.price),
               ),
             ],
           ),

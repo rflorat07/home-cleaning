@@ -1,4 +1,5 @@
 class TRoutes {
+  TRoutes._();
   static const home = '/';
   static const notfound = '/notfound';
   static const explore = '/explore';

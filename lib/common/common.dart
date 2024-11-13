@@ -9,6 +9,7 @@ export 'widgets/containers/address_container.dart';
 export 'widgets/containers/bottom_navigation_container.dart';
 export 'widgets/containers/rounded_container.dart';
 export 'widgets/containers/rounded_icon_text.dart';
+export 'widgets/currency/custom_money_display.dart';
 export 'widgets/gallery/gallery_photo_view_wrapper.dart';
 export 'widgets/icons/t_circular_icon.dart';
 export 'widgets/images/t_circular_image.dart';

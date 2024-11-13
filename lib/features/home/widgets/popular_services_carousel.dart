@@ -152,12 +152,7 @@ class UncontainedLayoutPopularService extends StatelessWidget {
                   const SizedBox(height: TSizes.xs),
 
                   // Cost
-                  Text(
-                    '\$ ${item.price.toStringAsFixed(2)}',
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: textTheme.bodyLarge!.apply(color: TColors.green),
-                  )
+                  CustomMoneyDisplay(amount: item.price),
                 ],
               ),
             ),
