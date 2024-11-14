@@ -26,7 +26,7 @@ class TCustomPriceRange extends StatelessWidget {
                 .copyWith(fontWeight: FontWeight.w500),
           ),
 
-          const SizedBox(height: TSizes.size12),
+          const SizedBox(height: TSizes.size6),
 
           SfRangeSliderTheme(
             data: TSliderThemeData.lightSfRangeSliderThemeData,

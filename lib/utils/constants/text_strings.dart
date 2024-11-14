@@ -103,7 +103,9 @@ class TTexts {
   static const String searchServices = 'Search Services';
 
   // -- Filter
+  static const String reviews = 'Reviews';
   static const String priceRange = 'Price Range';
+  static const String availableDate = 'Available Date';
 
   // -- Section Heading
   static const String categories = 'Categories';

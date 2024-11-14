@@ -45,6 +45,8 @@ class AppIcons {
       IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData carpainter =
       IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData linearBookmark =
+      IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData edit =
       IconData(0xe80c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData electrician =
@@ -63,12 +65,12 @@ class AppIcons {
       IconData(0xe814, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData security =
       IconData(0xe817, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData star =
+      IconData(0xe818, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData verify =
       IconData(0xe819, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData iron =
       IconData(0xe81a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData linearBookmark =
-      IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 
   static IconData getIconDataFromName(String name) {
     final Map<String, IconData> iconData = {
