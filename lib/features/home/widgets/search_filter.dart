@@ -4,6 +4,7 @@ import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../common/widgets/icons/t_circular_icon.dart';
 import '../../../utils/utils.dart';
+import '../../filter/screens/filter.dart';
 import '../../search/screens/search.dart';
 
 class TSearchFilter extends StatelessWidget {
@@ -51,7 +52,7 @@ class TSearchFilter extends StatelessWidget {
 
         const SizedBox(width: TSizes.spaceBtwItems / 2),
         // Filter
-        const TCircularIcon(
+        TCircularIcon(
           icon: IconsaxPlusLinear.setting_4,
           iconColor: TColors.green,
           size: TSizes.iconSl,
@@ -59,6 +60,7 @@ class TSearchFilter extends StatelessWidget {
           width: TSizes.inputMaxHeight,
           height: TSizes.inputMaxHeight,
           borderRadius: TSizes.borderRadiusMd,
+          onPressed: () => Get.to(() => const FiltersScreen()),
         ),
       ],
     );

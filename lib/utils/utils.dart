@@ -25,6 +25,7 @@ export 'theme/custom_themes/filled_button_theme.dart';
 export 'theme/custom_themes/input_theme.dart';
 export 'theme/custom_themes/list_tile_theme.dart';
 export 'theme/custom_themes/navigation_bar_theme.dart';
+export 'theme/custom_themes/slider_theme.dart';
 export 'theme/custom_themes/tabbar_theme.dart';
 export 'theme/custom_themes/text_theme.dart';
 export 'theme/theme.dart';

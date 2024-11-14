@@ -24,6 +24,7 @@ dependencies:
   cached_network_image: ^3.4.1
   flutter_native_splash: ^2.4.0
   smooth_page_indicator: ^1.2.0+3
+  syncfusion_flutter_sliders: ^27.1.58
 
   # Icons
   iconsax_plus: ^1.0.0

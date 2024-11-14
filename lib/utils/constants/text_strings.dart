@@ -102,6 +102,9 @@ class TTexts {
   static const String notification = 'Notification';
   static const String searchServices = 'Search Services';
 
+  // -- Filter
+  static const String priceRange = 'Price Range';
+
   // -- Section Heading
   static const String categories = 'Categories';
   static const String specialForYou = '#SpecialForYou';
