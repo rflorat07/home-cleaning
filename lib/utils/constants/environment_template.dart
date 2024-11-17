@@ -18,4 +18,7 @@ class EnvironmentTemplate {
     iosClientId: '',
     iosBundleId: '',
   );
+
+  static const mapAPIKeyIOS = '';
+  static const mapAPIKeyAND = '';
 }
