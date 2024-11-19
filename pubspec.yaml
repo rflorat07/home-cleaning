@@ -28,6 +28,7 @@ dependencies:
   syncfusion_flutter_sliders: ^27.1.58
 
   # Maps
+  map_launcher: ^3.5.0
   google_maps_flutter: ^2.10.0
 
   # Icons

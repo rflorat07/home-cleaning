@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:map_launcher/map_launcher.dart';
 
 import '../../../common/common.dart';
 import '../../../data/repositories/services/services.repository.dart';
@@ -79,6 +80,19 @@ class ServiceDetailsController extends GetxController {
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     } finally {
       isLoading.value = false;
+    }
+  }
+
+  Future<void> mapLauncher(GeoModel? location) async {
+    if (location != null) {
+      final availableMaps = await MapLauncher.installedMaps;
+      print(
+          availableMaps); // [AvailableMap { mapName: Google Maps, mapType: google }, ...]
+
+      await availableMaps.first.showMarker(
+        coords: Coords(location.lat, location.lng),
+        title: '',
+      );
     }
   }
 }

@@ -144,6 +144,8 @@ class ServiceDetailTabAbout extends StatelessWidget {
               textStyle: textTheme.bodyLarge,
               buttonTitle: TTexts.viewOnMap,
               textButtonStyle: textTheme.bodyLarge!.apply(color: TColors.green),
+              onPressed: () =>
+                  controller.mapLauncher(controller.serviceSelected.value.geo),
             ),
 
             const SizedBox(height: TSizes.size4),
