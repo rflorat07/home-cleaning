@@ -28,7 +28,7 @@ class TTextTheme {
         fontWeight: FontWeight.w500,
         color: TColors.dark.withOpacity(0.5)),
     labelLarge: const TextStyle().copyWith(
-        fontSize: 12.0, fontWeight: FontWeight.normal, color: TColors.dark),
+        fontSize: 12.0, fontWeight: FontWeight.w400, color: TColors.dark),
     labelMedium: const TextStyle().copyWith(
         fontSize: 12.0,
         fontWeight: FontWeight.normal,

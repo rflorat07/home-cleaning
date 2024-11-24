@@ -24,8 +24,8 @@ void main() async {
 
   /* final controller = Get.put(DummyRepository());
   await controller.uploadDummyData(
-      '/Users/rogerflorat/Development/Home Cleaning APP/home_cleaning/data/providers/providers.json',
-      'Providers'); */
+      '/Users/rogerflorat/Development/Home Cleaning APP/home_cleaning/data/services/address.json',
+      'Addresses'); */
 
   runApp(const App());
 }

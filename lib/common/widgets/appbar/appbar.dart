@@ -14,7 +14,7 @@ class TAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.leadingIcon,
     this.leadingOnPressed,
     this.showBackArrow = false,
-    this.backgroundColor = Colors.transparent,
+    this.backgroundColor = Colors.white,
     this.systemOverlayStyle = SystemUiOverlayStyle.dark,
     this.backArrowBackgroundColor = Colors.transparent,
   });

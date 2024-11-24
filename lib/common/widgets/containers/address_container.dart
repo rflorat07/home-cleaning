@@ -7,16 +7,18 @@ import '../../../utils/utils.dart';
 class TAddressContainer extends StatelessWidget {
   const TAddressContainer({
     super.key,
+    this.onTap,
     required this.addres,
   });
 
   final AddressModel addres;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return ListTile(
-      onTap: () {},
+      onTap: onTap,
       iconColor: TColors.dark,
       horizontalTitleGap: TSizes.size6,
       minVerticalPadding: TSizes.size16,

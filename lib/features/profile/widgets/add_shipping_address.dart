@@ -7,7 +7,10 @@ import '../../../utils/utils.dart';
 class TAddShippingAddress extends StatelessWidget {
   const TAddShippingAddress({
     super.key,
+    this.onPressed,
   });
+
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +33,7 @@ class TAddShippingAddress extends StatelessWidget {
             ),
             backgroundColor: WidgetStateProperty.all(TColors.whiteSmoke),
           ),
-          onPressed: () {},
+          onPressed: onPressed,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

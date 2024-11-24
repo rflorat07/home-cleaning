@@ -1,0 +1,37 @@
+{
+    "result": [
+        {
+            "id": "",
+            "name": "Home",
+            "address": "1901 Thornridge Cir. Shiloh, Hawaii 81063",
+            "floor": "",
+            "landmark": "",
+            "geo": {
+                "lat": 45.465454,
+                "lng": 9.186516
+            }
+        },
+        {
+            "id": "",
+            "name": "Office",
+            "address": "1901 Thornridge Cir. Shiloh, Hawaii 81063",
+            "floor": "",
+            "landmark": "",
+            "geo": {
+                "lat": 45.465454,
+                "lng": 9.186516
+            }
+        },
+        {
+            "id": "",
+            "name": "Parent’s House",
+            "address": "1901 Thornridge Cir. Shiloh, Hawaii 81063",
+            "floor": "",
+            "landmark": "",
+            "geo": {
+                "lat": 45.465454,
+                "lng": 9.186516
+            }
+        }
+    ]
+}

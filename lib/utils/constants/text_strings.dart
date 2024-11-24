@@ -94,6 +94,7 @@ class TTexts {
   static const String eReceipt = 'E-Receipt';
   static const String ctaContinue = 'Continue';
   static const String yesLogout = 'Yes, Logout';
+  static const String saveAddress = 'Save address';
 
   // -- Home
   static const String search = 'Search..';
@@ -124,6 +125,14 @@ class TTexts {
   static const String myBookings = 'My Bookings';
   static const String logout = 'Logout';
   static const String logoutMessage = 'Are you sure you want to log out?';
+  static const String addAddress = 'Add Address';
+  static const String saveAddressAs = 'Save address as *';
+  static const String completeAddress = 'Complete address';
+  static const String completeAddressPlaceholder = 'Enter address *';
+  static const String floor = 'Floor';
+  static const String floorPlaceholder = 'Enter Floor';
+  static const String landmark = 'Landmark';
+  static const String landmarkPlaceholder = 'Enter Landmark';
 
   // --- Service Detail
   static const String demoVideo = 'Demo Video';
