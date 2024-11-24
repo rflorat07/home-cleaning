@@ -154,7 +154,9 @@ class TPopularServiceCard extends StatelessWidget {
                 children: [
                   // Remove Favorites text
                   Text(
-                    TTexts.removeFavorites,
+                    item.isBookmark
+                        ? TTexts.removeFavorites
+                        : TTexts.addFavorites,
                     style: textTheme.headlineSmall!.copyWith(
                       fontWeight: FontWeight.w500,
                     ),
@@ -195,7 +197,9 @@ class TPopularServiceCard extends StatelessWidget {
                       Expanded(
                         child: FilledButton(
                           onPressed: onPressed,
-                          child: const Text(TTexts.yesRemove),
+                          child: Text(
+                            item.isBookmark ? TTexts.yesRemove : TTexts.yesAdd,
+                          ),
                         ),
                       ),
                     ],

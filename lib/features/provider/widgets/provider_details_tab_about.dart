@@ -144,11 +144,15 @@ class ProviderDetailTabAbout extends StatelessWidget {
               textStyle: textTheme.bodyLarge,
               buttonTitle: TTexts.viewOnMap,
               textButtonStyle: textTheme.bodyLarge!.apply(color: TColors.green),
+              onPressed: () => controller.mapLauncher(
+                controller.providerDetails.value.geo,
+                controller.providerDetails.value.address,
+              ),
             ),
 
-            const SizedBox(height: TSizes.size4),
+            const SizedBox(height: TSizes.size12),
             const Divider(color: TColors.dividerColor),
-            const SizedBox(height: TSizes.size4),
+            const SizedBox(height: TSizes.size12),
 
             /// Address Desc
             Row(

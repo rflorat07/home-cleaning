@@ -144,13 +144,15 @@ class ServiceDetailTabAbout extends StatelessWidget {
               textStyle: textTheme.bodyLarge,
               buttonTitle: TTexts.viewOnMap,
               textButtonStyle: textTheme.bodyLarge!.apply(color: TColors.green),
-              onPressed: () =>
-                  controller.mapLauncher(controller.serviceSelected.value.geo),
+              onPressed: () => controller.mapLauncher(
+                controller.serviceSelected.value.geo,
+                controller.serviceSelected.value.address,
+              ),
             ),
 
-            const SizedBox(height: TSizes.size4),
+            const SizedBox(height: TSizes.size12),
             const Divider(color: TColors.dividerColor),
-            const SizedBox(height: TSizes.size4),
+            const SizedBox(height: TSizes.size12),
 
             /// Address Desc
             Row(
@@ -166,6 +168,7 @@ class ServiceDetailTabAbout extends StatelessWidget {
 
             // Map
             const SizedBox(height: TSizes.size12),
+
             const TRoundedContainer(
               radius: TSizes.size12,
               width: double.infinity,

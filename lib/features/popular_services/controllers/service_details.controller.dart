@@ -83,15 +83,12 @@ class ServiceDetailsController extends GetxController {
     }
   }
 
-  Future<void> mapLauncher(GeoModel? location) async {
+  Future<void> mapLauncher(GeoModel? location, String address) async {
     if (location != null) {
       final availableMaps = await MapLauncher.installedMaps;
-      print(
-          availableMaps); // [AvailableMap { mapName: Google Maps, mapType: google }, ...]
-
       await availableMaps.first.showMarker(
         coords: Coords(location.lat, location.lng),
-        title: '',
+        title: address,
       );
     }
   }

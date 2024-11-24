@@ -7,6 +7,7 @@ class MapController extends GetxController {
 
   GoogleMapController? _mapController;
 
+  RxBool isLoading = false.obs;
   RxList<Marker> markers = <Marker>[].obs;
   final initialPosition = const LatLng(40.712986, -74.004593);
 
@@ -17,13 +18,14 @@ class MapController extends GetxController {
 
   @override
   void onInit() {
-    super.onInit();
     _addMarker(initialPosition, 'New York');
+    super.onInit();
   }
 
   // Initialize the controller
-  void setMapController(GoogleMapController controller) {
+  Future<void> setMapController(GoogleMapController controller) async {
     _mapController = controller;
+    isLoading(true);
   }
 
   // Move the camera to a specific position
@@ -40,6 +42,7 @@ class MapController extends GetxController {
       'assets/icons/custom_marker.png', // Path to your custom marker image
     );
 
+    markers.clear();
     markers.add(
       Marker(
         markerId: MarkerId(location.toString()),

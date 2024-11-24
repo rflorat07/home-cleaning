@@ -90,6 +90,7 @@ class TTexts {
   static const String update = 'Update';
   static const String apply = 'Apply';
   static const String yesRemove = 'Yes, Remove';
+  static const String yesAdd = 'Yes, Add';
   static const String eReceipt = 'E-Receipt';
   static const String ctaContinue = 'Continue';
   static const String yesLogout = 'Yes, Logout';
@@ -135,6 +136,7 @@ class TTexts {
   static const String addressDesc = '1012 Ocean avanue, New yourk, USA';
   static const String searchReviews = 'Search in reviews';
   static const String removeFavorites = 'Remove from Favorites?';
+  static const String addFavorites = 'Add to Favorites!';
   static const String aboutServiceDesc =
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Read more';
   static const String loremIpsum =

@@ -35,7 +35,7 @@ class ProviderDetailTabServices extends StatelessWidget {
 
             const SizedBox(height: TSizes.spaceBtwItems),
 
-            // Gallery IMG
+            // PopularService
             SizedBox(
               height: (TSizes.size135 + 24) * 6,
               child: ListView.separated(
@@ -45,7 +45,13 @@ class ProviderDetailTabServices extends StatelessWidget {
                     : controller.servicesDetails.length,
                 itemBuilder: (context, index) {
                   return TPopularServiceCard(
-                      item: controller.servicesDetails[index]);
+                    item: controller.servicesDetails[index],
+                    onPressed: () {
+                      Get.back();
+                      controller.removeFromFavorites(
+                          controller.servicesDetails[index]);
+                    },
+                  );
                 },
                 separatorBuilder: (context, index) =>
                     const SizedBox(height: TSizes.spaceBtwItems),
