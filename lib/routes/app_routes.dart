@@ -4,6 +4,7 @@ import '../features/explore/screens/explore.dart';
 import '../features/navigation/screens/navigation_menu.dart';
 import '../features/profile/screens/manage_address.dart';
 import '../features/profile/screens/my_bookings.dart';
+import '../features/profile/screens/privacy_policy.dart';
 import '../features/profile/screens/your_profile.dart';
 import 'routes.dart';
 
@@ -17,6 +18,8 @@ class AppRouters {
     GetPage(
         name: TRoutes.manageAddress, page: () => const ManageAddressScreen()),
     GetPage(name: TRoutes.myBookings, page: () => const MyBookingsScreen()),
+    GetPage(
+        name: TRoutes.privacyPolicy, page: () => const PrivacyPolicyScreen()),
   ];
 
   static final unknownRoute =

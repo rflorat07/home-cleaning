@@ -10,4 +10,5 @@ class TRoutes {
   static const manageAddress = '/manageaddress';
   static const myBookings = '/mybookings';
   static const logout = '/logout';
+  static const privacyPolicy = '/privacypolicy';
 }

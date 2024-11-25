@@ -56,7 +56,7 @@ List<ProfileModel> demoProfileList = [
   ProfileModel(
     title: 'Privacy Policy',
     icon: IconsaxPlusLinear.lock_1,
-    router: '',
+    router: TRoutes.privacyPolicy,
   ),
   ProfileModel(
     title: 'Invites Friends',

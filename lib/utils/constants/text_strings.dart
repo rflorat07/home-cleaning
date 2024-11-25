@@ -133,6 +133,7 @@ class TTexts {
   static const String floorPlaceholder = 'Enter Floor';
   static const String landmark = 'Landmark';
   static const String landmarkPlaceholder = 'Enter Landmark';
+  static const String privacyPolicy = 'Privacy Policy';
 
   // --- Service Detail
   static const String demoVideo = 'Demo Video';
