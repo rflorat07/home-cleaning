@@ -3,8 +3,9 @@ import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../../../common/common.dart';
-import '../../../common/controllers/map.controller.dart';
 import '../../../utils/utils.dart';
+import '../widgets/add_address_form.dart';
+import '../widgets/address_filter_chips.dart';
 
 class AddAddressScreen extends StatelessWidget {
   const AddAddressScreen({super.key});
@@ -88,74 +89,12 @@ class AddAddressScreen extends StatelessWidget {
                     const SizedBox(height: TSizes.size12),
 
                     // Filter Chips
-                    SizedBox(
-                      height: TSizes.size35,
-                      child: ListView.separated(
-                        padding:
-                            const EdgeInsets.only(left: TSizes.defaultSpace),
-                        scrollDirection: Axis.horizontal,
-                        physics: const BouncingScrollPhysics(),
-                        itemCount: 4,
-                        itemBuilder: (context, index) {
-                          final chip = [
-                            'Home',
-                            'Parent’s House',
-                            'Farm House',
-                            'Other'
-                          ];
-                          return ChoiceChip(
-                            label: Text(chip[index]),
-                            padding: const EdgeInsets.all(TSizes.size6),
-                            labelStyle: TextStyle(
-                                fontSize: TSizes.fontSize12,
-                                fontWeight: FontWeight.w500,
-                                color:
-                                    index == 0 ? TColors.white : TColors.dark),
-                            onSelected: (value) {},
-                            selected: index == 0,
-                          );
-                        },
-                        separatorBuilder: (context, index) =>
-                            const SizedBox(width: TSizes.size8),
-                      ),
-                    ),
+                    const AddressFilterChips(),
 
                     const SizedBox(height: TSizes.size16),
 
-                    const Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: TSizes.defaultSpace),
-                        child: Form(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              /// Complete address
-                              CustomTextFormField(
-                                maxLines: 5,
-                                labelText: TTexts.completeAddress,
-                                placeholder: TTexts.completeAddressPlaceholder,
-                              ),
-
-                              SizedBox(height: TSizes.size16),
-
-                              /// Floor
-                              CustomTextFormField(
-                                labelText: TTexts.floor,
-                                placeholder: TTexts.floorPlaceholder,
-                              ),
-
-                              SizedBox(height: TSizes.size16),
-
-                              /// Landmark
-                              CustomTextFormField(
-                                labelText: TTexts.landmark,
-                                placeholder: TTexts.landmarkPlaceholder,
-                              ),
-                            ],
-                          ),
-                        )),
-
-                    //
+                    // Form Add Addresss
+                    const AddAddressForm(),
                   ],
                 ),
               ),

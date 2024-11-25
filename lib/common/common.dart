@@ -1,3 +1,4 @@
+export 'controllers/map/map.controller.dart';
 export 'models/models.dart';
 export 'styles/spacing_styles.dart';
 export 'widgets/appbar/appbar.dart';

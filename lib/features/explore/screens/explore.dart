@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../../../common/controllers/map.controller.dart';
+import '../../../common/common.dart';
 import '../../../utils/utils.dart';
 import '../widgets/explore_header_container.dart';
 import '../widgets/explorer_carousel_card.dart';

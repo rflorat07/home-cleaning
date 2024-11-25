@@ -5,7 +5,7 @@ import '../../../utils/utils.dart';
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
-    this.maxLines,
+    this.maxLines = 1,
     required this.labelText,
     required this.placeholder,
     this.fieldHeight = TSizes.size44,

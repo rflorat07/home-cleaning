@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../common/common.dart';
-import '../../../common/controllers/map.controller.dart';
 import '../../../utils/utils.dart';
 
 class ExplorerLocationButton extends StatelessWidget {
