@@ -61,7 +61,7 @@ List<ProfileModel> demoProfileList = [
   ProfileModel(
     title: 'Invites Friends',
     icon: IconsaxPlusLinear.profile_add,
-    router: '',
+    router: TRoutes.inviteFriends,
   ),
   ProfileModel(
     title: 'Log out',

@@ -134,6 +134,7 @@ class TTexts {
   static const String landmark = 'Landmark';
   static const String landmarkPlaceholder = 'Enter Landmark';
   static const String privacyPolicy = 'Privacy Policy';
+  static const String inviteFriends = 'Invite Friends';
 
   // --- Service Detail
   static const String demoVideo = 'Demo Video';

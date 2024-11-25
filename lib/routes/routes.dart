@@ -11,4 +11,5 @@ class TRoutes {
   static const myBookings = '/mybookings';
   static const logout = '/logout';
   static const privacyPolicy = '/privacypolicy';
+  static const inviteFriends = '/invitefriends';
 }
