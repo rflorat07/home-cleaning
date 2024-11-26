@@ -20,7 +20,7 @@ class SearchScreen extends StatelessWidget {
           controller: controller.searchTextController,
           onChanged: (value) => controller.updateSearchTerm(value),
           decoration: InputDecoration(
-            labelText: TTexts.search,
+            hintText: TTexts.search,
             prefixIcon: const Icon(
               IconsaxPlusLinear.search_normal_1,
               color: TColors.green,

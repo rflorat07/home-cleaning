@@ -51,7 +51,7 @@ List<ProfileModel> demoProfileList = [
   ProfileModel(
     title: 'Help Center',
     icon: IconsaxPlusLinear.info_circle,
-    router: '',
+    router: TRoutes.helpCenter,
   ),
   ProfileModel(
     title: 'Privacy Policy',

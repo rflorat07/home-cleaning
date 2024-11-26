@@ -84,6 +84,8 @@ class TTexts {
   static const String upcomingTab = 'Upcoming';
   static const String completedTab = 'Completed';
   static const String cancelledTab = 'Cancelled';
+  static const String faq = 'FAQ';
+  static const String contactUs = 'Contact Us';
 
   // -- CTA
   static const String cancel = 'Cancel';
@@ -135,6 +137,8 @@ class TTexts {
   static const String landmarkPlaceholder = 'Enter Landmark';
   static const String privacyPolicy = 'Privacy Policy';
   static const String inviteFriends = 'Invite Friends';
+  static const String helpCenter = 'Help Center';
+  static const String searchHC = 'Search';
 
   // --- Service Detail
   static const String demoVideo = 'Demo Video';

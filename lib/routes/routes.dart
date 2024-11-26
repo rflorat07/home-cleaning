@@ -12,4 +12,5 @@ class TRoutes {
   static const logout = '/logout';
   static const privacyPolicy = '/privacypolicy';
   static const inviteFriends = '/invitefriends';
+  static const helpCenter = '/helpcenter';
 }
