@@ -7,14 +7,16 @@ class CustomExpansionTile extends StatelessWidget {
     super.key,
     this.children,
     this.content,
-    this.isExpanded = false,
+    this.leading,
     required this.title,
+    this.isExpanded = false,
     this.padding = const EdgeInsets.only(bottom: TSizes.size8),
   });
 
   final String title;
   final String? content;
   final bool isExpanded;
+  final Widget? leading;
   final List<Widget>? children;
   final EdgeInsetsGeometry? padding;
 
@@ -26,6 +28,7 @@ class CustomExpansionTile extends StatelessWidget {
       child: ExpansionTile(
         initiallyExpanded: isExpanded,
         expandedAlignment: Alignment.topLeft,
+        leading: leading,
         title: Text(
           title,
           style: textTheme.labelLarge!.copyWith(

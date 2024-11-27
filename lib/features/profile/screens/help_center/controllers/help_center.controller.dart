@@ -8,8 +8,9 @@ class HelpCenterController extends GetxController {
 
   RxBool isLoading = false.obs;
 
-  RxList<HelpCenterModel> allFAQ = <HelpCenterModel>[].obs;
   RxList<String> chipList = <String>[].obs;
+  RxList<HelpCenterModel> faqList = <HelpCenterModel>[].obs;
+  RxList<HelpCenterModel> contactUsList = <HelpCenterModel>[].obs;
 
   final _helpCenterRepository = Get.put(HelpCenterRepository());
 
@@ -24,19 +25,24 @@ class HelpCenterController extends GetxController {
 
   @override
   void onInit() {
-    fetchHelpCenterRecord();
+    fetchInitData();
     super.onInit();
   }
 
-  fetchHelpCenterRecord() async {
+  Future<void> fetchInitData() async {
     try {
       isLoading(true);
-      final result = await _helpCenterRepository.getAllAddress();
-      allFAQ(result);
+
+      final faqListResult = await _helpCenterRepository.getAllHelpCenter();
+      final contactUsResult = await _helpCenterRepository.getAllContactUs();
+
       chipList(_chips);
+      faqList(faqListResult);
+      contactUsList(contactUsResult);
     } catch (e) {
-      allFAQ([]);
       chipList([]);
+      faqList([]);
+      contactUsList([]);
     } finally {
       isLoading(false);
     }

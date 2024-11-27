@@ -26,16 +26,17 @@ class HelpCenterTabFaq extends StatelessWidget {
                   // FAQ
                   Container(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: TSizes.defaultSpace,
-                        vertical: TSizes.size12),
+                      horizontal: TSizes.defaultSpace,
+                      vertical: TSizes.size12,
+                    ),
                     child: Column(
                       children: [
                         ...List.generate(
-                          controller.allFAQ.length,
+                          controller.faqList.length,
                           (index) => CustomExpansionTile(
-                            isExpanded: controller.allFAQ[index].expanded,
-                            title: controller.allFAQ[index].title,
-                            content: controller.allFAQ[index].content,
+                            isExpanded: controller.faqList[index].expanded,
+                            title: controller.faqList[index].title,
+                            content: controller.faqList[index].content,
                           ),
                         ),
                       ],

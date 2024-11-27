@@ -1,0 +1,46 @@
+{
+    "result": [
+        {
+            "id": "",
+            "expanded": false,
+            "icon": "headphones",
+            "title": "Customer Service",
+            "content": "Lorem ipsum dolor sit amet"
+        },
+        {
+            "id": "",
+            "expanded": true,
+            "icon": "headphones",
+            "title": "whatsapp",
+            "content": "Lorem ipsum dolor sit amet"
+        },
+        {
+            "id": "",
+            "expanded": false,
+            "icon": "world",
+            "title": "Website",
+            "content": "Lorem ipsum dolor sit amet."
+        },
+        {
+            "id": "",
+            "expanded": false,
+            "icon": "facebook",
+            "title": "Facebook",
+            "content": "Lorem ipsum dolor sit amet."
+        },
+        {
+            "id": "",
+            "expanded": false,
+            "icon": "twitter",
+            "title": "Twitter",
+            "content": "Lorem ipsum dolor sit amet."
+        },
+        {
+            "id": "",
+            "expanded": false,
+            "icon": "instagram",
+            "title": "Instagram",
+            "content": "Lorem ipsum dolor sit amet."
+        }
+    ]
+}

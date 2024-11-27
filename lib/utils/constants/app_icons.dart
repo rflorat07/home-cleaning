@@ -55,6 +55,8 @@ class AppIcons {
       IconData(0xe80e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData homeCleaning =
       IconData(0xe80f, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData headphones =
+      IconData(0xe810, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData laundry =
       IconData(0xe811, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData massage =
@@ -63,6 +65,10 @@ class AppIcons {
       IconData(0xe813, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData percent =
       IconData(0xe814, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData whatsapp =
+      IconData(0xe815, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData world =
+      IconData(0xe816, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData security =
       IconData(0xe817, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData star =
@@ -71,6 +77,12 @@ class AppIcons {
       IconData(0xe819, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData iron =
       IconData(0xe81a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData facebook =
+      IconData(0xe81b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData instagram =
+      IconData(0xe81d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData xSocialMedia =
+      IconData(0xe81e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 
   static IconData getIconDataFromName(String name) {
     final Map<String, IconData> iconData = {
@@ -90,6 +102,12 @@ class AppIcons {
       'gardening': AppIcons.gardening,
       'security': AppIcons.security,
       'massage': AppIcons.massage,
+      'world': AppIcons.world,
+      'facebook': AppIcons.facebook,
+      'whatsapp': AppIcons.whatsapp,
+      'instagram': AppIcons.instagram,
+      'headphones': AppIcons.headphones,
+      'x-social-media': AppIcons.xSocialMedia,
     };
 
     return iconData[name] ?? Icons.close;
