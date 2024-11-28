@@ -31,7 +31,7 @@ List<ProfileModel> demoProfileList = [
   ProfileModel(
     title: 'Payment Methods',
     icon: IconsaxPlusLinear.card,
-    router: '',
+    router: TRoutes.paymentMethods,
   ),
   ProfileModel(
     title: 'My Bookings',

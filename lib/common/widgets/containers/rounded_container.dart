@@ -18,19 +18,20 @@ class TRoundedContainer extends StatelessWidget {
     this.fit = BoxFit.cover,
     this.isNetworkImage = true,
     this.radius = TSizes.size16,
+    this.borderWidth = TSizes.size1,
     this.isBorderRadiusCircular = true,
     this.backgroundColor = TColors.white,
     this.borderColor = TColors.borderPrimary,
   });
 
   final BoxFit? fit;
-  final double radius;
   final Widget? child;
   final Function()? onTap;
   final String? imageUrl;
   final Color borderColor;
   final Color backgroundColor;
   final double? width, height;
+  final double radius, borderWidth;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
   final BorderRadius? borderRadius;
@@ -50,7 +51,9 @@ class TRoundedContainer extends StatelessWidget {
           borderRadius: isBorderRadiusCircular
               ? BorderRadius.circular(radius)
               : borderRadius,
-          border: showBorder ? Border.all(color: borderColor) : null,
+          border: showBorder
+              ? Border.all(color: borderColor, width: borderWidth)
+              : null,
           image: imageUrl != null
               ? isNetworkImage
                   ? DecorationImage(

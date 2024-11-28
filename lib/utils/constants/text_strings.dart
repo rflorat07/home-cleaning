@@ -139,6 +139,13 @@ class TTexts {
   static const String inviteFriends = 'Invite Friends';
   static const String helpCenter = 'Help Center';
   static const String searchHC = 'Search';
+  static const String paymentMethods = 'Payment Methods';
+  static const String creditDebitCard = 'Credit & Debit Card';
+  static const String morePaymentOptions = 'More Payment Options';
+  static const String addCard = 'Add Card';
+  static const String paypal = 'Paypal';
+  static const String applePay = 'Apple Pay';
+  static const String googlePay = 'Google Pay';
 
   // --- Service Detail
   static const String demoVideo = 'Demo Video';

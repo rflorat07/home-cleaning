@@ -6,6 +6,7 @@ import '../features/profile/screens/help_center/screens/help_center.dart';
 import '../features/profile/screens/invite_friends.dart';
 import '../features/profile/screens/manage_address.dart';
 import '../features/profile/screens/my_bookings.dart';
+import '../features/profile/screens/payment_methods/screens/payment_methods.dart';
 import '../features/profile/screens/privacy_policy.dart';
 import '../features/profile/screens/your_profile.dart';
 import 'routes.dart';
@@ -25,6 +26,8 @@ class AppRouters {
     GetPage(
         name: TRoutes.inviteFriends, page: () => const InviteFriendsScreen()),
     GetPage(name: TRoutes.helpCenter, page: () => const HelpCenterScreen()),
+    GetPage(
+        name: TRoutes.paymentMethods, page: () => const PaymentMethodsScreen()),
   ];
 
   static final unknownRoute =

@@ -6,11 +6,12 @@ class TRoutes {
   static const bookmark = '/bookmark';
   static const chat = '/chat';
   static const profile = '/profile';
-  static const yourProfile = '/yourprofile';
-  static const manageAddress = '/manageaddress';
+  static const yourProfile = '/your-profile';
+  static const manageAddress = '/manage-address';
   static const myBookings = '/mybookings';
   static const logout = '/logout';
-  static const privacyPolicy = '/privacypolicy';
-  static const inviteFriends = '/invitefriends';
-  static const helpCenter = '/helpcenter';
+  static const privacyPolicy = '/privacy-policy';
+  static const inviteFriends = '/invite-friends';
+  static const helpCenter = '/help-center';
+  static const paymentMethods = '/payment-methods';
 }
