@@ -97,6 +97,7 @@ class TTexts {
   static const String ctaContinue = 'Continue';
   static const String yesLogout = 'Yes, Logout';
   static const String saveAddress = 'Save address';
+  static const String confirmPayment = 'Confirm Payment';
 
   // -- Home
   static const String search = 'Search..';

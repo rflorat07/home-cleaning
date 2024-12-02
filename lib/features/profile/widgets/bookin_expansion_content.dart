@@ -21,20 +21,25 @@ class BookinExpansionContent extends StatelessWidget {
         ),
       ),
       child: ExpansionTile(
+        shape: const RoundedRectangleBorder(),
+        collapsedShape: const RoundedRectangleBorder(),
         showTrailingIcon: false,
         childrenPadding: const EdgeInsets.only(top: TSizes.size12),
         expandedAlignment: Alignment.topLeft,
         title: SizedBox(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'View More',
-                style: textTheme.bodyLarge!.apply(color: TColors.green),
-              ),
-              const SizedBox(width: TSizes.size10),
-              const Icon(IconsaxPlusLinear.arrow_down, color: TColors.green)
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: TSizes.size8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'View More',
+                  style: textTheme.bodyLarge!.apply(color: TColors.green),
+                ),
+                const SizedBox(width: TSizes.size8),
+                const Icon(IconsaxPlusLinear.arrow_down, color: TColors.green)
+              ],
+            ),
           ),
         ),
         children: [

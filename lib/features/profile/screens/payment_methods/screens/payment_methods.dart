@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../../../common/common.dart';
@@ -13,6 +14,10 @@ class PaymentMethodsScreen extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: const TAppBar(showBackArrow: true, title: TTexts.paymentMethods),
+      bottomNavigationBar: TBottomNavigationContainer(
+        text: TTexts.confirmPayment,
+        onPressed: () => Get.back(),
+      ),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
         child: Column(
