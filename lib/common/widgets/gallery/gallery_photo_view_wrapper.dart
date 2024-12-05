@@ -36,6 +36,7 @@ class GalleryPhotoViewWrapper extends StatelessWidget {
         extendBodyBehindAppBar: true,
         appBar: const TAppBar(
           showBackArrow: true,
+          backgroundColor: Colors.transparent,
           backArrowBackgroundColor: Colors.white,
         ),
         body: Container(
