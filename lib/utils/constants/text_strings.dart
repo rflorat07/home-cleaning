@@ -173,4 +173,6 @@ class TTexts {
   static const String customer = 'Customer';
   static const String yearsExp = 'Years Exp.';
   static const String addDetailedReview = 'Add detailed review';
+  static const String yourOverallRating = 'Your overall rating';
+  static const String yourExperience = 'How was your experience with';
 }
