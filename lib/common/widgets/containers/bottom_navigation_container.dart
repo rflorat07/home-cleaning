@@ -10,7 +10,7 @@ class TBottomNavigationContainer extends StatelessWidget {
     this.onPressed,
     this.decoration,
     required this.text,
-    this.height = TSizes.size80,
+    this.height = TSizes.size48,
   });
 
   final String text;
@@ -40,7 +40,7 @@ class TBottomNavigationContainer extends StatelessWidget {
               ),
             ),
         child: SizedBox(
-          height: TSizes.size48,
+          height: height,
           child: FilledButton(
             onPressed: onPressed,
             style: ButtonStyle(

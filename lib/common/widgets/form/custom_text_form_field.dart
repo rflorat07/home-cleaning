@@ -5,14 +5,20 @@ import '../../../utils/utils.dart';
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
+    this.border,
     this.maxLines = 1,
     required this.labelText,
     required this.placeholder,
     this.fieldHeight = TSizes.size44,
+    this.borderRadius = TSizes.size8,
+    this.backgroundColor = TColors.whiteSmoke,
   });
 
   final int? maxLines;
+  final BoxBorder? border;
   final double? fieldHeight;
+  final double borderRadius;
+  final Color backgroundColor;
   final String labelText, placeholder;
 
   @override
@@ -29,11 +35,12 @@ class CustomTextFormField extends StatelessWidget {
         ),
         const SizedBox(height: TSizes.size8),
         Container(
-          decoration: const BoxDecoration(
-            color: TColors.whiteSmoke,
+          decoration: BoxDecoration(
+            color: backgroundColor,
             borderRadius: BorderRadius.all(
-              Radius.circular(TSizes.size8),
+              Radius.circular(borderRadius),
             ),
+            border: border,
           ),
           //height: maxLines != null ? null : fieldHeight,
           child: TextFormField(

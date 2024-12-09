@@ -98,6 +98,7 @@ class TTexts {
   static const String yesLogout = 'Yes, Logout';
   static const String saveAddress = 'Save address';
   static const String confirmPayment = 'Confirm Payment';
+  static const String addPphoto = 'add photo';
 
   // -- Home
   static const String search = 'Search..';
@@ -160,6 +161,7 @@ class TTexts {
   static const String searchReviews = 'Search in reviews';
   static const String removeFavorites = 'Remove from Favorites?';
   static const String addFavorites = 'Add to Favorites!';
+  static const String enterHere = 'Enter here';
   static const String aboutServiceDesc =
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Read more';
   static const String loremIpsum =
@@ -170,4 +172,5 @@ class TTexts {
   static const String review = 'Review';
   static const String customer = 'Customer';
   static const String yearsExp = 'Years Exp.';
+  static const String addDetailedReview = 'Add detailed review';
 }
