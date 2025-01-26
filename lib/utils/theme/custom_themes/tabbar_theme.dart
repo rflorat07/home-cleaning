@@ -12,7 +12,7 @@ class TTabBarTheme {
       ),
     ),
     indicatorSize: TabBarIndicatorSize.tab,
-    dividerColor: Colors.black.withOpacity(0.1),
+    dividerColor: Colors.black.withValues(alpha: 0.1),
     labelStyle: const TextStyle(
         color: TColors.green,
         fontSize: TSizes.fontSize14,
@@ -31,7 +31,7 @@ class TTabBarTheme {
     ),
     indicatorColor: TColors.green,
     indicatorSize: TabBarIndicatorSize.tab,
-    dividerColor: Colors.black.withOpacity(0.1),
+    dividerColor: Colors.black.withValues(alpha: 0.1),
     labelStyle: const TextStyle(
         color: TColors.green,
         fontSize: TSizes.fontSize14,

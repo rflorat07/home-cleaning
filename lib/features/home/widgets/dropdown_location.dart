@@ -27,7 +27,7 @@ class TDropdownlocation extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .labelLarge!
-                  .apply(color: TColors.white.withOpacity(0.7)),
+                  .apply(color: TColors.white.withValues(alpha: 0.7)),
             ),
 
             const SizedBox(height: TSizes.xs),
@@ -85,7 +85,7 @@ class TDropdownlocation extends StatelessWidget {
           iconColor: TColors.white,
           borderRadius: TSizes.size8,
           svgIcon: SvgPicture.asset(TIcons.notification),
-          backgroundColor: Colors.white.withOpacity(0.17),
+          backgroundColor: Colors.white.withValues(alpha: 0.17),
           onPressed: () => Get.to(() => const NotificationScreen()),
         ),
       ],

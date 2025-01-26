@@ -22,7 +22,7 @@ class OnBoardingDotNavigation extends StatelessWidget {
           fixedCenter: false,
           dotWidth: TSizes.dotSize,
           dotHeight: TSizes.dotSize,
-          dotColor: TColors.green.withOpacity(0.2),
+          dotColor: TColors.green.withValues(alpha: 0.2),
           activeDotColor: TColors.green,
         ),
       ),

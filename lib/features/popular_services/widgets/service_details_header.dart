@@ -44,7 +44,7 @@ class ServiceDetailsHeader extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(
                     vertical: TSizes.spaceBtwItems / 2,
                     horizontal: TSizes.spaceBtwItems),
-                backgroundColor: TColors.davyGrey.withOpacity(0.5),
+                backgroundColor: TColors.davyGrey.withValues(alpha: 0.5),
               ),
               child: Row(
                 children: [
@@ -53,7 +53,7 @@ class ServiceDetailsHeader extends StatelessWidget {
                     height: TSizes.spaceBtwSections,
                     child: Icon(
                       Icons.play_arrow_rounded,
-                      color: TColors.davyGrey.withOpacity(0.5),
+                      color: TColors.davyGrey.withValues(alpha: 0.5),
                     ),
                   ),
                   const SizedBox(width: TSizes.sm),
@@ -105,9 +105,10 @@ class ServiceDetailsHeader extends StatelessWidget {
                           height: TSizes.size49,
                           radius: TSizes.cardRadiusXs,
                           imageUrl: serviceSelected.value.images[6],
-                          backgroundColor: TColors.darkerGrey.withOpacity(0.6),
+                          backgroundColor:
+                              TColors.darkerGrey.withValues(alpha: 0.6),
                           child: Container(
-                            color: Colors.black.withOpacity(0.4),
+                            color: Colors.black.withValues(alpha: 0.4),
                             child: Center(
                               child: Text(
                                 '+ ${serviceSelected.value.images.length - 5}',

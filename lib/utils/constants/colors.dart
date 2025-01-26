@@ -18,7 +18,7 @@ class TColors {
 
   // Background Container Colors
   static const Color lightContainer = Colors.white;
-  static Color darkContainer = Colors.white.withOpacity(0.1);
+  static Color darkContainer = Colors.white.withValues(alpha: 0.1);
 
   // Button Colors
   static const Color buttonPrimary = Color(0xFF4C9580);

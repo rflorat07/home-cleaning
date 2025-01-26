@@ -63,7 +63,7 @@ class TSpecialOfferCarousel extends StatelessWidget {
                   fixedCenter: false,
                   dotWidth: TSizes.carouselDotSize,
                   dotHeight: TSizes.carouselDotSize,
-                  dotColor: TColors.green.withOpacity(0.2),
+                  dotColor: TColors.green.withValues(alpha: 0.2),
                   activeDotColor: TColors.green,
                 ),
               ),

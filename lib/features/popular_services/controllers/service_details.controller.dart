@@ -48,8 +48,8 @@ class ServiceDetailsController extends GetxController {
 
   void updateColor(double offset) {
     if (offset > 100) {
-      appBarColor.value =
-          TColors.green.withOpacity(0.9); // Change to red when scrolled down
+      appBarColor.value = TColors.green
+          .withValues(alpha: 0.9); // Change to red when scrolled down
     } else {
       appBarColor.value =
           Colors.transparent; // Change back to blue when at the top
