@@ -25,7 +25,7 @@ class LoginScreen extends StatelessWidget {
                   subTitle: TTexts.loginSubTitle,
                 ),
 
-                /// Form
+                /// Login Form
                 TLoginForm(),
 
                 /// Divider
