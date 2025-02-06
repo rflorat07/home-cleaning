@@ -28,6 +28,9 @@ dependencies:
   syncfusion_flutter_core: ^27.1.58
   syncfusion_flutter_sliders: ^27.1.58
 
+  # Form
+  formz: ^0.8.0
+
   # Maps
   map_launcher: ^3.5.0
   google_maps_flutter: ^2.10.0

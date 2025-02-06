@@ -70,6 +70,8 @@ class TTexts {
   static const String signUpLabel = 'Don’t have an account? ';
   static const String signInpLabel = 'Already  have an account? ';
   static const String rememberMe = 'Remember Me';
+  static const String invalidEmail = 'Invalid email address';
+  static const String invalidPassword = 'Invalid password';
 
   // -- Tabs
   static const String homeTab = 'Home';

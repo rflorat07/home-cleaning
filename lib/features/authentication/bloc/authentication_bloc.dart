@@ -8,8 +8,6 @@ part 'authentication_state.dart';
 
 class AuthenticationBloc
     extends Bloc<AuthenticationEvent, AuthenticationState> {
-  final AuthenticationBlocRepository _authenticationRepository;
-
   AuthenticationBloc({
     required AuthenticationBlocRepository authenticationRepository,
   })  : _authenticationRepository = authenticationRepository,
@@ -24,6 +22,7 @@ class AuthenticationBloc
 
     on<AuthenticationLogoutPressed>(_onLogoutPressed);
   }
+  final AuthenticationBlocRepository _authenticationRepository;
 
   void _onLogoutPressed(
     AuthenticationLogoutPressed event,

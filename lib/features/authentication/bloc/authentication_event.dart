@@ -12,10 +12,9 @@ final class AuthenticationStarted extends AuthenticationEvent {
 }
 
 final class AuthenticationLoggedIn extends AuthenticationEvent {
+  const AuthenticationLoggedIn({required this.email, required this.password});
   final String email;
   final String password;
-
-  const AuthenticationLoggedIn({required this.email, required this.password});
 
   @override
   List<Object> get props => [email, password];

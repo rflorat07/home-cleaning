@@ -4,18 +4,17 @@ import 'package:flutter/services.dart';
 import '../../../utils/utils.dart';
 
 class AuthenticationBlocRepository {
-  final FirebaseAuth _firebaseAuth;
-
   AuthenticationBlocRepository({
     FirebaseAuth? firebaseAuth,
   }) : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance;
+  final FirebaseAuth _firebaseAuth;
 
   /// Get Authentication User Data
   User? get currentUser => _firebaseAuth.currentUser;
 
   /// [EmailAuthentication] - LOGIN
-  Future<UserCredential> loginWithEmailAndPassword(
-      String email, String password) async {
+  Future<UserCredential> logInWithEmailAndPassword(
+      {required String email, required String password}) async {
     try {
       return await _firebaseAuth.signInWithEmailAndPassword(
           email: email, password: password);
