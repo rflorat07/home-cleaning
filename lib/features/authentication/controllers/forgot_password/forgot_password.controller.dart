@@ -20,12 +20,12 @@ class ForgotPasswordController extends GetxController {
       if (!forgotPasswordFormKey.currentState!.validate()) return;
 
       // Star Loading
-      TFullScreenLoader.openLoadingDialog();
+      TFullScreenLoader.openLoadingDialog(null);
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
-        TFullScreenLoader.stopLoading();
+        TFullScreenLoader.stopLoading(null);
         return;
       }
 
@@ -34,7 +34,7 @@ class ForgotPasswordController extends GetxController {
           .sendPasswordResetEmail(email.text.trim());
 
       // Remove Loader
-      TFullScreenLoader.stopLoading();
+      TFullScreenLoader.stopLoading(null);
 
       // Show Success Screen
       TLoaders.successSnackBar(
@@ -44,7 +44,7 @@ class ForgotPasswordController extends GetxController {
       Get.offAll(() => const LoginScreen());
     } catch (e) {
       // Remove Loader
-      TFullScreenLoader.stopLoading();
+      TFullScreenLoader.stopLoading(null);
       TLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
     }
   }

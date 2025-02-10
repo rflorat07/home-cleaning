@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class TFullScreenLoader {
-  static void openLoadingDialog() {
+  static void openLoadingDialog(BuildContext? context) {
     showDialog(
-      context: Get.overlayContext!,
+      context: context ?? Get.overlayContext!,
       barrierDismissible: false,
       useSafeArea: false,
       builder: (_) => PopScope(
@@ -22,7 +22,9 @@ class TFullScreenLoader {
     );
   }
 
-  static void stopLoading() {
-    Navigator.of(Get.overlayContext!).pop();
+  static void stopLoading(BuildContext? context) {
+    if (ModalRoute.of(context ?? Get.overlayContext!)?.isCurrent == false) {
+      Navigator.of(context ?? Get.overlayContext!).pop();
+    }
   }
 }

@@ -38,12 +38,12 @@ class YourProfileController extends GetxController {
       if (!yourProfileFormKey.currentState!.validate()) return;
 
       // Star Loading
-      TFullScreenLoader.openLoadingDialog();
+      TFullScreenLoader.openLoadingDialog(null);
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
-        TFullScreenLoader.stopLoading();
+        TFullScreenLoader.stopLoading(null);
         return;
       }
 
@@ -61,14 +61,14 @@ class YourProfileController extends GetxController {
       await userController.fetchUserRecord();
 
       // Remove Loader
-      TFullScreenLoader.stopLoading();
+      TFullScreenLoader.stopLoading(null);
 
       // Show Success Screen
       TLoaders.successSnackBar(
           title: 'Congratulations', message: 'Your Profile has been update.');
     } catch (e) {
       // Remove Loader
-      TFullScreenLoader.stopLoading();
+      TFullScreenLoader.stopLoading(null);
       TLoaders.errorSnackBar(title: 'Oh Snap', message: e.toString());
     }
   }

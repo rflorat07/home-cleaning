@@ -43,12 +43,12 @@ class LoginController extends GetxController {
       }
 
       //Start Loading
-      TFullScreenLoader.openLoadingDialog();
+      //TFullScreenLoader.openLoadingDialog();
 
       // check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
-        TFullScreenLoader.stopLoading();
+        TFullScreenLoader.stopLoading(null);
         return;
       }
 
@@ -57,14 +57,14 @@ class LoginController extends GetxController {
           .loginWithEmailAndPassword(email.text.trim(), password.text.trim());
 
       // Remove Loader
-      TFullScreenLoader.stopLoading();
+      TFullScreenLoader.stopLoading(null);
 
       // redirect
       AuthenticationRepository.instance.screenRedirect();
 
       Get.offAll(() => const NavigationMenu());
     } catch (e) {
-      TFullScreenLoader.stopLoading();
+      TFullScreenLoader.stopLoading(null);
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     }
   }

@@ -7,7 +7,7 @@ import '../../../../../data/repositories/authentication/authentication.dart';
 import '../../../../../utils/utils.dart';
 import '../../../../navigation/screens/navigation_menu.dart';
 import '../../forgot_password/forgot_password.dart';
-import '../cubit/login_cubit.dart';
+import '../bloc/login_bloc.dart';
 
 class TLoginForm extends StatelessWidget {
   const TLoginForm({
@@ -18,21 +18,29 @@ class TLoginForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          LoginCubit(context.read<AuthenticationBlocRepository>()),
-      child: BlocListener<LoginCubit, LoginState>(
+          LoginBloc(context.read<AuthenticationBlocRepository>()),
+      child: BlocListener<LoginBloc, LoginState>(
         listener: (context, state) {
+          if (state.status.isInProgress) {
+            TFullScreenLoader.openLoadingDialog(context);
+          }
+
+          if (state.status.isSuccess) {
+            TFullScreenLoader.stopLoading(context);
+            AppNavigator.pushAndRemove(context, const NavigationMenu());
+          }
+
           if (state.status.isFailure) {
+            TFullScreenLoader.stopLoading(context);
             ScaffoldMessenger.of(context)
               ..hideCurrentSnackBar()
               ..showSnackBar(
                 SnackBar(
+                  duration: const Duration(seconds: 3),
                   content: Text(state.errorMessage ?? 'Authentication Failure'),
                   behavior: SnackBarBehavior.floating,
                 ),
               );
-          }
-          if (state.status.isSuccess) {
-            AppNavigator.pushAndRemove(context, const NavigationMenu());
           }
         },
         child: Padding(
@@ -58,8 +66,7 @@ class TLoginForm extends StatelessWidget {
 class _EmailInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final displayError =
-        context.select((LoginCubit cubit) => cubit.state.email.displayError);
+    final blocState = context.select((LoginBloc bloc) => bloc.state);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,10 +81,13 @@ class _EmailInput extends StatelessWidget {
 
         TextFormField(
           key: const Key('loginForm_emailInput_textField'),
-          onChanged: (email) => context.read<LoginCubit>().emailChanged(email),
+          onChanged: (email) =>
+              context.read<LoginBloc>().add(EmailChanged(email)),
           keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
-            errorText: displayError != null ? TTexts.invalidEmail : null,
+            errorText: blocState.email.isValid || blocState.email.isPure
+                ? null
+                : blocState.email.displayError,
           ),
         ),
       ],
@@ -88,8 +98,7 @@ class _EmailInput extends StatelessWidget {
 class _PasswordInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final cubitState = context.select((LoginCubit cubit) => cubit.state);
-
+    final blocState = context.select((LoginBloc bloc) => bloc.state);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: TSizes.size6,
@@ -106,21 +115,22 @@ class _PasswordInput extends StatelessWidget {
         TextFormField(
           key: const Key('loginForm_passwordInput_textField'),
           onChanged: (password) =>
-              context.read<LoginCubit>().passwordChanged(password),
-          obscureText: cubitState.obscureText,
+              context.read<LoginBloc>().add(PasswordChanged(password)),
+          obscureText: blocState.obscureText,
           decoration: InputDecoration(
             suffixIcon: IconButton(
-              onPressed: () =>
-                  context.read<LoginCubit>().togglePasswordVisibility(),
+              onPressed: () => context
+                  .read<LoginBloc>()
+                  .add(TogglePasswordVisibility(blocState.obscureText)),
               icon: Icon(
-                cubitState.obscureText
+                blocState.obscureText
                     ? IconsaxPlusLinear.eye_slash
                     : IconsaxPlusLinear.eye,
               ),
             ),
-            errorText: cubitState.password.displayError != null
-                ? TTexts.invalidPassword
-                : null,
+            errorText: blocState.password.isValid || blocState.password.isPure
+                ? null
+                : blocState.password.displayError,
           ),
         ),
       ],
@@ -131,7 +141,7 @@ class _PasswordInput extends StatelessWidget {
 class _RememberMeCheckbox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final cubitState = context.select((LoginCubit cubit) => cubit.state);
+    final blocState = context.select((LoginBloc bloc) => bloc.state);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -142,9 +152,10 @@ class _RememberMeCheckbox extends StatelessWidget {
               height: TSizes.size24,
               width: TSizes.size24,
               child: Checkbox(
-                value: cubitState.rememberMe,
-                onChanged: (value) =>
-                    context.read<LoginCubit>().rememberMeChanged(),
+                value: blocState.rememberMe,
+                onChanged: (value) => context
+                    .read<LoginBloc>()
+                    .add(RememberMeChanged(value ?? false)),
               ),
             ),
             const SizedBox(width: TSizes.size4),
@@ -176,15 +187,12 @@ class _RememberMeCheckbox extends StatelessWidget {
 class _LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final isValid = context.select(
-      (LoginCubit cubit) => cubit.state.isValid,
-    );
     return SizedBox(
       width: double.infinity,
       height: TSizes.buttonHeight,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(padding: EdgeInsets.zero),
-        onPressed: () => context.read<LoginCubit>().logInWithCredentials(),
+        onPressed: () => context.read<LoginBloc>().add(LoginSubmitted()),
         child: const Text(TTexts.signIn),
       ),
     );

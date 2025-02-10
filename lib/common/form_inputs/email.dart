@@ -2,7 +2,7 @@ import 'package:formz/formz.dart';
 
 enum EmailValidationError { invalid }
 
-class Email extends FormzInput<String, EmailValidationError> {
+class Email extends FormzInput<String, String> {
   const Email.pure() : super.pure('');
 
   const Email.dirty([super.value = '']) : super.dirty();
@@ -11,9 +11,7 @@ class Email extends FormzInput<String, EmailValidationError> {
       RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
 
   @override
-  EmailValidationError? validator(String? value) {
-    return _emailRegExp.hasMatch(value ?? '')
-        ? null
-        : EmailValidationError.invalid;
+  String? validator(String? value) {
+    return _emailRegExp.hasMatch(value ?? '') ? null : 'Invalid email address.';
   }
 }

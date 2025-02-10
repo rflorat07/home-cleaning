@@ -97,7 +97,7 @@ class UserController extends GetxController {
   // Delete User Account
   void deleteUserAccount() async {
     try {
-      TFullScreenLoader.openLoadingDialog();
+      TFullScreenLoader.openLoadingDialog(null);
       // First re-authenticate user
       final auth = AuthenticationRepository.instance;
       final provider =
@@ -107,12 +107,12 @@ class UserController extends GetxController {
         // Re Verify Auth Email
         if (provider == 'password') {
           await auth.deleteAccount();
-          TFullScreenLoader.stopLoading();
+          TFullScreenLoader.stopLoading(null);
           Get.offAll(() => const LoginScreen());
         }
       }
     } catch (e) {
-      TFullScreenLoader.stopLoading();
+      TFullScreenLoader.stopLoading(null);
       TLoaders.warningSnackBar(title: 'Oh Snap!', message: e.toString());
     }
   }
@@ -121,18 +121,18 @@ class UserController extends GetxController {
   Future<void> reAuthenticateEmailAndPasswordUser() async {
     try {
       // Star Loading
-      TFullScreenLoader.openLoadingDialog();
+      TFullScreenLoader.openLoadingDialog(null);
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
-        TFullScreenLoader.stopLoading();
+        TFullScreenLoader.stopLoading(null);
         return;
       }
 
       // Form Validation
       if (!reAuthFormKey.currentState!.validate()) {
-        TFullScreenLoader.stopLoading();
+        TFullScreenLoader.stopLoading(null);
         return;
       }
 
@@ -142,13 +142,13 @@ class UserController extends GetxController {
       await AuthenticationRepository.instance.deleteAccount();
 
       // Remove Loader
-      TFullScreenLoader.stopLoading();
+      TFullScreenLoader.stopLoading(null);
 
       // Redirect
       Get.offAll(() => const LoginScreen());
     } catch (e) {
       // Remove Loader
-      TFullScreenLoader.stopLoading();
+      TFullScreenLoader.stopLoading(null);
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
     }
   }

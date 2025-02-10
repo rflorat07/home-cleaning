@@ -37,12 +37,12 @@ class SignupController extends GetxController {
       }
 
       // Start Loading
-      TFullScreenLoader.openLoadingDialog();
+      TFullScreenLoader.openLoadingDialog(null);
 
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
-        TFullScreenLoader.stopLoading();
+        TFullScreenLoader.stopLoading(null);
         return;
       }
 
@@ -64,7 +64,7 @@ class SignupController extends GetxController {
       final userRepository = Get.put(UserRepository());
       await userRepository.saveUserRecord(newUser);
 
-      TFullScreenLoader.stopLoading();
+      TFullScreenLoader.stopLoading(null);
 
       // Show Success Message
       TLoaders.successSnackBar(
@@ -77,7 +77,7 @@ class SignupController extends GetxController {
     } catch (e) {
       // Show some Generic error to the user
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
-      TFullScreenLoader.stopLoading();
+      TFullScreenLoader.stopLoading(null);
     }
   }
 }
