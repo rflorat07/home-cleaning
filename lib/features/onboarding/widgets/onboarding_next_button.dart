@@ -22,7 +22,7 @@ class OnBoardingNextButton extends StatelessWidget {
             padding: EdgeInsets.zero,
             fixedSize: const Size(TSizes.buttonWidth, TSizes.buttonHeight),
             backgroundColor: dark ? TColors.primary : TColors.primary),
-        child: const Icon(Icons.arrow_forward),
+        child: const Icon(Icons.arrow_forward, color: TColors.white),
       ),
     );
   }

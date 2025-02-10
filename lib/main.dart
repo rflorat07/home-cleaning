@@ -8,6 +8,7 @@ import 'package:get_storage/get_storage.dart';
 import 'app.dart';
 import 'bloc_observer.dart';
 import 'data/repositories/authentication/authentication.dart';
+import 'data/repositories/services/shared_preferences_service.dart';
 import 'firebase_options.dart';
 import 'service_locator.dart';
 
@@ -34,11 +35,19 @@ void main() async {
   /// -- Initialize Authentication Repository
   final authenticationRepository = AuthenticationBlocRepository();
 
+  /// -- Initialize SharedPreferences
+  final sharedPreferencesService = SharedPreferencesService();
+
   /// -- Initialize Dummy Data
   /* final controller = Get.put(DummyRepository());
   await controller.uploadDummyData(
       '/Users/rogerflorat/Development/Home Cleaning APP/home_cleaning/data/services/address.json',
       'Addresses'); */
 
-  runApp(App(authenticationRepository: authenticationRepository));
+  runApp(
+    App(
+      authenticationRepository: authenticationRepository,
+      sharedPreferencesService: sharedPreferencesService,
+    ),
+  );
 }
