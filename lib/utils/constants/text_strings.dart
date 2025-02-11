@@ -13,11 +13,11 @@ class TTexts {
       'Engage in a *Conversation \nwith Service Provider*';
 
   static const String onBoardingSubTitle1 =
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ';
+      'Lorem ipsum dolor sit amet, consectetur \nadipiscing elit, sed do eiusmod tempor incididunt ';
   static const String onBoardingSubTitle2 =
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ';
+      'Lorem ipsum dolor sit amet, consectetur \nadipiscing elit, sed do eiusmod tempor incididunt ';
   static const String onBoardingSubTitle3 =
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ';
+      'Lorem ipsum dolor sit amet, consectetur \nadipiscing elit, sed do eiusmod tempor incididunt ';
 
   // -- Authentication Headings Text
   static const String loginTitle = 'Sign In';

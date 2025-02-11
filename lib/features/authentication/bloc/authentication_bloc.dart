@@ -25,6 +25,8 @@ class AuthenticationBloc
     AuthenticationStarted event,
     Emitter<AuthenticationState> emit,
   ) async {
+    await Future.delayed(const Duration(seconds: 2));
+
     final currentUser = _authenticationRepository.currentUser;
 
     if (currentUser != null) {

@@ -44,3 +44,5 @@ class TogglePasswordVisibility extends LoginEvent {
 }
 
 class LoginSubmitted extends LoginEvent {}
+
+class LoadSavedCredentials extends LoginEvent {}
