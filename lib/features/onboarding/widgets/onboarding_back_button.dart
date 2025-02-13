@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../utils/utils.dart';
-import '../controllers/onboarding.controller.dart';
+import '../bloc/on_boarding_bloc.dart';
 
 class OnBoardingBackButton extends StatelessWidget {
   const OnBoardingBackButton({
@@ -14,13 +14,17 @@ class OnBoardingBackButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
 
-    return Obx(() => OnBoardingController.instance.currentPageIndex.value == 0
-        ? const SizedBox()
-        : Positioned(
-            left: double.minPositive,
-            bottom: TDeviceUtils.getBottomNavigationBarHeight() + 15,
-            child: ElevatedButton(
-              onPressed: () => OnBoardingController.instance.backPage(),
+    return BlocBuilder<OnBoardingBloc, OnBoardingState>(
+      buildWhen: (previous, current) =>
+          previous.currentPageIndex != current.currentPageIndex,
+      builder: (context, state) => state.currentPageIndex == 0
+          ? const SizedBox(
+              width: TSizes.size64,
+              height: TSizes.size48,
+            )
+          : ElevatedButton(
+              onPressed: () =>
+                  context.read<OnBoardingBloc>().add(const BackPage()),
               style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.zero,
                   shape: const CircleBorder(),
@@ -30,6 +34,6 @@ class OnBoardingBackButton extends StatelessWidget {
               child: const Icon(IconsaxPlusLinear.arrow_left,
                   color: TColors.green),
             ),
-          ));
+    );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../utils/utils.dart';
-import '../controllers/onboarding.controller.dart';
+import '../bloc/on_boarding_bloc.dart';
 import '../widgets/index.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -10,47 +10,63 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(OnBoardingController());
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            /// Horizontal Scrollable Pages
-            PageView(
-              controller: controller.pageController,
-              onPageChanged: controller.updatePageIndicator,
-              children: const [
-                OnBoardingPage(
-                  image: TImages.onBoardingImage1,
-                  title: TTexts.onBoardingTitle1,
-                  subtitle: TTexts.onBoardingSubTitle1,
-                ),
-                OnBoardingPage(
-                  image: TImages.onBoardingImage2,
-                  title: TTexts.onBoardingTitle2,
-                  subtitle: TTexts.onBoardingSubTitle2,
-                ),
-                OnBoardingPage(
-                  image: TImages.onBoardingImage3,
-                  title: TTexts.onBoardingTitle3,
-                  subtitle: TTexts.onBoardingSubTitle3,
-                ),
-              ],
+    return BlocProvider<OnBoardingBloc>(
+      create: (context) {
+        final pageController = PageController(); // Inicialización aquí
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          pageController.animateToPage(0,
+              duration: Duration.zero,
+              curve: Curves
+                  .linear); // Para prevenir el error _positions.isNotEmpty
+        });
+        return OnBoardingBloc(pageController: pageController);
+      },
+      child: BlocBuilder<OnBoardingBloc, OnBoardingState>(
+        builder: (context, state) {
+          return Scaffold(
+            body: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  /// Horizontal Scrollable Pages
+                  PageView(
+                    controller: context.read<OnBoardingBloc>().pageController,
+                    onPageChanged: (index) {
+                      context
+                          .read<OnBoardingBloc>()
+                          .add(UpdatePageIndicator(index));
+                    },
+                    children: const [
+                      OnBoardingPage(
+                        image: TImages.onBoardingImage1,
+                        title: TTexts.onBoardingTitle1,
+                        subtitle: TTexts.onBoardingSubTitle1,
+                      ),
+                      OnBoardingPage(
+                        image: TImages.onBoardingImage2,
+                        title: TTexts.onBoardingTitle2,
+                        subtitle: TTexts.onBoardingSubTitle2,
+                      ),
+                      OnBoardingPage(
+                        image: TImages.onBoardingImage3,
+                        title: TTexts.onBoardingTitle3,
+                        subtitle: TTexts.onBoardingSubTitle3,
+                      ),
+                    ],
+                  ),
+
+                  /// Skip Button
+                  const OnBoardingSkip(),
+
+                  /// Navigation Buttons
+                  const OnBoardingNavigation(),
+                ],
+              ),
             ),
-
-            /// Skip Button
-            const OnBoardingSkip(),
-
-            /// Dot Navigation SmoothPageIndicator
-            const OnBoardingDotNavigation(),
-
-            /// Circular Button
-            const OnBoardingBackButton(),
-            const OnBoardingNextButton(),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
