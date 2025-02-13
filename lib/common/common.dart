@@ -23,6 +23,7 @@ export 'widgets/loaders/loaders.dart';
 export 'widgets/shimmer/category_shimmer.dart';
 export 'widgets/shimmer/popular_service_shimmer.dart';
 export 'widgets/shimmer/shimmer.dart';
+export 'widgets/snackbar/app_snackbar.dart';
 export 'widgets/special_offer/special_offer.dart';
 export 'widgets/success_screen/success_screen.dart';
 export 'widgets/texts/section_heading.dart';

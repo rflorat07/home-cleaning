@@ -12,12 +12,11 @@ class OnBoardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<OnBoardingBloc>(
       create: (context) {
-        final pageController = PageController(); // Inicialización aquí
+        final pageController = PageController();
+        // Para prevenir el error _positions.isNotEmpty
         WidgetsBinding.instance.addPostFrameCallback((_) {
           pageController.animateToPage(0,
-              duration: Duration.zero,
-              curve: Curves
-                  .linear); // Para prevenir el error _positions.isNotEmpty
+              duration: Duration.zero, curve: Curves.linear);
         });
         return OnBoardingBloc(pageController: pageController);
       },

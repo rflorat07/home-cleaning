@@ -72,6 +72,7 @@ class TTexts {
   static const String rememberMe = 'Remember Me';
   static const String invalidEmail = 'Invalid email address';
   static const String invalidPassword = 'Invalid password';
+  static const String failedSendEmail = 'Failed to send email';
 
   // -- Tabs
   static const String homeTab = 'Home';

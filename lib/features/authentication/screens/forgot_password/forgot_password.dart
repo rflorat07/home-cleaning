@@ -10,17 +10,18 @@ class ForgotPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AnnotatedRegion(
+    return AnnotatedRegion(
       value: SystemUiOverlayStyle.dark,
       child: Scaffold(
-        appBar: TAppBar(showBackArrow: true),
+        appBar: const TAppBar(showBackArrow: true),
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
+            padding:
+                const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
             child: Column(
               children: [
                 /// Title & Sub-Title
-                TCustomHeader(
+                const TCustomHeader(
                   title: TTexts.forgotPasswordTitle,
                   subTitle: TTexts.forgotPasswordSubTitle,
                   //padding: EdgeInsets.only(top: TSizes.size120),
