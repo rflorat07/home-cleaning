@@ -51,6 +51,7 @@ class TTexts {
   static const String forgotPasswordTitle = 'Forgot Password?';
   static const String forgotPasswordSubTitle =
       'Don\'t worry sometimes people can forget too, enter your email and we will send you a password reset link.';
+  static const String signupFailedMessage = 'Signup failed. Please try again.';
 
   // -- Authentication Form Text
   static const String name = 'Name';

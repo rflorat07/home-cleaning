@@ -1,9 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../utils/utils.dart';
-import '../../../controllers/signup/signup.controller.dart';
+import '../bloc/signup_bloc.dart';
 
 class TTermsAndConditionsCheckbox extends StatelessWidget {
   const TTermsAndConditionsCheckbox({
@@ -12,7 +12,6 @@ class TTermsAndConditionsCheckbox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = SignupController.instance;
     return Row(
       children: [
         SizedBox(
@@ -20,12 +19,16 @@ class TTermsAndConditionsCheckbox extends StatelessWidget {
           height: TSizes.size24,
           child: Transform.scale(
             scale: 1.2,
-            child: Obx(
-              () => Checkbox(
-                value: controller.privacyPolicy.value,
-                onChanged: (value) => controller.privacyPolicy.value =
-                    !controller.privacyPolicy.value,
-              ),
+            child: BlocBuilder<SignupBloc, SignupState>(
+              builder: (context, state) {
+                return Checkbox(
+                  key: const Key('signupForm_privacyPolicy_checkbox'),
+                  value: state.agreeTerms,
+                  onChanged: (value) => context
+                      .read<SignupBloc>()
+                      .add(AgreeTermsChanged(value ?? false)),
+                );
+              },
             ),
           ),
         ),
@@ -42,7 +45,7 @@ class TTermsAndConditionsCheckbox extends StatelessWidget {
               ),
               TextSpan(
                 text: TTexts.termsCondition,
-                recognizer: TapGestureRecognizer()..onTap = () => Get.to(() {}),
+                recognizer: TapGestureRecognizer()..onTap = () {},
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                       fontWeight: FontWeight.w500,
                       color: TColors.green,

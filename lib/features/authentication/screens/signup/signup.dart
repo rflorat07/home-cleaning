@@ -10,14 +10,14 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
           padding: TSpacingStyle.paddingWithAppBarHeight,
           child: Column(
             children: [
               /// Title & Sub-Title
-              TCustomHeader(
+              const TCustomHeader(
                 title: TTexts.signupTitle,
                 subTitle: TTexts.signupSubTitle,
               ),
@@ -26,17 +26,17 @@ class SignupScreen extends StatelessWidget {
               TSignupForm(),
 
               /// Divider
-              TFormDivider(dividerText: TTexts.orSignUpWith),
+              const TFormDivider(dividerText: TTexts.orSignUpWith),
 
-              SizedBox(height: TSizes.spaceBtwSections),
+              const SizedBox(height: TSizes.spaceBtwSections),
 
               /// Social Buttons
-              TSocialButtons(),
+              const TSocialButtons(),
 
-              SizedBox(height: TSizes.spaceBtwSections),
+              const SizedBox(height: TSizes.spaceBtwSections),
 
               /// Footer
-              TSignupFooter()
+              const TSignupFooter()
             ],
           ),
         ),
